@@ -1,2 +1,5 @@
 hyperclass
 ==========
+
+Feature setup for automatic hypernym classification based on Snow et al 2005 ( http://ai.stanford.edu/~rion/papers/hypernym_nips05.pdf )
+
