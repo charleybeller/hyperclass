@@ -1,5 +1,9 @@
 hyperclass
 ==========
 
-Feature setup for automatic hypernym classification based on Snow et al 2005 ( http://ai.stanford.edu/~rion/papers/hypernym_nips05.pdf )
+Feature setup for automatic hypernym classification based on Snow et al 2005
+( http://ai.stanford.edu/~rion/papers/hypernym_nips05.pdf )
+
+To run from within sbt with input file test.xml.gz and output file output.txt:
+run test.xml.gz output.txt
 
