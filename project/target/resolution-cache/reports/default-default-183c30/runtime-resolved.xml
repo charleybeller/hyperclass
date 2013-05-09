@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="default"
+		module="default-183c30"
+		revision="0.1-SNAPSHOT"
+		extra-sbtVersion="0.12"
+		extra-scalaVersion="2.9.2"
+		conf="runtime"
+		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom"
+		date="20130508130011"/>
+	<dependencies>
+		<module organisation="com.github.retronym" name="sbt-onejar">
+			<revision name="0.8" status="release" pubdate="20120702232236" resolver="sbt-plugin-releases" artresolver="sbt-plugin-releases" extra-sbtVersion="0.12" extra-scalaVersion="2.9.2" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="0">
+				<metadata-artifact status="no" details="" size="1806" time="0" location="/home/hltcoe/cbeller/.ivy2/cache/scala_2.9.2/sbt_0.12/com.github.retronym/sbt-onejar/ivy-0.8.xml" searched="false" origin-is-local="false" origin-location="http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/com.github.retronym/sbt-onejar/scala_2.9.2/sbt_0.12/0.8/ivys/ivy.xml"/>
+				<caller organisation="default" name="default-183c30" conf="compile, runtime" rev="0.8" rev-constraint-default="0.8" rev-constraint-dynamic="0.8" callerrev="0.1-SNAPSHOT" extra-sbtVersion="0.12" extra-scalaVersion="2.9.2"/>
+				<artifacts>
+					<artifact name="sbt-onejar" type="jar" ext="jar" status="no" details="" size="147377" time="0" location="/home/hltcoe/cbeller/.ivy2/cache/scala_2.9.2/sbt_0.12/com.github.retronym/sbt-onejar/jars/sbt-onejar-0.8.jar">
+						<origin-location is-local="false" location="http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/com.github.retronym/sbt-onejar/scala_2.9.2/sbt_0.12/0.8/jars/sbt-onejar.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>
