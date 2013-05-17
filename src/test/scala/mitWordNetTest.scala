@@ -10,9 +10,9 @@ import edu.mit.jwi.item.POS
 import edu.mit.jwi.item.IWordID
 import edu.mit.jwi.data.ILoadPolicy
 
-class WordNetTest extends FlatSpec with ShouldMatchers {
+class MITWordNetTest extends FlatSpec with ShouldMatchers {
   
-  "A dictionary" should "be openable" in {
+  "A dictionary" should "be openable" ignore {
     val wnDir  = new File("data/wordnet/dict")
     val dict = new Dictionary(wnDir)
     dict.open()
@@ -28,7 +28,7 @@ class WordNetTest extends FlatSpec with ShouldMatchers {
     word.getSynset.getGloss should be (gloss)
   }
 
-  "An IRAMDictionary" should "get synonyms " in {
+  "An IRAMDictionary" should "get synonyms " ignore {
     val wnDir = new File("data/wordnet/dict")
     val dict = new RAMDictionary(wnDir, ILoadPolicy.NO_LOAD)
     dict.open()
