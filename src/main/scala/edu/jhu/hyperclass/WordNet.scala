@@ -23,8 +23,8 @@ object WordNet {
     catch { case e:Throwable => throw new RuntimeException(e) }
   }
 
-  def getSynsets(word: String): Array[ISynset] = {
-    val idxWords = POS.values().map{pos => Option(dict.getIndexWord(word,pos)) }.flatten
+  def getSynsets(word: String): List[ISynset] = {
+    val idxWords = List(Option(dict.getIndexWord(word,POS.NOUN))).flatten
     val wordIDs = idxWords.map{ iw => iw.getWordIDs.asScala }.flatten
     val synsets = wordIDs.map{ wid => dict.getWord(wid).getSynset }
     synsets
@@ -37,7 +37,7 @@ object WordNet {
     words.map{ w => w.getLemma }.toSet
   }
 
-  def isXaY(x: String, y:String): Boolean = {
+  def isa(x: String, y:String): Boolean = {
     getHypernyms(x)(y)
   }
 }
