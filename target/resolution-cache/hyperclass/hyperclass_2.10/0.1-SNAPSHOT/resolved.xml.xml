@@ -4,7 +4,7 @@
 		module="hyperclass_2.10"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20130508130126"
+		publication="20130517135945"
 	>
 		<description>
 		hyperclass
@@ -36,7 +36,10 @@
 		<dependency org="org.scalatest" name="scalatest_2.10" rev="1.9.1" conf="test->default(compile)"/>
 		<dependency org="log4j" name="log4j" rev="1.2.17" conf="compile->default(compile)"/>
 		<dependency org="edu.stanford.nlp" name="stanford-corenlp" rev="1.3.4" conf="compile->default(compile)"/>
-		<dependency org="edu.mit.jwi" name="jwi" rev="2.2.3" conf="compile->default(compile)"/>
+		<dependency org="org.scalanlp" name="breeze-math_2.10" rev="0.2.3" conf="compile->default(compile)"/>
+		<dependency org="org.scalanlp" name="breeze-learn_2.10" rev="0.2.3" conf="compile->default(compile)"/>
+		<dependency org="org.scalanlp" name="breeze-process_2.10" rev="0.2.3" conf="compile->default(compile)"/>
+		<dependency org="org.scalanlp" name="breeze-viz_2.10" rev="0.2.3" conf="compile->default(compile)"/>
 		<exclude org="org.scala-lang" module="scala-library" artifact="*" type="jar" ext="*" matcher="exact"/>
 		<exclude org="org.scala-lang" module="scala-compiler" artifact="*" type="jar" ext="*" matcher="exact"/>
 		<override org="org.scala-lang" module="scala-library" matcher="exact" rev="2.10.0"/>

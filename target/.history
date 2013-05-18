@@ -78,3 +78,6 @@ test
 console
 run test.xml.gz output.txt
 console
+compile
+quit
+exit
