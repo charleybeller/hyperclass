@@ -1,0 +1,83 @@
+
+import java.io.File
+import breeze.config.{GenerateHelp, Help, CommandLineParser}
+import io.Source
+import breeze.data.Example
+import breeze.util.Index
+import breeze.linalg._
+import breeze.classify.LogisticClassifier
+import breeze.stats.ContingencyStats
+import breeze.optimize.FirstOrderMinimizer.OptParams
+import collection.mutable.ArrayBuffer
+
+object Regression {
+
+	def main(args: Array[String]) {
+
+		val langData = breeze.text.LanguagePack.English
+		val tokenizer = langData.simpleTokenizer
+
+		val data: Array[Example[Int, IndexedSeq[String]]] = new Array[Example[Int, IndexedSeq[String]]](100);
+		for(i <- 0 until 100) {
+			val text = tokenizer("Hello World " + i.toString()).toIndexedSeq
+			data(i) = Example(label = if(i % 2 == 0) 0 else 1, features = text, id = i.toString())
+		}
+
+		sealed trait Feature
+		case class ParseFeature(w: String) extends Feature
+
+		val featureIndex = Index[Feature]()
+
+		def extractFeatures(ex: Example[Int, IndexedSeq[String]]) =  {
+			ex.map { words =>
+				val builder = new VectorBuilder[Double](Int.MaxValue)
+				for(w <- words) {
+					val fi = featureIndex.index(ParseFeature(w))
+					builder.add(fi, 1.0)
+				}
+				builder
+			}	
+		}	
+	
+		val extractedData: IndexedSeq[Example[Int, SparseVector[Double]]] = data.map(extractFeatures).map{ex =>
+			ex.map{ builder =>
+				builder.length = featureIndex.size
+				builder.toSparseVector
+			}	
+		}
+
+	    	val folds = extractedData.groupBy(_.id.take(1)).mapValues(_.toSet)
+
+/*		for( (nameOfFold, test) <- folds) {
+			val train = extractedData.filterNot(test)
+			val opt = OptParams(maxIterations=60,useStochastic=false,useL1=true)
+			val classifier = new LogisticClassifier.Trainer[Int, SparseVector[Double]](opt).train(train)
+		
+			for( ex <- test){
+				println(ex.features)
+				println(classifier.classify(ex.features) + " " + ex.label)
+			}	
+		}*/
+
+		val allStats = ArrayBuffer[ContingencyStats[Int]]()
+	
+		for( (nameOfFold, test) <- folds) {
+			val train = extractedData.filterNot(test)
+			val opt = OptParams(maxIterations=60,useStochastic=false,useL1=true)
+			val classifier = new LogisticClassifier.Trainer[Int, SparseVector[Double]](opt).train(train)
+		
+			println(test.toSeq)
+	
+			val stats = ContingencyStats(classifier, test.toSeq)
+			
+			allStats += stats
+			println(stats)
+		}
+
+		for( (stats,i) <- allStats.zipWithIndex) {
+			println("CV Fold " + i)
+			println(stats)
+		}
+
+	}
+}
