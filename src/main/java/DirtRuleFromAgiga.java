@@ -129,7 +129,9 @@ public class DirtRuleFromAgiga {
           hypernymRelation = "xy";
         else if (WordNet.isa(y,x))
           hypernymRelation = "yx";
-        else hypernymRelation = "zz";
+        else if (WordNet.isnota(x,y) && WordNet.isnota(y,x))
+          hypernymRelation = "zz";
+        else hypernymRelation = "unknown";
         StringBuilder dirtRule = this.buildRule(paths);
         dirtRule.append("\t"+hypernymRelation+"\tX="+x+"\tY="+y+"\tphrases=");
         for (int k=i; k<=j; k++) {
