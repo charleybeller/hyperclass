@@ -18,7 +18,7 @@ libraryDependencies  ++= Seq(
 	"log4j" % "log4j" % "1.2.17",
 	//"edu.jhu.agiga" % "agiga" % "1.0",
 	"edu.stanford.nlp" % "stanford-corenlp" % "1.3.4",
-	"edu.mit.jwi" % "jwi" % "2.2.3",
+	"edu.mit" % "jwi" % "2.2.3",
 	"org.scalanlp" %% "breeze-math" % "0.2.3",
 	"org.scalanlp" %% "breeze-learn" % "0.2.3",
 	"org.scalanlp" %% "breeze-process" % "0.2.3",
