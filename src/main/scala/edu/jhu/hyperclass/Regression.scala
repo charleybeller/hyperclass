@@ -52,7 +52,14 @@ object Regression {
 
 		println("Initializing...")
 		var dm : DataMatrix = new DataMatrix(new Array[PhrasePair](0));
-		dm.initializeFromFile("output/xISAy.txt")
+		for(a <- args){
+			println(a)
+		}
+
+		val posFile = "output/xy.txt"
+		val negFile = "output/zz.txt"
+
+		dm.initializeFromFile(posFile)
 		
 		println("Splitting train and test...")
 		val (trainDM : DataMatrix, testDM : DataMatrix) = dm splitTrainTest 10;

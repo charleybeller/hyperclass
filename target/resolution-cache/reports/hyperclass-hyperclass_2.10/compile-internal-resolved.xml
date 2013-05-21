@@ -7,7 +7,7 @@
 		revision="0.1-SNAPSHOT"
 		conf="compile-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom"
-		date="20130517135945"/>
+		date="20130521112100"/>
 	<dependencies>
 		<module organisation="org.scalanlp" name="breeze-viz_2.10">
 			<revision name="0.2.3" status="release" pubdate="20130413133137" resolver="public" artresolver="public" homepage="http://scalanlp.org/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="25">
