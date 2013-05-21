@@ -81,3 +81,8 @@ console
 compile
 quit
 exit
+run "output/zz.txt"
+q
+exit
+compile
+exit

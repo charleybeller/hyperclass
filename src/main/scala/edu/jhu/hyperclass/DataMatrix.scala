@@ -17,14 +17,17 @@ class DataMatrix(phrasePairs : Array[PhrasePair]){
 	/**
  	* Initialize DataMatrix by reading PhrasePairs from file
  	*/
-	def initializeFromFile(fileName: String) = {
+	def initializeFromFile(posFileName: String, allFileName : String) = {
 		pairs = new Array(0);
-		for(line <- fromFile(fileName).getLines){
+		println("Reading File")
+		for(line <- fromFile(allFileName).getLines){
 			val comps : Array[String] = line.split('\t')
 			pairs = pairs :+ new PhrasePair(comps(2).split("=")(1), comps(3).split("=")(1))
 		}
-		getLabelsFromFile(fileName);
-		extractFeaturesFromFile(fileName);
+		println("Getting Labels")
+		getLabelsFromFile(posFileName);
+		println("Getting Features")
+		extractFeaturesFromFile(allFileName);
 	}
 
 	/**
@@ -108,14 +111,14 @@ class DataMatrix(phrasePairs : Array[PhrasePair]){
  	*/
 	def extractFeaturesFromFile(fileName : String) = {
 		
-		for(p <- pairs ){
-			var idx : Int = 1;
-			var wordFeatures : Array[Feature] = new Array[Feature](0);
-			var fs = parseFeaturesFromFile(fileName)
-			for((p,f) <- pairs.zip(fs)){
-				p.features = f
-			}
+//		for(p <- pairs ){
+		var idx : Int = 1;
+		var wordFeatures : Array[Feature] = new Array[Feature](0);
+		var fs = parseFeaturesFromFile(fileName)
+		for((p,f) <- pairs.zip(fs)){
+			p.features = f
 		}
+//		}
 	} 
 
 	/**

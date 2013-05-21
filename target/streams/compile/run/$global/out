@@ -18,6 +18,7 @@
 [0m[[0mdebug[0m] [0m	/home/hltcoe/epavlick/hyperclass/repo/lib_managed/jars/joda-time/joda-time/joda-time-2.1.jar[0m
 [0m[[0mdebug[0m] [0m	/home/hltcoe/epavlick/hyperclass/repo/lib_managed/jars/de.jollyday/jollyday/jollyday-0.4.7.jar[0m
 [0m[[0mdebug[0m] [0m	/home/hltcoe/epavlick/hyperclass/repo/lib_managed/jars/javax.xml.bind/jaxb-api/jaxb-api-2.2.7.jar[0m
+[0m[[0mdebug[0m] [0m	/home/hltcoe/epavlick/hyperclass/repo/lib_managed/jars/edu.mit/jwi/jwi-2.2.3.jar[0m
 [0m[[0mdebug[0m] [0m	/home/hltcoe/epavlick/hyperclass/repo/lib_managed/jars/org.scalanlp/breeze-math_2.10/breeze-math_2.10-0.2.3.jar[0m
 [0m[[0mdebug[0m] [0m	/home/hltcoe/epavlick/hyperclass/repo/lib_managed/jars/org.scalanlp/breeze-core_2.10/breeze-core_2.10-0.2.3.jar[0m
 [0m[[0mdebug[0m] [0m	/home/hltcoe/epavlick/hyperclass/repo/lib_managed/jars/com.thoughtworks.paranamer/paranamer/paranamer-2.2.jar[0m
@@ -31,7 +32,7 @@
 [0m[[0mdebug[0m] [0m	/home/hltcoe/epavlick/hyperclass/repo/lib_managed/jars/org.jblas/jblas/jblas-1.2.3.jar[0m
 [0m[[0mdebug[0m] [0m	/home/hltcoe/epavlick/hyperclass/repo/lib_managed/jars/org.scalanlp/breeze-learn_2.10/breeze-learn_2.10-0.2.3.jar[0m
 [0m[[0mdebug[0m] [0m	/home/hltcoe/epavlick/hyperclass/repo/lib_managed/jars/org.scalanlp/breeze-process_2.10/breeze-process_2.10-0.2.3.jar[0m
-[0m[[0mdebug[0m] [0m	/home/hltcoe/epavlick/hyperclass/repo/lib_managed/jars/de.bwaldvogel/liblinear/liblinear-1.8.jar[0m
+[0m[[0mdebug[0m] [0m	/home/hltcoe/epavlick/hyperclass/repo/lib_managed/jars/de.bwaldvogel/liblinear/liblinear-1.92.jar[0m
 [0m[[0mdebug[0m] [0m	/home/hltcoe/epavlick/hyperclass/repo/lib_managed/jars/org.scalanlp/breeze-viz_2.10/breeze-viz_2.10-0.2.3.jar[0m
 [0m[[0mdebug[0m] [0m	/home/hltcoe/epavlick/hyperclass/repo/lib_managed/jars/jfree/jcommon/jcommon-1.0.16.jar[0m
 [0m[[0mdebug[0m] [0m	/home/hltcoe/epavlick/hyperclass/repo/lib_managed/jars/jfree/jfreechart/jfreechart-1.0.13.jar[0m
@@ -42,3 +43,7 @@
 [0m[[0mdebug[0m] [0m	/home/hltcoe/epavlick/hyperclass/repo/lib_managed/jars/bouncycastle/bcmail-jdk14/bcmail-jdk14-138.jar[0m
 [0m[[0mdebug[0m] [0m	/home/hltcoe/epavlick/hyperclass/repo/lib_managed/jars/bouncycastle/bcprov-jdk14/bcprov-jdk14-138.jar[0m
 [0m[[0mdebug[0m] [0mWaiting for thread run-main to exit[0m
+[0m[[0mdebug[0m] [0m	Thread run-main exited.[0m
+[0m[[0mdebug[0m] [0mInterrupting remaining threads (should be all daemons).[0m
+[0m[[0mdebug[0m] [0mSandboxed run complete..[0m
+[0m[[0mdebug[0m] [0mExited with code 0[0m
