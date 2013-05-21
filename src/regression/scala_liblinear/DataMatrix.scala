@@ -106,7 +106,7 @@ class DataMatrix(phrasePairs : ArraySeq[PhrasePair]){
  	*/
 	def getX() : ArraySeq[Array[FeatureNode]] = {
 		
-		var X : ArraySeq[Array[FeatureNode]] = new ArraySeq[Array[FeatureNode]](0);
+		var X : ArraySeq[Array[Feature]] = new ArraySeq[Array[Feature]](0);
 		return X;
 //		for(var p <- pairs ){
 //			copyToArray( X :+ (p.features.toArray(new FeatureNode[ p.features.size() ]));

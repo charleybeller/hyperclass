@@ -1,7 +1,6 @@
-import scala.collection.mutable.ArraySeq
 import scala.io.Source._;
+import scala.collection.immutable.HashMap;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Random;
 
@@ -11,29 +10,21 @@ import de.bwaldvogel.liblinear.FeatureNode;
 /**
  * Holds the list of word pairs do be used in classifier training/testing
  * */
-class DataMatrix(phrasePairs : ArraySeq[PhrasePair]){ 
+class DataMatrix(phrasePairs : Array[PhrasePair]){ 
 
-	var pairs : ArraySeq[PhrasePair] = phrasePairs
+	var pairs : Array[PhrasePair] = phrasePairs
 
 	/**
  	* Initialize DataMatrix by reading PhrasePairs from file
  	*/
 	def initializeFromFile(fileName: String) = {
-		pairs = new ArraySeq(0);
+		pairs = new Array(0);
 		for(line <- fromFile(fileName).getLines){
-			println(line) 
+			val comps : Array[String] = line.split('\t')
+			pairs = pairs :+ new PhrasePair(comps(2).split("=")(1), comps(3).split("=")(1))
 		}
-
-//	     	String line;
-//		String[] words;
-//  		try (BufferedReader reader = Files.newBufferedReader(path, StandardCharsets.UTF_8)){
-//  			while ((line = reader.readLine()) != null) {
-//				words = line.split("\t"); 
-//				this.pairs.add(new PhrasePair(words[0], words[1]));
-//			}
-//		}
-//		getLabels();
-//		extractFeatures();
+		getLabelsFromFile(fileName);
+		extractFeaturesFromFile(fileName);
 	}
 
 	/**
@@ -43,14 +34,14 @@ class DataMatrix(phrasePairs : ArraySeq[PhrasePair]){
 
 	def splitTrainTest(testPcnt : Int) : (DataMatrix, DataMatrix) = {
 		
-		var train : ArraySeq[PhrasePair] = new ArraySeq(0);
-		var test : ArraySeq[PhrasePair] = new ArraySeq(0);
+		var train : Array[PhrasePair] = new Array(0);
+		var test : Array[PhrasePair] = new Array(0);
 		var i : Int = 0;
 		var r : Random = new Random(); 
 		for(p <- pairs){
 			i = r.nextInt(100);
-			if(i <= testPcnt){ test :+ p; }
-			else{ train :+ p; }
+			if(i <= testPcnt){ test = test :+ p; }
+			else{ train = train :+ p; }
 		}	
 		(new DataMatrix(train), new DataMatrix(test));
 	}
@@ -58,73 +49,98 @@ class DataMatrix(phrasePairs : ArraySeq[PhrasePair]){
 	/**
  	* Use wordnet to determine if the pair is related by hypernym/hyponym relationship
  	*/
-	def getLabels() = {
+	def getLabelsFromFile(fileName : String) = {
 		
-		for(p <- pairs ){ p.hypernym = 1.0; }
+		var r : Random = new Random(); 
+		var labels : HashMap[PhrasePair, Int] = new HashMap[PhrasePair, Int]();
+		for(line <- fromFile(fileName).getLines){
+			val comps : Array[String] = line.split('\t')
+			val p : PhrasePair = new PhrasePair(comps(2).split("=")(1), comps(3).split("=")(1))
+			labels = labels + ((p, 1))
+		}
+		for(p <- pairs ){ p.setHypernym(if(labels contains p) 1 else 0) }
 	}
 
 	/**
  	* Get the coordinate features for a pair of words
  	*/
-	def coordinateFeatures(p : PhrasePair) : ArraySeq[Int] = {
+	def coordinateFeatures(p : PhrasePair) : Array[Int] = {
 	
-		var features : ArraySeq[Int] = new ArraySeq[Int](0);
+		var features : Array[Int] = new Array[Int](0);
 		features :+ 0;
 	}
 
 	/**
  	* Get the parse features for a pair of words
  	*/
-	def parseFeatures(p : PhrasePair) : ArraySeq[Int] = {
-	
-		var features : ArraySeq[Int] = new ArraySeq[Int](0);
+	def parseFeatures(p : PhrasePair) : Array[Int] = {
+		var features : Array[Int] = new Array[Int](0);
 		features :+ 0;
+	}
+
+	/**
+ 	* Get the parse features each PhrasePair 
+ 	*/
+	def parseFeaturesFromFile(fileName : String) : Array[Array[Feature]] = {
+		
+		//first pass to get all string feature types to initialize FeatureEncoder
+
+		var features : Array[String] = new Array[String](0);
+		for(line <- fromFile(fileName).getLines){
+			features = features :+ line.split('\t')(0)
+		}
+		
+		//second pass, to save all features into feature array 
+	
+		var fm : FeatureMatrix[PhrasePair, String] = new FeatureMatrix[PhrasePair, String](features);
+		for(line <- fromFile(fileName).getLines){
+			val comps : Array[String] = line.split('\t')
+			val p : PhrasePair = new PhrasePair(comps(2).split("=")(1), comps(3).split("=")(1))
+			val parse : String = comps(0)
+			fm.store(p, parse) 
+		}
+	
+		return fm.toArray(pairs)
 	}
 
 	/**
  	* Extract features for each PhrasePair is pairs
  	*/
-	def extractFeatures() = {
-
+	def extractFeaturesFromFile(fileName : String) = {
+		
 		for(p <- pairs ){
 			var idx : Int = 1;
-			var wordFeatures : ArraySeq[FeatureNode] = new ArraySeq[FeatureNode](0);
-			for(f <- parseFeatures(p)){
-				wordFeatures :+ (new FeatureNode(idx, f));
-				idx = idx + 1;
+			var wordFeatures : Array[Feature] = new Array[Feature](0);
+			var fs = parseFeaturesFromFile(fileName)
+			for((p,f) <- pairs.zip(fs)){
+				p.features = f
 			}
-			for(f <- coordinateFeatures(p)){
-				wordFeatures :+ (new FeatureNode(idx, f));
-				idx = idx + 1;
-			}
-			p.features = wordFeatures; 
 		}
 	} 
 
 	/**
  	* Get the feature matrix
  	*/
-	def getX() : ArraySeq[Array[FeatureNode]] = {
+	def getX() : Array[Array[Feature]] = {
 		
-		var X : ArraySeq[Array[FeatureNode]] = new ArraySeq[Array[FeatureNode]](0);
-		return X;
-//		for(var p <- pairs ){
-//			copyToArray( X :+ (p.features.toArray(new FeatureNode[ p.features.size() ]));
-//		}
-//		return X.toArray(new FeatureNode[ X.size() ][ X.get(0).length ]);
+		var X : Array[Array[Feature]] = new Array[Array[Feature]](0);
+		for(p <- pairs){
+			X = X :+ p.features
+		}
+		return X 
 
 	}
 
 	/**
  	* Get the label matrix
  	*/
-	def getY() : ArraySeq[Double] = {
+	def getY() : Array[Double] = {
 		
-		var Y : ArraySeq[Double] = new ArraySeq(pairs.length);
-		return Y;
-//		for(p <- pairs){
-//			Y :+ p.hypernym; 
-//		}
+		var Y : Array[Double] = new Array(0);
+		for(p <- pairs){
+			Y = Y :+ p.hypernym; 
+		}
+		return Y
 	}
 
 	/**
