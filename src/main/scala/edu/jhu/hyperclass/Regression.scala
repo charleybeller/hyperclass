@@ -34,32 +34,36 @@ object Regression {
 	/**
  	* Test model on X with known labels Y 
  	*/
-	def test(model : Model, dm : DataMatrix) : Double = {
+	def test(model : Model, dm : DataMatrix) : (Double, Double, Double) = {
 		val X : Array[Array[Feature]] = dm.getX();
 		val Y : Array[Double] = dm.getY();
 		
-		var correct : Float = 0; var total : Float = 0; var prediction : Double = 0;
+		var tp : Float = 0
+		var fp : Float = 0
+		var fn : Float = 0
+		var yhat : Double = 0;
 		for((x,y) <- X.zip(Y)){
-			prediction = Linear.predict(model, x);
-			println(prediction + "  " + y)
-			if(prediction == y) correct = correct + 1; 
-			total = total + 1;	
-		}		
-		correct / total;
+			yhat = Linear.predict(model, x);
+			println("Predicted: " + yhat + " True:  " + y)
+			if(y == 1 && yhat == 1) tp = tp + 1
+			if(y == 0 && yhat == 1) fp = fp + 1
+			if(y == 1 && yhat == 0) fn = fn + 1
+		}	
+		val p = tp / (tp + fp)
+		val r = tp / (tp + fn)
+		val f = 2 * (p * r) / (p + r)
+		(p, r, f)	
 	}
 	
 	def main(args : Array[String]){
 
 		println("Initializing...")
 		var dm : DataMatrix = new DataMatrix(new Array[PhrasePair](0));
-		for(a <- args){
-			println(a)
-		}
 
 		val posFile = "output/xy.txt"
-		val negFile = "output/zz.txt"
+		val allFile = "output/joined.txt"
 
-		dm.initializeFromFile(posFile)
+		dm.initializeFromFile(posFile, allFile)
 		
 		println("Splitting train and test...")
 		val (trainDM : DataMatrix, testDM : DataMatrix) = dm splitTrainTest 10;
@@ -72,6 +76,7 @@ object Regression {
 		//model save modelFile;
 	
 		println("Testing...")
-		println(test(model, testDM));
+		val (p, r, f) = test(model, testDM)
+		println("Precision: " + p + " Recall: " + r + " Fscore: " + f)
 	}
 }
