@@ -1,0 +1,868 @@
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:partmod:v->target->v:dobj:n	xy	X=status	Y=state	phrases=status targeting state 
+n:nsubj:v<-be->v:prep:IN->among->IN:pobj:n	xy	X=champion	Y=contender	phrases=champion will be among top contenders 
+n:nn:n	xy	X=Daily	Y=newspaper	phrases=Daily Mirror newspaper 
+n:prep:IN->in->IN:pobj:n	xy	X=thing	Y=situation	phrases=thing in a situation 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:prep:IN->of->IN:pobj:n	xy	X=middle	Y=area	phrases=middle of the Kurdish-controlled area 
+n:conj:n	xy	X=baby	Y=child	phrases=babies and young children 
+n:nsubj:v<-be->v:prep:v->exclude->v:pobj:n	xy	X=expense	Y=cost	phrases=expenses for the year were down 64.7 million dollars to 1.612 billion dollars , excluding abnormal restructuring costs 
+n:nsubjpass:v<-vote->v:prep:IN->into->IN:pobj:n	xy	X=constitution	Y=law	phrases=constitution will be voted into law 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:nsubj:v<-be->v:prep:v->exclude->v:pobj:n	xy	X=expense	Y=cost	phrases=expenses for the year were down 64.7 million dollars to 1.612 billion dollars , excluding abnormal restructuring costs 
+n:conj:n	xy	X=network	Y=system	phrases=network and modern transmission systems 
+n:partmod:v->target->v:dobj:n	xy	X=status	Y=state	phrases=status targeting state 
+n:nn:n	xy	X=peacekeeping	Y=operation	phrases=peacekeeping operation 
+n:nn:n<-Akashi->n:conj:n->Stoltenberg->n:nn:n	xy	X=representative	Y=negotiator	phrases=representative Yasushi Akashi , UNPROFOR commander General Bertrand de Lapresle , peace negotiator 
+n:prep:IN->at->IN:pobj:n	xy	X=introduction	Y=beginning	phrases=introduction of new ministerial decree number 15\/1994 at the beginning 
+n:conj:n<-office->n:conj:n	xy	X=house	Y=building	phrases=house , an administration building 
+n:pobj:IN<-of<-IN:prep:n<-member->n:appos:n	xy	X=Knesset	Y=parliament	phrases=Knesset , the Israeli parliament 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:nn:n	xy	X=Bank	Y=side	phrases=Bank side 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:nsubj:v<-pay->v:prep:TO->to->TO:pobj:n	xy	X=politician	Y=leader	phrases=Politicians from all parties on Thursday , led by Prime Minister John Major , paid emotional tributes to the Labor leader 
+n:conj:n	xy	X=Shellfire	Y=shooting	phrases=Shellfire and shooting 
+n:nsubjpass:v<-lower->v:conj:v->run->v:nsubj:n	xy	X=flag	Y=emblem	phrases=flag was lowered and the red , green , white and black Palestinian emblem 
+n:conj:n<-office->n:conj:n	xy	X=house	Y=building	phrases=house , a military administration building 
+n:nn:n	xy	X=Bank	Y=side	phrases=Bank side 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:nsubj:n<-percent->n:advcl:n->percent->n:nsubj:n	xy	X=output	Y=production	phrases=Output of ATPC members last year of 73,268 tonnes was 20.7 percent below its agreed limit , while production 
+n:nn:n	xy	X=militia	Y=force	phrases=militia forces 
+n:appos:n<-Bayraqdar<-n:nsubj:v<-urge->v:dobj:n	xy	X=chief	Y=leader	phrases=chief , urged Yemen 's leaders 
+n:conj:n<-building->n:conj:n	xy	X=house	Y=building	phrases=house , a military administration building 
+n:nsubj:v<-go->v:conj:v->threaten->v:nsubj:n	xy	X=employee	Y=worker	phrases=employees went on strike to protest the government 's failure to deliver promised pay raises and agricultural workers 
+n:conj:n->agent->n:nn:n	xy	X=pesticide	Y=chemical	phrases=pesticides , desert parasites or chemical 
+n:conj:n->generation->n:prep:IN->of->IN:pobj:n	xy	X=funding	Y=resource	phrases=funding and internal generation of resources 
+n:infmod:v->give->v:dobj:n	xy	X=ability	Y=quality	phrases=ability to give the `` best quality 
+n:conj:n<-life->n:prep:IN->of->IN:pobj:n	xy	X=limb	Y=member	phrases=limbs of members 
+n:nsubj:v<-suggest->v:ccomp:v->inflate->v:nsubj:n	xy	X=diplomat	Y=official	phrases=diplomats in Maputo suggest some government army officials 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:nsubj:v<-be->v:prep:IN->in->IN:pobj:n	xy	X=project	Y=work	phrases=projects were in the works 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:nn:n	xy	X=cigarette	Y=smoke	phrases=cigarette smoke 
+n:conj:n	xy	X=seed	Y=fruit	phrases=seeds and fruits 
+n:prep:IN->with->IN:pobj:n	xy	X=accordance	Y=agreement	phrases=accordance with existing agreements 
+n:prep:IN->after->IN:pobj:n	xy	X=conference	Y=meeting	phrases=conference after their meeting 
+n:prep:IN->with->IN:pobj:n	xy	X=accordance	Y=agreement	phrases=accordance with existing agreements 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:nn:n	xy	X=landslide	Y=victory	phrases=landslide election victory 
+n:conj:n<-pain->n:conj:n	xy	X=anguish	Y=distress	phrases=anguish , and pychological and emotional distress 
+n:conj:n	xy	X=racism	Y=bias	phrases=racism and bias 
+n:pobj:IN<-of<-IN:prep:n<-fear->n:dep:n	xy	X=tsunami	Y=wave	phrases=tsunamis -- extremely high waves 
+n:nsubj:v<-follow<-v:ccomp:v<-say->v:nsubj:n	xy	X=announcement	Y=statement	phrases=announcement of the planned evacuation from Yemen 's capital Sanaa , follows a request to India by the Nepalese government , an embassy statement 
+n:nn:n	xy	X=Daily	Y=newspaper	phrases=Daily newspaper 
+n:prep:IN->after->IN:pobj:n	xy	X=victory	Y=success	phrases=victory after his success 
+n:conj:n<-education->n:conj:n	xy	X=health	Y=welfare	phrases=health , welfare 
+n:conj:n->fire->n:nn:n	xy	X=gun	Y=weapon	phrases=gun and light weapons 
+n:nn:n	xy	X=peacekeeping	Y=operation	phrases=peacekeeping operations 
+n:dobj:v<-face->v:prep:IN->in->IN:pobj:n	xy	X=barrage	Y=language	phrases=barrage of greetings in at least four languages 
+n:pobj:IN<-between<-IN:prep:n<-war->n:conj:n	xy	X=troops	Y=force	phrases=troops and the forces 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:appos:n	xy	X=headquarters	Y=office	phrases=headquarters , the former offices 
+n:nn:n<-community->n:nn:n	xy	X=Sunni	Y=Moslem	phrases=Sunni Moslem 
+n:dep:n	xy	X=SA	Y=militia	phrases=SA -LRB- the main Nazi militia 
+n:conj:n->fire->n:nn:n	xy	X=gun	Y=weapon	phrases=gun and light weapons 
+n:nn:n<-Democrats<-n:nn:n	xy	X=Social	Y=party	phrases=Social Democrats -LRB- PVDA -RRB- , Gijs van Aardenne for the right-wing Liberal Democrats -LRB- VVD -RRB- and Jan Vis for left-wing Democrats '66 -LRB- D66 -RRB- party 
+n:infmod:v->provide->v:dobj:n->therapy->n:nn:n	xy	X=ability	Y=quality	phrases=ability of therapists to provide good quality 
+n:nsubjpass:v<-sign<-v:ccomp:v<-say->v:nsubj:n	xy	X=agreement	Y=statement	phrases=Agreements on the establishment of a joint commission for bilateral cooperation and on trade and tourism were also signed during Kiet 's official visit , the joint statement 
+n:dep:n	xy	X=place	Y=point	phrases=place -- 21 points 
+n:dep:n->point->n:conj:n	xy	X=place	Y=point	phrases=place -- 21 points behind Labor and half a point 
+n:nsubj:v<-stress->v:conj:v->say->v:nsubj:n	xy	X=ambassador	Y=diplomat	phrases=ambassador to the United Nations , Sir David Hannay , stressed all delegates were aware of the urgency of the situation , but a US diplomat 
+n:dep:n	xy	X=SA	Y=militia	phrases=SA -LRB- the main Nazi militia 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:prep:IN->of->IN:pobj:n	xy	X=round	Y=ammunition	phrases=rounds of ammunition 
+n:nsubj:v<-conform->v:prep:IN->with->IN:pobj:n	xy	X=restriction	Y=rule	phrases=restrictions on imports and exports of commodities and technology must conform with GATT rules 
+n:prep:IN->of->IN:pobj:n	xy	X=import	Y=commodity	phrases=imports and exports of commodities 
+n:conj:n<-import->n:prep:IN->of->IN:pobj:n	xy	X=export	Y=commodity	phrases=exports of commodities 
+n:nsubj:n<-Sunday->n:prep:IN->in->IN:pobj:n	xy	X=police	Y=force	phrases=Police were out in force 
+n:rcmod:v->provide->v:dobj:n	xy	X=stake	Y=share	phrases=stake in the deal , which provided a 22.2 percent share 
+n:nn:n	xy	X=landslide	Y=victory	phrases=landslide victory 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:prep:v->include->v:pobj:n	xy	X=officer	Y=man	phrases=officers , including 10 senior men 
+n:dobj:v<-make<-v:ccomp:v<-say->v:nsubj:n	xy	X=remark	Y=statement	phrases=remarks after accompanying Saudi Arabian Minister for Petroleum and Mineral Resources Hisham Nazer to a meeting with President Fidel Ramos on Sunday , the statement 
+n:nn:n<-Minister->n:nn:n	xy	X=Saudi	Y=Arabian	phrases=Saudi Arabian 
+n:nn:n<-Company->n:nn:n	xy	X=Saudi	Y=Arabian	phrases=Saudi Arabian 
+n:nsubj:v<-collide->v:prep:IN->with->IN:pobj:n	xy	X=ship	Y=vessel	phrases=ship transporting dangerous acids collided with another vessel 
+n:conj:n<-administration->n:conj:n	xy	X=headquarters	Y=office	phrases=headquarters , police station , police barracks , a military camp and a document office 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:conj:n<-administration->n:conj:n	xy	X=headquarters	Y=office	phrases=headquarters , police station , police barracks , a military camp and a document office 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:appos:CD->one->CD:prep:IN->of->IN:pobj:n	xy	X=Street	Y=thoroughfare	phrases=Street , one of the main commercial thoroughfares 
+n:nn:n	xy	X=railway	Y=line	phrases=railway line 
+n:pobj:IN<-of<-IN:prep:n<-percent<-n:nsubj:n	xy	X=film	Y=production	phrases=films they see are US productions 
+n:nn:n	xy	X=film	Y=production	phrases=film production 
+n:conj:n<-economy->n:conj:n	xy	X=culture	Y=society	phrases=cultures or societies 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:nn:n	xy	X=intifada	Y=uprising	phrases=Intifada , or uprising 
+n:prep:IN->after->IN:pobj:n	xy	X=conference	Y=meeting	phrases=conference after their meeting 
+n:conj:n	xy	X=backhand	Y=return	phrases=backhand in the net and a wide return 
+n:nn:n	xy	X=backhand	Y=return	phrases=backhand return 
+n:conj:n	xy	X=ally	Y=country	phrases=allies and countries 
+n:dep:n->goal->n:prep:IN->for->IN:pobj:n	xy	X=position	Y=point	phrases=positions -LRB- played , won , drawn , lost , goals for , against , points 
+n:prep:IN->of->IN:pobj:n	xy	X=round	Y=ammunition	phrases=rounds of ammunition 
+n:conj:n	xy	X=ship	Y=vessel	phrases=ship Ming Fortune , which was carrying dangerous substances including petroleum products and acid , and the Panamanian vessel 
+n:prep:IN->from->IN:pobj:n->ship->n:nn:n	xy	X=bag	Y=container	phrases=bags of pesticide from a container 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:conj:n	xy	X=minibus	Y=coach	phrases=minibus and a coach 
+n:dep:n->goal->n:prep:IN->for->IN:pobj:n	xy	X=position	Y=point	phrases=positions -LRB- played , won , drawn , lost , goals for , against , points 
+n:prep:IN->of->IN:pobj:n	xy	X=existence	Y=state	phrases=existence of two -LRB- separate -RRB- states 
+n:dep:n<-Anderton<-n:nsubj:v<-criticise->v:dobj:n	xy	X=opposition	Y=action	phrases=opposition Alliance leader Jim Anderton and ruling National Party MPs Ian Revell and Max Bradford have criticised the protesters ' actions 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:nsubjpass:v<-encourage->v:xcomp:v->set->v:dobj:n	xy	X=firm	Y=business	phrases=firms would be encouraged to set up such businesses 
+n:prep:IN->of->IN:pobj:n	xy	X=center	Y=country	phrases=center of the country 
+n:prep:IN->of->IN:pobj:n	xy	X=total	Y=unit	phrases=total of 250,000 twenty-foot equivalent units 
+n:nn:n<-meeting->n:nn:n	xy	X=board	Y=committee	phrases=board executive committee 
+n:conj:JJ<-asian<-JJ:amod:n	xy	X=Middle	Y=country	phrases=Middle East countries 
+n:rcmod:n	xy	X=enclave	Y=territory	phrases=enclave , which is Azerbaijani territory 
+n:nn:n	xy	X=budget	Y=fund	phrases=budget funds 
+n:prep:TO->to->TO:pobj:n	xy	X=clothes	Y=wear	phrases=clothes to wear 
+n:nn:n	xy	X=transportation	Y=facility	phrases=transportation facilities 
+n:conj:n	xy	X=tomorrow	Y=day	phrases=tomorrow , but perhaps the day 
+n:nn:n	xy	X=peacekeeping	Y=operation	phrases=peacekeeping operation 
+n:conj:n<-garden->n:conj:n	xy	X=basement	Y=floor	phrases=basement , walls and floors 
+n:nn:n<-work->n:nn:n	xy	X=Electric	Y=machine	phrases=Electric machine 
+n:dobj:v<-sign<-v:ccomp:v<-say->v:nsubj:n	xy	X=agreement	Y=statement	phrases=agreement on the number of MFUA fighters and cadres to wear `` the uniform of the state '' and on `` socio-economic projects and the civil service , '' the statement 
+n:prep:IN->of->IN:pobj:n	xy	X=round	Y=ammunition	phrases=rounds of ammunition 
+n:nn:n<-officer->n:prep:IN->in->IN:pobj:n	xy	X=staff	Y=force	phrases=staff officer in the Rwandan armed forces 
+n:prep:IN->of->IN:pobj:n	xy	X=output	Y=product	phrases=output of your product 
+n:prep:IN->in->IN:pobj:n->City->n:appos:n	xy	X=left	Y=place	phrases=left in Gaza City , the last place 
+n:conj:n	xy	X=Hinduism	Y=faith	phrases=Hinduism and other faiths 
+n:conj:n<-bank<-n:nsubj:v<-channel->v:dobj:n	xy	X=fund	Y=money	phrases=fund have channeled money 
+n:nsubj:v<-close->v:advcl:v->buoy->v:nsubjpass:n	xy	X=nickel	Y=metal	phrases=Nickel closed 10 dollars lower at 6,360 dollars per tonne , as the metal 
+n:dobj:v<-contribute->v:prep:TO->to->TO:pobj:n	xy	X=troops	Y=force	phrases=troops to a strengthened UN force 
+n:nsubj:v<-lie->v:prep:IN->in->IN:pobj:n	xy	X=district	Y=region	phrases=district lies in the same mountainous region 
+n:nn:n<-Kumate<-n:nsubjpass:v<-elect->v:xcomp:n	xy	X=Secretary	Y=head	phrases=Secretary of Health Jesus Kumate was elected head 
+n:nsubj:v<-accuse->v:dobj:n->correspondent->n:nn:n	xy	X=daily	Y=newspaper	phrases=daily accused some American newspaper 
+n:appos:n->part->n:prep:IN->of->IN:pobj:n	xy	X=Alliance	Y=coalition	phrases=Alliance , part of the right-wing coalition 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:appos:n	xy	X=Association	Y=organization	phrases=Association , a trade organization 
+n:nsubjpass:v<-assimilate->v:prep:IN->into->IN:pobj:n	xy	X=homeland	Y=country	phrases=homelands invented by the apartheid government to keep blacks out of `` white '' South Africa were assimilated into the country 
+n:nn:n<-statistics<-n:nsubj:v<-increase->v:dobj:n	xy	X=Horror	Y=fear	phrases=Horror statistics -- like December 's poll that only 13 percent of Americans knew what the World Cup was , far less that it was taking place in their country -- have increased fears 
+n:conj:n<-role<-n:conj:n<-status->n:conj:n	xy	X=position	Y=point	phrases=position of UNITA deputies in parliament and the more sensitive point 
+n:prep:IN->at->IN:pobj:n	xy	X=dig	Y=site	phrases=dig at an Old Stone Age site 
+n:nsubj:v<-bring->v:prep:IN->under->IN:pobj:n	xy	X=authority	Y=control	phrases=authorities brought the clash under control 
+n:nn:n	xy	X=peacekeeping	Y=operation	phrases=peacekeeping operations 
+n:conj:n->need->n:infmod:v->stem->v:nsubj:n	xy	X=operation	Y=action	phrases=operations and the need for prompt UN action 
+n:dobj:v<-contribute->v:prep:TO->to->TO:pobj:n	xy	X=troops	Y=force	phrases=troops to a multi-national UN force 
+n:conj:n	xy	X=intifada	Y=uprising	phrases=intifada or uprising 
+n:nn:n	xy	X=summer	Y=season	phrases=summer season 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:nsubj:v<-agree->v:xcomp:v->send->v:dobj:n	xy	X=mountie	Y=officer	phrases=Mounties have agreed to send an officer 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:conj:n	xy	X=intifada	Y=uprising	phrases=intifada or uprising 
+n:nn:n	xy	X=month	Y=period	phrases=month period 
+n:nn:n	xy	X=summer	Y=season	phrases=summer season 
+n:conj:n	xy	X=health	Y=welfare	phrases=health , social welfare 
+n:nn:n<-shrine->n:nn:n	xy	X=Shiite	Y=Moslem	phrases=Shiite Moslem 
+n:prep:IN->on->IN:pobj:n	xy	X=comment	Y=statement	phrases=comment on the statement 
+n:nn:n	xy	X=Sharia	Y=law	phrases=Sharia law 
+n:appos:n	xy	X=Jihad	Y=war	phrases=Jihad -LRB- holy war 
+n:nn:n	xy	X=enemy	Y=force	phrases=enemy '' forces 
+n:conj:n	xy	X=vandalism	Y=mischief	phrases=vandalism and mischief 
+n:conj:n	xy	X=landowner	Y=holder	phrases=landowners and holders 
+n:prep:IN->among->IN:pobj:n	xy	X=politician	Y=leader	phrases=politician among leaders 
+n:conj:v->impress->v:dobj:n	xy	X=politician	Y=leader	phrases=politician among leaders of the Caucasus and that as governor of Krasnodar , he had impressed political leaders 
+n:nn:n	xy	X=summer	Y=season	phrases=summer season 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:conj:n	xy	X=health	Y=welfare	phrases=health , social welfare 
+n:nsubjpass:v<-calculate->v:prep:IN->on->IN:pobj:n	xy	X=majority	Y=number	phrases=majority in the Senate is calculated on the number 
+n:nsubj:v<-say->v:ccomp:n	xy	X=source	Y=point	phrases=sources said the selection could become a point 
+n:nsubj:v<-rise->v:advcl:v->be->v:nsubj:n	xy	X=dividend	Y=earnings	phrases=dividend rose to 22.2 pence from 21 pence a year earlier , while earnings 
+n:nn:n	xy	X=crude	Y=oil	phrases=crude oil 
+n:conj:n	xy	X=intifada	Y=uprising	phrases=intifada or uprising 
+n:conj:n	xy	X=ozone	Y=gas	phrases=ozone and other toxic gasses 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:conj:n	xy	X=intifada	Y=uprising	phrases=intifada or uprising 
+n:nsubj:v<-seem->v:xcomp:v->contradict->v:dobj:n	xy	X=remark	Y=statement	phrases=remark seemed to contradict an earlier White House statement 
+n:nsubj:n<-part->n:prep:IN->of->IN:pobj:n	xy	X=trip	Y=journey	phrases=trip is the most perilous part of the journey 
+n:nn:n	xy	X=Hajj	Y=pilgrimage	phrases=Hajj pilgrimage 
+n:nsubj:JJ<-unchanged->JJ:advcl:v->plummet->v:nsubj:n	xy	X=dividend	Y=earnings	phrases=dividend was unchanged at 11.6 pence , while earnings 
+n:nn:n	xy	X=month	Y=period	phrases=month period 
+n:prep:IN->at->IN:pobj:n	xy	X=birth	Y=beginning	phrases=birth at the beginning 
+n:conj:n	xy	X=meeting	Y=gathering	phrases=meeting and the leaders ' gathering 
+n:appos:n<-Dijksma->n:rcmod:n	xy	X=leader	Y=person	phrases=leader of the Young Labor , who at 23 became the youngest person 
+n:appos:n->declaration->n:conj:n	xy	X=charter	Y=document	phrases=charter , the CIS declaration on human rights as well as UN and CSCE documents 
+n:nn:n	xy	X=police	Y=force	phrases=police forces 
+n:nn:n	xy	X=peacekeeping	Y=operation	phrases=peacekeeping operations 
+n:appos:n<-a.m.->n:appos:n	xy	X=gmt	Y=time	phrases=GMT -RRB- , the time 
+n:nsubj:v<-try->v:xcomp:v->use->v:dobj:n	xy	X=police	Y=force	phrases=police tried to use force 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:nn:n	xy	X=crude	Y=oil	phrases=crude oil 
+n:nn:n	xy	X=Social	Y=party	phrases=Social Democrat party 
+n:nn:n	xy	X=Hajj	Y=pilgrimage	phrases=Hajj pilgrimage 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:nn:n	xy	X=nightmare	Y=situation	phrases=nightmare situation 
+n:prep:IN->in->IN:pobj:n	xy	X=thing	Y=situation	phrases=thing in the Dominican Republic , in the current situation 
+n:conj:n	xy	X=capability	Y=ability	phrases=capability and ability 
+n:conj:n	xy	X=intifada	Y=uprising	phrases=intifada , or uprising 
+n:conj:n	xy	X=capability	Y=ability	phrases=capability and ability 
+n:conj:n	xy	X=intifada	Y=uprising	phrases=intifada , or uprising 
+n:nsubj:n<-September->n:appos:n	xy	X=date	Y=day	phrases=date for the beginning of the service is September 4 , the opening day 
+n:nsubj:v<-be->v:prep:IN->in->IN:pobj:n	xy	X=trend	Y=direction	phrases=trend nationwide is increasingly in the opposite direction 
+n:nn:n	xy	X=Middle	Y=country	phrases=Middle Eastern country 
+n:infmod:v->restructure->v:dobj:n	xy	X=effort	Y=activity	phrases=efforts to restructure its activities 
+n:conj:n	xy	X=cable	Y=wire	phrases=cable and wire 
+n:conj:n	xy	X=vandalism	Y=mischief	phrases=vandalism and mischief 
+n:prep:IN->in->IN:pobj:n	xy	X=thing	Y=situation	phrases=thing in the Dominican Republic , in the current situation 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:nsubj:v<-force->v:xcomp:v->withdraw->v:dobj:n	xy	X=response	Y=issue	phrases=response from overseas investors forced VSNL to withdraw the issue 
+n:nsubj:v<-block->v:dobj:n->process->n:nn:n	xy	X=truce	Y=peace	phrases=truce that had been a precondition for holding the talks -- which are also to be attended by National Assembly chairman Chea Sim -- had blocked the peace 
+n:conj:n	xy	X=capability	Y=ability	phrases=capability and ability 
+n:conj:n->tool->n:nn:n	xy	X=computer	Y=machine	phrases=computers , lasers , oscilloscopes , furnaces , metallic compounds , machine 
+n:dobj:v<-send->v:xcomp:v->join->v:dobj:n	xy	X=troops	Y=force	phrases=troops to join a UN peace force 
+n:nsubj:v<-contrast->v:prep:IN->with->IN:pobj:n	xy	X=remark	Y=statement	phrases=remarks contrasted with hardline statements 
+n:conj:n	xy	X=capability	Y=ability	phrases=capability and ability 
+n:conj:n	xy	X=diplomat	Y=official	phrases=diplomats and UN officials 
+n:nsubj:v<-lobby->v:prep:IN->for->IN:pobj:n	xy	X=movement	Y=change	phrases=movement would not lobby for changes 
+n:nn:n	xy	X=Alliance	Y=coalition	phrases=Alliance coalition 
+n:appos:n	xy	X=Jihad	Y=war	phrases=Jihad -LRB- holy war 
+n:conj:n	xy	X=intifada	Y=uprising	phrases=intifada or uprising 
+n:prep:IN->for->IN:pobj:n	xy	X=quota	Y=number	phrases=quota for the number 
+n:nsubj:v<-overshadow->v:dobj:n	xy	X=emergency	Y=crisis	phrases=emergency in Rwanda could overshadow the immense humanitarian crisis 
+n:appos:n	xy	X=Jihad	Y=war	phrases=Jihad -LRB- holy war 
+n:conj:n	xy	X=intifada	Y=uprising	phrases=intifada or uprising 
+n:prep:IN->for->IN:pobj:n	xy	X=quota	Y=number	phrases=quota for the number 
+n:conj:n	xy	X=schedule	Y=plan	phrases=schedules and plans 
+n:conj:n	xy	X=firm	Y=business	phrases=firm , the DASA aero group , Debis financial and computer services , and the AEG electrical engineering business 
+n:conj:n	xy	X=capability	Y=ability	phrases=capability and ability 
+n:nsubj:v<-want->v:xcomp:v->see->v:dobj:n	xy	X=company	Y=establishment	phrases=company wanted to see the establishment 
+n:dobj:v<-send->v:xcomp:v->join->v:dobj:n	xy	X=troops	Y=force	phrases=troops to strife - torn Rwanda to join a UN peacekeeping force 
+n:conj:n<-ambassador->n:conj:n	xy	X=staffer	Y=employee	phrases=staffer and two employees 
+n:nn:n	xy	X=Hajj	Y=pilgrimage	phrases=Hajj pilgrimage 
+n:dobj:v<-contribute->v:prep:TO->to->TO:pobj:n	xy	X=troops	Y=force	phrases=troops to the 5,500-strong force 
+n:conj:n	xy	X=maneuver	Y=operation	phrases=maneuvers and peace-keeping operations 
+n:conj:n	xy	X=ozone	Y=gas	phrases=ozone and other toxic gasses 
+n:rcmod:n->Tuesday->n:prep:IN->in->IN:pobj:n	xy	X=troops	Y=force	phrases=troops armed with assault rifles and police , who were out in force 
+n:conj:n	xy	X=preventive	Y=curative	phrases=preventive , rehabilitative and curative 
+n:nn:n	xy	X=Hajj	Y=pilgrimage	phrases=Hajj pilgrimage 
+n:conj:n	xy	X=mind	Y=knowledge	phrases=mind , impressive memory and detailed knowledge 
+n:appos:n	xy	X=jihad	Y=war	phrases=jihad -LRB- holy war 
+n:amod:n	xy	X=year	Y=period	phrases=year period 
+n:nsubj:v<-fight->v:prep:IN->with->IN:pobj:n	xy	X=troops	Y=force	phrases=troops fought artillery duals with southern forces 
+n:nn:n	xy	X=Alliance	Y=coalition	phrases=Alliance 90-Green coalition 
+n:nsubj:n	xy	X=problem	Y=difficulty	phrases=problem with targeted sanctions is the difficulty 
+n:nsubj:v<-fall->v:conj:v->stop->v:dobj:n	xy	X=output	Y=production	phrases=output has fallen about 25 percent in the first quarter compared to last year and about 5,300 factories have already stopped production 
+n:rcmod:n	xy	X=urologist	Y=specialist	phrases=urologists , who are surgical specialists 
+n:appos:n	xy	X=jihad	Y=war	phrases=jihad -LRB- holy war 
+n:dep:n	xy	X=factory	Y=plant	phrases=factory , '' even an agricultural plant 
+n:nn:n	xy	X=bite	Y=wound	phrases=bite wounds 
+n:rcmod:n->Tuesday->n:prep:IN->in->IN:pobj:n	xy	X=troops	Y=force	phrases=troops armed with assault rifles and police , who were out in force 
+n:prep:IN->of->IN:pobj:n	xy	X=corner	Y=area	phrases=corner of the penalty area 
+n:appos:n	xy	X=jihad	Y=war	phrases=jihad -LRB- holy war 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:prep:TO->to->TO:pobj:n	xy	X=reference	Y=comment	phrases=reference to comments 
+n:dobj:v<-call->v:conj:n	xy	X=vote	Y=option	phrases=vote , but it was virtually Gaviria 's only option 
+n:rcmod:n->Tuesday->n:prep:IN->in->IN:pobj:n	xy	X=troops	Y=force	phrases=Troops armed with assault rifles and police , who were out in force 
+n:conj:n	xy	X=friendship	Y=relationship	phrases=friendship and relationships 
+n:prep:IN->of->IN:pobj:n	xy	X=center	Y=country	phrases=center of the country 
+n:nn:n	xy	X=month	Y=period	phrases=month transition period 
+n:conj:n	xy	X=union	Y=organization	phrases=union , business and professional organizations 
+n:dep:IN->in->IN:pobj:n	xy	X=police	Y=force	phrases=police out in force 
+n:poss:n	xy	X=summer	Y=season	phrases=summer 's rainy season 
+n:nn:n	xy	X=crude	Y=oil	phrases=crude oil 
+n:conj:n	xy	X=warship	Y=ship	phrases=warship and a merchant ship 
+n:conj:n	xy	X=superhighway	Y=highway	phrases=superhighway to Guangzhou and the Shenzhen airport and four other north-south highways 
+n:conj:n	xy	X=warship	Y=ship	phrases=warship , the USS Newport , and a merchant ship 
+n:prep:IN->of->IN:pobj:n	xy	X=creation	Y=activity	phrases=creation and development of business activity 
+n:dep:n	xy	X=business	Y=enterprise	phrases=businesses , particularly small and medium enterprises 
+n:partmod:v->employ->v:prep:IN->by->IN:pobj:n	xy	X=people	Y=group	phrases=people employed by the group 
+n:conj:n	xy	X=warship	Y=ship	phrases=warship , the USS Newport , and a merchant ship 
+n:prep:IN->for->IN:pobj:n	xy	X=foundation	Y=relation	phrases=foundation for the economic and trade relations 
+n:nn:n<-Free->n:conj:n	xy	X=Radio	Y=broadcasting	phrases=Radio Free Asia '' , broadcasting 
+n:prep:IN->of->IN:pobj:n	xy	X=center	Y=country	phrases=center of the country 
+n:prep:IN->in->IN:pobj:n	xy	X=area	Y=region	phrases=area in the ASEAN region 
+n:tmod:v<-speak->v:prep:IN->on->IN:pobj:n	xy	X=evening	Y=day	phrases=evening , on the seventh full day 
+n:prep:IN->for->IN:pobj:n	xy	X=foundation	Y=relation	phrases=foundation for the economic and trade relations 
+n:nn:n	xy	X=Alliance	Y=coalition	phrases=Alliance 90-Greens coalition 
+n:rcmod:v->injure->v:nsubjpass:n	xy	X=winter	Y=season	phrases=winter season 
+n:dobj:v<-find->v:prep:IN->during->IN:pobj:n	xy	X=winter	Y=season	phrases=winter season were injured at some point during the season 
+n:nsubj:v<-arrive->v:xcomp:v->place->v:dobj:n	xy	X=troops	Y=force	phrases=troops and members of the national guard arrived in Crimea to place local law-enforcement forces 
+n:nsubj:v<-detain->v:dobj:n	xy	X=officer	Y=man	phrases=Officers also detained a 27-year-old Japanese man 
+n:dobj:v<-enter->v:prep:IN->in->IN:pobj:n	xy	X=center	Y=area	phrases=center in the Miami area 
+n:conj:n	xy	X=Knesset	Y=parliament	phrases=Knesset , or parliament 
+n:conj:n	xy	X=representative	Y=negotiator	phrases=representatives and US trade negotiators 
+n:nn:n	xy	X=Gulf	Y=water	phrases=Gulf waters 
+n:nsubj:v<-arrive->v:xcomp:v->place->v:dobj:n	xy	X=troops	Y=force	phrases=troops and members of the national guard arrived in Crimea to place local law-enforcement forces 
+n:prep:IN->for->IN:pobj:n	xy	X=foundation	Y=relation	phrases=foundation for the economic and trade relations 
+n:prep:IN->over->IN:pobj:n	xy	X=disagreement	Y=conflict	phrases=disagreements between Bonn and Paris over the conflicts 
+n:nsubj:JJ<-flung->JJ:advcl:v->count->v:nsubj:n	xy	X=election	Y=vote	phrases=elections are flung into doubt as the vote 
+n:conj:n	xy	X=union	Y=organization	phrases=union , business and professional organizations 
+n:prep:IN->after->IN:pobj:n	xy	X=conference	Y=meeting	phrases=conference after an unpredecented meeting 
+n:nn:n	xy	X=police	Y=force	phrases=police forces 
+n:conj:n	xy	X=union	Y=organization	phrases=union , business and professional organizations 
+n:conj:n<-garden->n:conj:n	xy	X=basement	Y=floor	phrases=basement , walls and floors 
+n:nn:n	xy	X=peacekeeping	Y=operation	phrases=peacekeeping operation 
+n:prep:IN->for->IN:pobj:n	xy	X=foundation	Y=relation	phrases=foundation for the economic and trade relations 
+n:prep:IN->of->IN:pobj:n	xy	X=center	Y=country	phrases=center of the country 
+n:conj:n->counterpart->n:appos:n	xy	X=consul	Y=diplomat	phrases=consul and his Chinese counterpart , the only two diplomats 
+n:appos:n	xy	X=metro	Y=railway	phrases=metro -LRB- Paris underground railway 
+n:prep:IN->inside->IN:pobj:n	xy	X=lorry	Y=wagon	phrases=lorries inside the freight wagons 
+n:ccomp:v->restore->v:dobj:n	xy	X=need	Y=condition	phrases=need for European countries to restore stable conditions 
+n:conj:v<-walk->v:conj:n	xy	X=tea	Y=drink	phrases=teas , and the occcasional drink 
+n:prep:IN->as->IN:pobj:n	xy	X=point	Y=factor	phrases=points to the seniority of many of the Gers ' player as a key motivating factor 
+n:nn:n	xy	X=Alliance	Y=coalition	phrases=Alliance 90-Greens coalition 
+n:conj:n	xy	X=cardiologist	Y=specialist	phrases=cardiologist and a diabetes specialist 
+n:conj:n	xy	X=business	Y=enterprise	phrases=business and small enterprises 
+n:nn:n	xy	X=police	Y=force	phrases=police forces 
+n:appos:n	xy	X=jihad	Y=war	phrases=jihad -LRB- holy war 
+n:nn:n	xy	X=post	Y=position	phrases=post position 
+n:dobj:v<-take->v:prep:IN->at->IN:pobj:n	xy	X=place	Y=point	phrases=place at this point 
+n:prep:IN->for->IN:pobj:n	xy	X=opposition	Y=action	phrases=opposition for military action 
+n:nn:n	xy	X=police	Y=force	phrases=police forces 
+n:dep:n	xy	X=year	Y=period	phrases=year period 
+n:num:n<-appearance->n:conj:n	xy	X=final	Y=match	phrases=finals appearances and 16 matches 
+n:nsubj:v<-differ->v:prep:IN->from->IN:pobj:n	xy	X=malignancy	Y=disease	phrases=malignancy differs from Hodgkin 's disease 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:nn:n<-office->n:nn:n	xy	X=peacekeeping	Y=operation	phrases=peacekeeping operations 
+n:nn:n	xy	X=Middle	Y=country	phrases=Middle Eastern countries 
+n:nn:n<-Arabia->n:conj:n->Emirates->n:nn:n	xy	X=Saudi	Y=Arab	phrases=Saudi Arabia , the United Arab 
+n:nsubj:v<-take->v:advcl:v->step->v:nsubj:n	xy	X=troops	Y=force	phrases=troops out of Bosnia unless serious peace talks took place , as defiant Moslem forces 
+n:nsubj:v<-differ->v:prep:IN->from->IN:pobj:n	xy	X=malignancy	Y=disease	phrases=malignancy differs from Hodgkin 's disease 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:nn:n<-Kelly->n:appos:n	xy	X=biographer	Y=author	phrases=biographer Paul Kelly , author 
+n:nn:n	xy	X=safeguard	Y=measure	phrases=safeguards measures 
+n:prep:IN->of->IN:pobj:n	xy	X=center	Y=country	phrases=center of the country 
+n:nn:n	xy	X=safeguard	Y=measure	phrases=safeguards measures 
+n:prep:IN->of->IN:pobj:n	xy	X=explanation	Y=statement	phrases=explanation of a government minister 's statement 
+n:nn:n	xy	X=Sunni	Y=Moslem	phrases=Sunni and Shiite Moslem 
+n:conj:n<-Sunni<-n:nn:n	xy	X=Shiite	Y=Moslem	phrases=Shiite Moslem 
+n:conj:n	xy	X=police	Y=force	phrases=police and defense force 
+n:pobj:IN<-of<-IN:prep:n<-member->n:conj:n	xy	X=police	Y=force	phrases=police and defense force , the security forces 
+n:nn:n<-group->n:prep:IN->for->IN:pobj:n	xy	X=party	Y=organization	phrases=party umbrella group for social organizations 
+n:infmod:v->control->v:dobj:n	xy	X=attempt	Y=activity	phrases=attempts to control all religious activities 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:dobj:v<-tell->v:dep:v->call->v:dobj:n	xy	X=conference	Y=meeting	phrases=conference here he had called a special party meeting 
+n:nn:n	xy	X=police	Y=force	phrases=police forces 
+n:nsubjpass:v<-schedule->v:prep:IN->during->IN:pobj:n	xy	X=forum	Y=meeting	phrases=forum is scheduled for July 25 in Bangkok , during the ASEAN foreign ministers meeting 
+n:nn:n	xy	X=brand	Y=name	phrases=brand names 
+n:nsubjpass:v<-revise->v:advcl:v->turn->v:nsubj:n	xy	X=output	Y=production	phrases=output and shipment increases in March were revised upward from earlier estimates of 3.3 percent and 3.9 percent as production 
+n:nn:n	xy	X=Sunni	Y=Moslem	phrases=Sunni and Shiite Moslem 
+n:conj:n<-Sunni<-n:nn:n	xy	X=Shiite	Y=Moslem	phrases=Shiite Moslem 
+n:nn:n<-department->n:nn:n	xy	X=peacekeeping	Y=operation	phrases=peacekeeping operations 
+n:nn:n	xy	X=peacekeeping	Y=operation	phrases=peacekeeping operation 
+n:nn:n	xy	X=police	Y=force	phrases=police forces 
+n:nn:n	xy	X=crude	Y=oil	phrases=crude oil 
+n:nn:n	xy	X=militia	Y=force	phrases=militia force 
+n:nn:n	xy	X=police	Y=force	phrases=police forces 
+n:nsubj:v<-invite->v:dobj:n	xy	X=company	Y=institution	phrases=company will invite international financing institutions 
+n:dobj:v<-tell->v:dep:v->call->v:dobj:n	xy	X=conference	Y=meeting	phrases=conference here he had called a special party meeting 
+n:prep:IN->of->IN:pobj:n	xy	X=center	Y=country	phrases=center of the country 
+n:conj:n	xy	X=jihad	Y=war	phrases=jihad , '' or holy war 
+n:nsubj:v<-see<-v:ccomp:v<-say->v:nsubj:n	xy	X=Ltd.	Y=company	phrases=Ltd. saw consolidated pre-tax earnings fall by 47 percent from the figure in 1992-3 to 46.9 billion yen -LRB- 455 million dollars -RRB- in the year to March , the company 
+n:prep:IN->from->IN:pobj:n->rationalisation->n:conj:n	xy	X=contribution	Y=effort	phrases=contributions from continued rationalisation and cost-cutting efforts 
+n:prep:v->include->v:pobj:n	xy	X=troops	Y=force	phrases=troops , including special elite forces 
+n:nn:n	xy	X=militia	Y=force	phrases=militia force 
+n:conj:n	xy	X=autonomy	Y=independence	phrases=autonomy or even full-fledged independence 
+n:nn:n	xy	X=Homburg	Y=hat	phrases=Homburg hats 
+n:nsubj:n<-turnaround->n:prep:IN->from->IN:pobj:n	xy	X=stance	Y=position	phrases=stance was a turnaround from his first position 
+n:nn:n	xy	X=militia	Y=force	phrases=militia force 
+n:prep:v->include->v:pobj:n	xy	X=troops	Y=force	phrases=troops , including special elite forces 
+n:nn:n	xy	X=militia	Y=force	phrases=militia force 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:nsubj:n<-meeting->n:rcmod:v->hold->v:nsubjpass:n	xy	X=debate	Y=discussion	phrases=debate , planned to begin on June 27 , would be an `` enlarged family meeting '' where discussions 
+n:nn:n<-Kantor->n:conj:n	xy	X=Representative	Y=negotiator	phrases=Representative Mickey Kantor and the Japanese negotiators 
+n:prep:CC->or->CC:dep:n	xy	X=hajj	Y=pilgrimage	phrases=hajj , or pilgrimage 
+n:nn:n<-office->n:nn:n	xy	X=peacekeeping	Y=operation	phrases=peacekeeping operations 
+n:nn:n	xy	X=peacekeeping	Y=operation	phrases=peacekeeping operation 
+n:dobj:v<-seek->v:prep:IN->in->IN:pobj:n	xy	X=refuge	Y=country	phrases=refuge in neighbouring countries 
+n:nn:n	xy	X=brand	Y=name	phrases=brand names 
+n:nsubj:v<-be->v:prep:IN->in->IN:pobj:n	xy	X=retort	Y=response	phrases=retort was in response 
+n:nn:n	xy	X=militia	Y=force	phrases=militia force 
+n:nsubj:v<-take->v:prep:IN->against->IN:pobj:n	xy	X=parliament	Y=legislature	phrases=parliament would take against the Simferopol legislature 
+n:nn:n	xy	X=militia	Y=force	phrases=militia force 
+n:nn:n<-alliance->n:conj:n	xy	X=Social	Y=party	phrases=Social alliance and Free Democrat party 
+n:dobj:v<-have->v:conj:v->ratify->v:nsubjpass:n	xy	X=birdie	Y=score	phrases=birdies , getting home in 31 , but the eight under par score 
+n:pobj:IN<-under<-IN:prep:n	xy	X=par	Y=score	phrases=par score 
+n:nn:n	xy	X=Alliance	Y=coalition	phrases=Alliance -LRB- NA -RRB- coalition 
+n:nn:n<-Kantor->n:conj:n	xy	X=Representative	Y=negotiator	phrases=Representative Mickey Kantor and the Japanese negotiators 
+n:appos:n	xy	X=lymphoma	Y=cancer	phrases=lymphoma , a cancer 
+n:nn:n<-alliance->n:conj:n	xy	X=Social	Y=party	phrases=Social alliance and Free Democrat party 
+n:nn:n	xy	X=forehand	Y=return	phrases=forehand return 
+n:nn:n<-boom->n:nn:n	xy	X=house	Y=building	phrases=house building 
+n:nn:n	xy	X=mining	Y=production	phrases=mining production 
+n:conj:n<-Italy<-n:nsubj:v<-form->v:dobj:n	xy	X=Alliance	Y=coalition	phrases=Alliance formed a coalition 
+n:nn:n	xy	X=Slam	Y=victory	phrases=Slam victory 
+n:dobj:v<-chase->v:prep:IN->after->IN:pobj:n	xy	X=Slam	Y=triumph	phrases=Slam ' after his triumphs 
+n:nsubj:v<-act->v:xcomp:v->employ->v:dobj:n	xy	X=troops	Y=force	phrases=troops would act in accordance with combat duty regulations , employing the necessary forces 
+n:nn:n	xy	X=militia	Y=force	phrases=militia force 
+n:nsubj:v<-take->v:prep:IN->against->IN:pobj:n	xy	X=parliament	Y=legislature	phrases=parliament would take against the Simferopol legislature 
+n:nn:n	xy	X=militia	Y=force	phrases=militia force 
+n:conj:n	xy	X=peace	Y=order	phrases=peace and order 
+n:nn:n	xy	X=Customs	Y=duty	phrases=Customs duties 
+n:prep:IN->of->IN:pobj:n	xy	X=round	Y=ammunition	phrases=rounds of ammunition 
+n:nn:n<-shot->n:conj:n	xy	X=cannon	Y=gun	phrases=cannon shot and machine guns 
+n:nn:n<-fire->n:nn:n	xy	X=cannon	Y=gun	phrases=cannon and machine gun 
+n:nn:n	xy	X=Sharia	Y=law	phrases=Sharia law 
+n:nn:n<-Onassis->n:appos:n	xy	X=Madame	Y=lady	phrases=Madame Jacqueline Kennedy Onassis , a great lady 
+n:nn:n	xy	X=Sharia	Y=law	phrases=Sharia law 
+n:conj:n->fire->n:nn:n	xy	X=gun	Y=weapon	phrases=guns and automatic weapons 
+n:prep:IN->of->IN:pobj:n	xy	X=area	Y=region	phrases=areas of the Christian Kesruwan region 
+n:nsubj:n<-minister->n:attr:n	xy	X=post	Y=position	phrases=post was finance minister in Giuliano Amato 's government , a position 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:nsubj:v<-leave->v:conj:v->remain->v:nsubj:n	xy	X=ancestor	Y=relation	phrases=ancestors left Nimes just before the American Civil War broke out in 1861 , but many Bouvier relations 
+n:nn:n<-Hezbollah->n:nn:n	xy	X=Shiite	Y=Moslem	phrases=Shiite Moslem 
+n:nsubj:v<-leave->v:conj:v->remain->v:nsubj:n	xy	X=ancestor	Y=relation	phrases=ancestors left Pont-Saint-Esprit just before the American Civil War broke out in 1861 , but many Bouvier relations 
+n:prep:IN->of->IN:pobj:n	xy	X=integrity	Y=state	phrases=integrity of the state 
+n:conj:n	xy	X=forehand	Y=return	phrases=forehand from Stich and another poor service return 
+n:nn:n<-group->n:nn:n	xy	X=Shiite	Y=Moslem	phrases=Shiite Moslem 
+n:nn:n	xy	X=safeguard	Y=measure	phrases=safeguards measures 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:prep:IN->of->IN:pobj:n	xy	X=integrity	Y=state	phrases=integrity of the state 
+n:conj:n	xy	X=forehand	Y=return	phrases=forehand from Stich and another poor service return 
+n:conj:n<-post->n:conj:n	xy	X=governorship	Y=post	phrases=governorships -- excluding UNITA 's central highlands stronghold of Huambo -- and 20 municipal administrators posts 
+n:pobj:IN<-of<-IN:prep:n<-image->n:appos:n	xy	X=lady	Y=woman	phrases=lady , `` the woman 
+n:nsubj:n	xy	X=letter	Y=document	phrases=letter was the first document 
+n:prep:IN->of->IN:pobj:n	xy	X=area	Y=region	phrases=areas of the Christian Kesrwan region 
+n:prep:IN->for->IN:pobj:n	xy	X=foundation	Y=relation	phrases=foundation for the economic and trade relations 
+n:nsubjpass:v<-clear->v:prep:IN->off->IN:pobj:n	xy	X=header	Y=line	phrases=header from a corner was cleared off the line 
+n:nsubj:v<-move->v:xcomp:v->attack->v:dobj:n	xy	X=troops	Y=force	phrases=troops have moved east into the oil-rich Shabwa region to attack forces 
+n:prep:IN->at->IN:pobj:n	xy	X=expiry	Y=end	phrases=expiry of the North Atlantic Treaty Organisation ultimatum at the end 
+n:dobj:v<-send->v:prep:IN->for->IN:pobj:n	xy	X=troops	Y=force	phrases=troops for a multinational force 
+n:pobj:IN<-in<-IN:prep:v<-leave->v:dobj:n	xy	X=place	Y=point	phrases=place eight points 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:conj:n	xy	X=diplomat	Y=official	phrases=diplomats and officials 
+n:pobj:IN<-in<-IN:prep:n<-period->n:appos:n	xy	X=autumn	Y=season	phrases=autumn , `` the season 
+n:nn:n	xy	X=farm	Y=work	phrases=farm work 
+n:prep:IN->in->IN:pobj:n	xy	X=people	Y=group	phrases=people in vulnerable groups 
+n:prep:IN->of->IN:pobj:n	xy	X=membership	Y=body	phrases=membership of the world trade body 
+n:dep:v->come->v:prep:IN->into->IN:pobj:n	xy	X=MILITARY	Y=force	phrases=MILITARY : -LRB- These came into force 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:nsubj:v<-move->v:xcomp:v->attack->v:dobj:n	xy	X=troops	Y=force	phrases=troops had moved east into Shabwa to attack forces 
+n:prep:IN->of->IN:pobj:n	xy	X=center	Y=country	phrases=center of the country 
+n:nn:n<-Dirani->n:nn:n	xy	X=Shiite	Y=Moslem	phrases=Shiite Moslem 
+n:nn:n<-leader->n:nn:n	xy	X=Shiite	Y=Moslem	phrases=Shiite Moslem 
+n:nn:n<-Arafat->n:conj:n->Nahyan->n:nn:n	xy	X=chief	Y=leader	phrases=chief Yasser Arafat , Algerian President Lamiane Zeroual and United Arab Emirates leader 
+n:nn:n<-leader->n:nn:n	xy	X=Shiite	Y=Moslem	phrases=Shiite Moslem 
+n:prep:IN->of->IN:pobj:n	xy	X=round	Y=ammunition	phrases=rounds of ammunition 
+n:conj:n->appeal->n:nn:n	xy	X=jihad	Y=war	phrases=jihad or holy war 
+n:nsubj:v<-stir->v:dobj:n	xy	X=radio	Y=broadcasting	phrases=radio stirred up another storm broadcasting 
+n:nn:n<-leader->n:nn:n	xy	X=Shiite	Y=Moslem	phrases=Shiite Moslem 
+n:nn:n	xy	X=militia	Y=force	phrases=militia forces 
+n:conj:n	xy	X=police	Y=force	phrases=police or military force 
+n:conj:n->appeal->n:nn:n	xy	X=jihad	Y=war	phrases=jihad or holy war 
+n:nn:n	xy	X=Lady	Y=woman	phrases=Lady Keystone Open women 
+n:nsubj:n	xy	X=bloodbath	Y=massacre	phrases=bloodbath in Rwanda was the `` biggest massacre 
+n:appos:n	xy	X=Ltd.	Y=company	phrases=Ltd. , the holding company 
+n:infmod:v->develop->v:dobj:JJ->port->JJ:conj:n	xy	X=venture	Y=project	phrases=venture to develop a free port and 30 square-kilometer -LRB- 12 square miles -RRB- economic zone in Hainan and a residential project 
+n:conj:n<-immigration<-n:nn:n	xy	X=fertility	Y=rate	phrases=fertility rates 
+n:nn:n	xy	X=fertility	Y=rate	phrases=fertility rates 
+n:pobj:IN<-in<-IN:prep:n<-group->n:appos:n	xy	X=heartland	Y=region	phrases=heartland in the southwest , Abiola 's home region 
+n:pobj:IN<-for<-IN:prep:n<-System->n:dep:n	xy	X=Ltd.	Y=company	phrases=Ltd. -- a Telekom-Maharaja company 
+n:nn:n	xy	X=police	Y=force	phrases=police forces 
+n:nsubj:v<-declare->v:conj:v->give->v:dobj:n	xy	X=parliament	Y=legislature	phrases=parliament on Friday declared the Crimean constitution to be `` illegal '' and gave the local legislature 
+n:dobj:v<-achieve->v:prep:v->follow->v:pobj:n	xy	X=Slam	Y=triumph	phrases=Slam following her triumphs 
+n:conj:n	xy	X=report	Y=document	phrases=reports and falsified documents 
+n:pobj:IN<-from->IN:prep:TO->to->TO:pobj:n	xy	X=barter	Y=exchange	phrases=barter to cash exchanges 
+n:nn:n<-Party->n:appos:n	xy	X=Social	Y=party	phrases=Social Democratic Party -LRB- SDP -RRB- , the biggest party 
+n:prep:IN->of->IN:pobj:n	xy	X=coalition	Y=organization	phrases=coalition of some 40 pro-democracy and human rights organizations 
+n:pobj:IN<-in<-IN:prep:n<-group->n:appos:n	xy	X=heartland	Y=region	phrases=heartland in the southwest , Abiola 's home region 
+n:nsubj:v<-follow->v:dobj:n	xy	X=forum	Y=meeting	phrases=forum will follow the annual Association of Southeast Asian Nations foreign ministers ' meeting 
+n:nn:n<-leader->n:nn:n	xy	X=Shiite	Y=Moslem	phrases=Shiite Moslem 
+n:prep:IN->in->IN:pobj:n	xy	X=membership	Y=body	phrases=membership in the international body 
+n:nsubj:v<-drive->v:dobj:n	xy	X=troops	Y=force	phrases=troops drove Iraqi forces 
+n:prep:IN->during->IN:pobj:n->talk->n:nn:n	xy	X=truce	Y=peace	phrases=truce during last week 's peace 
+n:conj:n	xy	X=diplomat	Y=official	phrases=diplomats and officials 
+n:nn:n	xy	X=year	Y=period	phrases=year period 
+n:dobj:v<-chase->v:prep:IN->after->IN:pobj:n	xy	X=Slam	Y=triumph	phrases=Slam after her triumphs 
+n:nsubj:v<-claim->v:ccomp:v->involve->v:nsubjpass:n	xy	X=party	Y=organization	phrases=parties claimed the organization 
+n:nn:n	xy	X=police	Y=force	phrases=police forces 
+n:conj:n	xy	X=jihad	Y=war	phrases=jihad '' or holy war 
+n:infmod:v->continue->v:xcomp:v->pave->v:dobj:n	xy	X=road	Y=way	phrases=road Monday to continue discussions to pave the way 
+n:appos:n	xy	X=heartland	Y=region	phrases=heartland in the southwest , Abiola 's home region 
+n:appos:n	xy	X=people	Y=group	phrases=people , a minority group 
+n:conj:n	xy	X=burial	Y=funeral	phrases=burial and her funeral 
+n:nn:n<-leader->n:nn:n	xy	X=Shiite	Y=Moslem	phrases=Shiite Moslem 
+n:conj:n	xy	X=jihad	Y=war	phrases=jihad , '' or holy war 
+n:nn:n	xy	X=graduate	Y=student	phrases=graduate student 
+n:nsubj:v<-give->v:dobj:n	xy	X=parliament	Y=legislature	phrases=parliament has given the local legislature 
+n:prep:IN->of->IN:pobj:n	xy	X=population	Y=people	phrases=population of 29 million people 
+n:conj:n	xy	X=burial	Y=funeral	phrases=burial in the United States ' most hallowed resting place and her funeral 
+n:conj:v->have->v:xcomp:v->win->v:dobj:n	xy	X=final	Y=match	phrases=finals since 1954 and they have yet to win a match 
+n:nsubj:n	xy	X=win	Y=triumph	phrases=win would be a triumph 
+n:nn:n<-Federation->n:nn:n	xy	X=Saudi	Y=Arabian	phrases=Saudi Arabian 
+n:nsubj:v<-claim->v:ccomp:v->involve->v:nsubjpass:n	xy	X=party	Y=organization	phrases=parties claimed the organization 
+n:nsubj:n	xy	X=win	Y=triumph	phrases=win with Inter in 1991 was a further triumph 
+n:nsubj:n	xy	X=agenda	Y=plan	phrases=agenda of the Baltic Council is a plan 
+n:infmod:v->continue->v:xcomp:v->pave->v:dobj:n	xy	X=road	Y=way	phrases=road to continue discussions to pave the way 
+n:conj:n	xy	X=jihad	Y=war	phrases=jihad '' or holy war 
+n:nn:n	xy	X=tsunami	Y=wave	phrases=tsunami tidal wave 
+n:rcmod:v->want->v:dobj:n	xy	X=part	Y=relation	phrases=part of Europe which wanted good relations 
+n:nn:n	xy	X=police	Y=force	phrases=police task force 
+n:nsubjpass:v<-represent->v:prep:IN->on->IN:pobj:n	xy	X=Soviet	Y=council	phrases=Soviet , before it was dissolved in September 1993 , was represented on the council 
+n:conj:n	xy	X=norm	Y=standard	phrases=norms and standards 
+n:nsubj:v<-be->v:advcl:v->rise->v:nsubj:n	xy	X=dividend	Y=earnings	phrases=dividend was up at 9.2 pence from 8.1 , while earnings 
+n:conj:n<-remains->n:conj:n	xy	X=basement	Y=floor	phrases=basement , walls and floors 
+n:nsubj:n	xy	X=coalition	Y=organization	phrases=coalition is an umbrella organization 
+n:prep:IN->of->IN:pobj:n	xy	X=publication	Y=work	phrases=publication of his works 
+n:nsubj:v<-fall->v:prep:IN->on->IN:pobj:n	xy	X=earnings	Y=income	phrases=earnings had fallen by 11 percent to 32.95 billion yen on premium income 
+n:dobj:v<-forecast->v:prep:IN->on->IN:pobj:n	xy	X=earnings	Y=income	phrases=earnings of 34 billion yen on income 
+n:nsubj:v<-be->v:prep:IN->on->IN:pobj:n	xy	X=earnings	Y=income	phrases=earnings were down by 19 percent to 23.1 billion yen on increased premium income 
+n:dobj:v<-boost->v:advcl:v->rise->v:nsubj:n	xy	X=earnings	Y=income	phrases=earnings by 4.1 percent to 30.6 billion yen in the same period with premium income 
+n:dobj:v<-forecast->v:prep:IN->despite->IN:pobj:n	xy	X=profit	Y=income	phrases=profit of 30 billion yen for this year despite higher premium income 
+n:nsubj:v<-rise->v:prep:IN->on->IN:pobj:n	xy	X=profit	Y=income	phrases=profit rose 1.7 percent to 19 billion yen on premium income 
+n:nsubj:JJ<-unchanged->JJ:advcl:v->rise->v:nsubj:n	xy	X=dividend	Y=earnings	phrases=dividend remained unchanged at 3.25 pence , while earnings 
+n:nn:n<-Dirani->n:nn:n	xy	X=Shiite	Y=Moslem	phrases=Shiite Moslem 
+n:nn:n<-militia->n:nn:n	xy	X=Shiite	Y=Moslem	phrases=Shiite Moslem 
+n:prep:IN->of->IN:pobj:n	xy	X=purpose	Y=goal	phrases=purpose of the goals 
+n:prep:IN->of->IN:pobj:n	xy	X=savings	Y=fund	phrases=Savings and redirection of spending '' of government funds 
+n:conj:n	xy	X=health	Y=welfare	phrases=health and welfare 
+n:prep:IN->of->IN:pobj:n	xy	X=center	Y=country	phrases=center of the country 
+n:ccomp:n->decision->n:conj:n	xy	X=agreement	Y=statement	phrases=agreement that there should be no more unilateral decisions or statements 
+n:prep:IN->in->IN:pobj:n	xy	X=troops	Y=force	phrases=troops in the UNPROFOR force 
+n:nsubj:v<-declare->v:conj:v->give->v:dobj:n	xy	X=parliament	Y=legislature	phrases=parliament has declared the Crimean independence move `` illegal '' and has given the local legislature 
+n:prep:IN->of->IN:pobj:n	xy	X=existence	Y=state	phrases=existence of the Skopje state 
+n:dobj:v<-want->v:conj:v->abandon->v:nsubj:n	xy	X=existence	Y=state	phrases=existence of the Skopje state '' and also the `` normalisation '' of relations with it , but only if the new state 
+n:conj:n->technology->n:nn:n	xy	X=missile	Y=weapon	phrases=missiles and weapons 
+n:appos:n->force->n:nn:n	xy	X=Europol	Y=police	phrases=Europol , the EU police 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:prep:IN->of->IN:pobj:n	xy	X=purpose	Y=goal	phrases=purpose of the goals 
+n:nsubj:v<-fight->v:prep:IN->alongside->IN:pobj:n	xy	X=troops	Y=force	phrases=troops also fought alongside Allied forces 
+n:nsubj:JJ<-unusual->JJ:conj:n	xy	X=case	Y=occurrence	phrases=cases , including three deaths , reported around Gloucester , a concentration known as a `` cluster , '' were statistically unusual , but could still be a chance occurrence 
+n:nsubj:v<-cover->v:dobj:n	xy	X=phase	Y=period	phrases=phase will cover a six-month period 
+n:prep:IN->of->IN:pobj:n	xy	X=purpose	Y=goal	phrases=purpose of the goals 
+n:conj:n->talk->n:nn:n	xy	X=truce	Y=peace	phrases=truce or new peace 
+n:prep:IN->about->IN:pobj:n->rate->n:nn:n	xy	X=concern	Y=interest	phrases=concern about interest 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:dobj:v<-declare->v:prep:IN->as->IN:pobj:n	xy	X=yacht	Y=vessel	phrases=yacht as a commercial vessel 
+n:pobj:IN<-of<-IN:prep:n<-day->n:conj:n	xy	X=talk	Y=conversation	phrases=talks here which ended in the early hours of Tuesday , and five telephone conversations 
+n:prep:IN->of->IN:pobj:n	xy	X=population	Y=people	phrases=population of 29 million people 
+n:nn:n	xy	X=enemy	Y=force	phrases=enemy forces 
+n:prep:IN->around->IN:pobj:n	xy	X=population	Y=people	phrases=population of the 12 existing EU countries , now around 347 million people 
+n:nsubj:v<-fire->v:prep:IN->at->IN:pobj:n	xy	X=warship	Y=ship	phrases=warship fired warning shots at ships 
+n:nn:n<-Arabia->n:conj:n->Emirates->n:nn:n	xy	X=Saudi	Y=Arab	phrases=Saudi Arabia , Kuwait , Bahrain , Qatar , Oman and the United Arab 
+n:nsubj:v<-fire->v:prep:IN->at->IN:pobj:n	xy	X=warship	Y=ship	phrases=warships fired warning shots at ships 
+n:nsubj:v<-announce->v:dobj:n	xy	X=authority	Y=control	phrases=authorities announced Wednesday fresh price controls 
+n:nn:n	xy	X=staple	Y=commodity	phrases=staple commodities 
+n:nsubj:v<-fall->v:advcl:v->fall->v:nsubj:n	xy	X=output	Y=production	phrases=output fell 12.5 percent to 608,208 units for the 13th straight month , while production 
+n:conj:n<-China->n:conj:n	xy	X=rest	Y=part	phrases=rest of East Asia , parts 
+n:appos:n	xy	X=jihad	Y=war	phrases=jihad -LRB- holy war 
+n:nn:n	xy	X=asset	Y=quality	phrases=asset quality 
+n:nn:n<-problem->n:nn:n	xy	X=asset	Y=quality	phrases=asset quality 
+n:nn:n	xy	X=asset	Y=quality	phrases=asset quality 
+n:conj:n	xy	X=shipbuilding	Y=construction	phrases=shipbuilding and the construction 
+n:dobj:v<-seek->v:prep:IN->in->IN:pobj:n	xy	X=refuge	Y=country	phrases=refuge in neighbouring countries 
+n:nsubj:v<-rise->v:advcl:v->increase->v:nsubj:n	xy	X=dividend	Y=earnings	phrases=dividend rose to 22 pence from 19 pence , while earnings 
+n:nsubj:v<-lift->v:advcl:v->be->v:nsubj:n	xy	X=dividend	Y=earnings	phrases=dividend lifted slightly to 14.8 pence from 14 pence , while earnings 
+n:nn:n	xy	X=market	Y=activity	phrases=market activity 
+n:conj:n	xy	X=cosmetic	Y=toiletry	phrases=cosmetics and toiletry 
+n:conj:n<-cosmetic->n:conj:n->operation->n:nn:n	xy	X=chemical	Y=material	phrases=chemicals and new materials 
+n:nn:n	xy	X=month	Y=period	phrases=month period 
+n:conj:n	xy	X=shipbuilding	Y=construction	phrases=shipbuilding and the construction 
+n:dobj:v<-seek->v:prep:IN->in->IN:pobj:n	xy	X=refuge	Y=country	phrases=refuge in neighbouring countries 
+n:nn:n	xy	X=housing	Y=construction	phrases=housing construction 
+n:nn:n<-Administration<-n:nn:n	xy	X=Drug	Y=agent	phrases=Drug Enforcement Administration -LRB- DEA -RRB- agents 
+n:conj:n->talk->n:nn:n	xy	X=truce	Y=peace	phrases=truce or new peace 
+n:conj:n	xy	X=rapprochement	Y=cooperation	phrases=rapprochement and cooperation 
+n:prep:IN->of->IN:pobj:n->labor->n:conj:n	xy	X=coalition	Y=organization	phrases=coalition of 11 labor and human rights organizations 
+n:conj:n	xy	X=embezzlement	Y=theft	phrases=embezzlement and theft 
+n:nsubj:n	xy	X=plutonium	Y=element	phrases=Plutonium is a key element 
+n:nn:n<-interest->n:prep:IN->of->IN:pobj:n	xy	X=principal	Y=debt	phrases=principal and unpaid interest of the debt 
+n:nn:n	xy	X=police	Y=force	phrases=police forces 
+n:prep:IN->at->IN:pobj:n	xy	X=start	Y=beginning	phrases=start of the latest ethnic clashes at the beginning 
+n:nn:n	xy	X=spring	Y=season	phrases=spring home-buying season 
+n:nn:n<-community->n:nn:n	xy	X=Shiite	Y=Moslem	phrases=Shiite Moslem 
+n:dobj:v<-transform->v:prep:IN->into->IN:pobj:n	xy	X=police	Y=force	phrases=police into a public-orientated `` user-friendly '' force 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:nsubj:n	xy	X=plutonium	Y=element	phrases=Plutonium is a key element 
+n:conj:n	xy	X=diplomat	Y=official	phrases=diplomats and officials 
+n:prep:IN->of->IN:pobj:n	xy	X=part	Y=relation	phrases=part of its future relations 
+n:dobj:v<-deploy->v:prep:IN->between->IN:pobj:n	xy	X=troops	Y=force	phrases=troops between Azerbaijani and Armenian forces 
+n:dep:n<-people->n:dep:n	xy	X=faith	Y=belief	phrases=faith , my belief 
+n:dobj:v<-chase->v:prep:v->follow->v:pobj:n	xy	X=Slam	Y=victory	phrases=Slam following his victories 
+n:prep:IN->of->IN:pobj:n	xy	X=center	Y=country	phrases=center of the country 
+n:nn:n<-town->n:nn:n	xy	X=Shiite	Y=Moslem	phrases=Shiite Moslem 
+n:nn:n	xy	X=Daily	Y=newspaper	phrases=Daily Mail newspaper 
+n:rcmod:n	xy	X=constituent	Y=part	phrases=constituent of the neo-fascist National Alliance that is part 
+n:dobj:v<-support->v:prep:IN->in->IN:pobj:n	xy	X=election	Y=vote	phrases=election as prime minister in a parliament vote 
+n:rcmod:n	xy	X=constituent	Y=part	phrases=constituent of the neo-fascist National Alliance that is part 
+n:conj:n	xy	X=building	Y=structure	phrases=buildings , crooked barracks , a few modern structures 
+n:prep:IN->after->IN:pobj:n	xy	X=Slam	Y=triumph	phrases=Slam ' after his triumphs 
+n:nn:n	xy	X=police	Y=force	phrases=police forces 
+n:prep:IN->of->IN:pobj:n	xy	X=publication	Y=work	phrases=publication in France and the United States of his epic work 
+n:prep:IN->from->IN:pobj:n->nation->n:conj:n	xy	X=delegation	Y=organization	phrases=delegations from 53 nations and several non-governmental organizations 
+n:conj:n<-jailer->n:conj:JJ->tortured->JJ:conj:n	xy	X=torturer	Y=oppressor	phrases=torturers and tortured , oppressors 
+n:pobj:TO<-to<-TO:prep:n<-contribution->n:dep:n	xy	X=probe	Y=inquiry	phrases=probes , notably inquiries 
+n:nsubj:v<-cover->v:dobj:n	xy	X=phase	Y=period	phrases=phase will cover a six-month period 
+n:conj:n	xy	X=hotel	Y=building	phrases=hotel and school building 
+n:nn:n	xy	X=enemy	Y=force	phrases=enemy forces 
+n:nsubj:v<-lock<-v:ccomp:v<-say->v:nsubj:n	xy	X=ambassador	Y=diplomat	phrases=ambassador here locked himself inside his embassy and shut out staff after he was recalled to Sanaa for supporting southern forces in the country 's civil war , a diplomat 
+n:conj:n->talk->n:nn:n	xy	X=truce	Y=peace	phrases=truce or new peace 
+n:conj:n->attack->n:nn:n	xy	X=missile	Y=rocket	phrases=missile or rocket 
+n:nn:n	xy	X=police	Y=force	phrases=police and security forces 
+n:dep:n->goal->n:prep:IN->for->IN:pobj:n	xy	X=position	Y=point	phrases=positions -LRB- played , won , drawn , lost , goals for , against , points 
+n:prep:IN->of->IN:pobj:n	xy	X=ratification	Y=agreement	phrases=ratification of a global free trade agreement 
+n:nsubj:v<-be->v:prep:IN->with->IN:pobj:n	xy	X=troops	Y=force	phrases=Troops loyal to Baid , who on Saturday proclaimed an independent Yemeni Democratic Republic with its capital in Aden , have been at war since May 5 with forces 
+n:nsubj:v<-fire->v:prep:IN->on->IN:pobj:n	xy	X=warship	Y=ship	phrases=warships twice fired on ships 
+n:conj:n	xy	X=ship	Y=vessel	phrases=ship and other rescue vessels 
+n:nn:n<-association->n:conj:n	xy	X=politician	Y=leader	phrases=politicians , associations and trade union leaders 
+n:prep:IN->of->IN:pobj:n	xy	X=ratification	Y=agreement	phrases=ratification of a global free trade agreement 
+n:nn:n<-Express->n:conj:n	xy	X=Daily	Y=newspaper	phrases=Daily Express , the Daily Star , the Daily Mirror , The Sun and the Today newspaper 
+n:nn:n<-Star<-n:conj:n<-Express->n:conj:n	xy	X=Daily	Y=newspaper	phrases=Daily Star , the Daily Mirror , The Sun and the Today newspaper 
+n:nn:n<-Mirror<-n:conj:n<-Express->n:conj:n	xy	X=Daily	Y=newspaper	phrases=Daily Mirror , The Sun and the Today newspaper 
+n:nsubj:v<-travel->v:conj:v->prepare->v:nsubj:n	xy	X=ambassador	Y=diplomat	phrases=ambassador to Haiti traveled to the Haitian-Dominican border to get a glimpse of reported gaps in the UN trade embargo on Haiti and a top US diplomat 
+n:conj:n	xy	X=witchery	Y=sorcery	phrases=witchery and sorcery 
+n:conj:n	xy	X=witchcraft	Y=sorcery	phrases=witchcraft , sorcery 
+n:prep:IN->of->IN:pobj:n	xy	X=acceleration	Y=change	phrases=acceleration of structural change 
+n:nn:n	xy	X=distribution	Y=system	phrases=distribution systems 
+n:conj:n	xy	X=apparatus	Y=equipment	phrases=apparatus and mechatronoc equipment 
+n:prep:IN->of->IN:pobj:n	xy	X=export	Y=commodity	phrases=exports of the key commodity 
+n:conj:n	xy	X=troops	Y=force	phrases=troops and the forces 
+n:conj:n	xy	X=vandalism	Y=mischief	phrases=vandalism and mischief 
+n:conj:n->charge->n:nn:n	xy	X=vandalism	Y=mischief	phrases=vandalism and two mischief 
+n:dobj:v<-exchange<-v:ccomp:v<-say->v:nsubj:n	xy	X=agreement	Y=statement	phrases=agreements on the opening of liaison offices in their capitals in the first step towards the establishment of diplomatic relations , a foreign ministry statement 
+n:conj:n<-garden->n:conj:n	xy	X=basement	Y=floor	phrases=basement , walls and floors 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:conj:n	xy	X=police	Y=force	phrases=police and Israeli forces 
+n:nn:n	xy	X=peacekeeping	Y=operation	phrases=peacekeeping operation 
+n:pobj:IN<-in<-IN:prep:n<-cut->n:conj:n	xy	X=agreement	Y=statement	phrases=agreement -LRB- repo -RRB- on Wednesday and statements 
+n:conj:n	xy	X=missile	Y=weapon	phrases=missiles and chemical weapons 
+n:nn:n	xy	X=crude	Y=oil	phrases=crude oil 
+n:nsubjpass:v<-grant->v:dobj:n	xy	X=member	Y=associate	phrases=members to the European Union -- Bulgaria , Hungary , Poland , the Czech and Slovak republics , Romania and later Slovenia -- could be granted associate 
+n:pobj:IN<-of<-IN:prep:DT<-each->DT:conj:n	xy	X=jetliner	Y=jet	phrases=jetliners , the midsize 757 jets 
+n:conj:DT<-each->DT:conj:n	xy	X=jet	Y=plane	phrases=jets and the smallest 737 planes 
+n:nn:n	xy	X=Customs	Y=duty	phrases=Customs duties 
+n:nn:n	xy	X=Daily	Y=newspaper	phrases=Daily Times newspaper 
+n:prep:IN->in->IN:pobj:n	xy	X=track	Y=line	phrases=track in line 
+n:nn:n	xy	X=railway	Y=line	phrases=railway line 
+n:nsubj:v<-be->v:advcl:v->slip->v:nsubj:n	xy	X=dividend	Y=earnings	phrases=dividend was up at 8.25 pence from 7.42 pence the previous year , while earnings 
+n:nsubj:n	xy	X=yacht	Y=vessel	phrases=yacht a commercial vessel 
+n:prep:IN->of->IN:pobj:n	xy	X=acceleration	Y=change	phrases=acceleration of structural change 
+n:nn:n	xy	X=distribution	Y=system	phrases=distribution systems 
+n:pobj:IN<-of<-IN:prep:n<-bpd->n:dep:n	xy	X=crude	Y=oil	phrases=crude -- a higher sulphur content oil 
+n:dep:n<-coke->n:amod:JJ->kerosene->JJ:conj:n	xy	X=gasoline	Y=fuel	phrases=gasoline , kerosene , jet fuel 
+n:rcmod:v->lead->v:prep:TO->to->TO:pobj:n	xy	X=bloodbath	Y=massacre	phrases=bloodbath that has led to the massacre 
+n:abbrev:n	xy	X=MSG	Y=seasoning	phrases=MSG -RRB- food seasoning 
+n:nsubj:v<-declare->v:conj:v->give->v:dobj:n	xy	X=parliament	Y=legislature	phrases=parliament has declared the Crimean independence move `` illegal '' and has given the local legislature 
+n:nn:n	xy	X=peacekeeping	Y=operation	phrases=peacekeeping operation 
+n:nn:n<-business->n:nn:n	xy	X=film	Y=production	phrases=film production 
+n:nn:n	xy	X=peacekeeping	Y=operation	phrases=peacekeeping operations 
+n:nn:n	xy	X=peacekeeping	Y=operation	phrases=peacekeeping operation 
+n:nn:n	xy	X=floor	Y=level	phrases=floor level 
+n:nsubj:v<-confirm->v:ccomp:v->be->v:nsubj:n	xy	X=Organisation	Y=body	phrases=Organisation -LRB- WHO -RRB- has confirmed that there are some 50,000 bodies 
+n:abbrev:n<-Office->n:appos:n	xy	X=GAO	Y=agency	phrases=GAO -RRB- , the congressional watchdog agency 
+n:conj:n	xy	X=journalist	Y=writer	phrases=journalist and writer 
+n:nn:n	xy	X=landslide	Y=victory	phrases=landslide victories 
+n:prep:IN->of->IN:pobj:n	xy	X=wheel	Y=machine	phrases=wheel of the sleazy political machine 
+n:nsubj:v<-provide<-v:ccomp:v<-say->v:nsubj:n	xy	X=police	Y=force	phrases=Police had previously also provided the hostage-takers with phials of morphine , security forces 
+n:nn:n	xy	X=landslide	Y=victory	phrases=landslide victory 
+n:prep:IN->of->IN:pobj:n	xy	X=integrity	Y=state	phrases=integrity of member states 
+n:nsubj:v<-win->v:conj:v->make->v:nsubj:n	xy	X=engine	Y=motor	phrases=engine has won at Indy in 70 years , but the new Mercedes motor 
+n:conj:n	xy	X=pasta	Y=dish	phrases=pasta and fish dishes 
+n:nn:n	xy	X=distribution	Y=system	phrases=distribution system 
+n:prep:IN->of->IN:pobj:n	xy	X=matter	Y=concern	phrases=matter because of environmental concerns 
+n:nsubj:v<-ban->v:prep:IN->from->IN:pobj:n	xy	X=Army	Y=service	phrases=Army banned political - oriented programs from another service 
+n:nsubj:v<-provide<-v:ccomp:v<-say->v:nsubj:n	xy	X=police	Y=force	phrases=Police had previously also provided the gunmen with phials of morphine , security forces 
+n:partmod:v->do->v:dobj:n	xy	X=firm	Y=business	phrases=firms doing business 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:dobj:v<-broadcast->v:parataxis:v->use->v:dobj:n	xy	X=commercial	Y=ad	phrases=commercials -- using the same ads 
+n:prep:IN->of->IN:pobj:n	xy	X=review	Y=assessment	phrases=review of the Secretary of State 's assessment 
+n:conj:n	xy	X=radio	Y=broadcasting	phrases=radio and TV broadcasting 
+n:nn:n	xy	X=tv	Y=broadcasting	phrases=TV broadcasting 
+n:prep:IN->as->IN:pobj:n	xy	X=tackle	Y=lineman	phrases=tackles as 300 pound linemen 
+n:prep:IN->of->IN:pobj:n	xy	X=review	Y=assessment	phrases=review of the Secretary of State 's assessment 
+n:conj:n	xy	X=radio	Y=broadcasting	phrases=radio and TV broadcasting 
+n:nn:n	xy	X=tv	Y=broadcasting	phrases=TV broadcasting 
+n:conj:n	xy	X=jihad	Y=war	phrases=jihad '' or holy war 
+n:nn:n<-contest->n:prep:IN->across->IN:pobj:n	xy	X=Labor	Y=class	phrases=Labor leadership contest across all social classes 
+n:nn:n	xy	X=AFL-CIO	Y=federation	phrases=AFL-CIO labor federation 
+n:nsubjpass:v<-include->v:prep:IN->in->IN:pobj:n	xy	X=area	Y=region	phrases=areas are not included in this region 
+n:nn:n	xy	X=propane	Y=gas	phrases=propane gas 
+n:conj:n->factor->n:nsubj:n	xy	X=partner	Y=relation	phrases=partners , and good relations 
+n:rcmod:v->understate->v:dobj:n	xy	X=price	Y=value	phrases=price which understated its true asset value 
+n:nn:n	xy	X=brand	Y=name	phrases=brand name 
+n:nsubj:v<-provide<-v:ccomp:v<-say->v:nsubj:n	xy	X=police	Y=force	phrases=Police had previously also provided the gunmen with phials of morphine , security forces 
+n:pobj:IN<-after->IN:conj:v->reject->v:dep:n	xy	X=midnight	Y=hour	phrases=midnight and only hours 
+n:dobj:v<-have<-v:ccomp:v<-say->v:nsubj:n	xy	X=comment	Y=statement	phrases=comment on the US decision as we do not get involved in US-communist China relations , just as we want communist China to stay away from Washington-Taipei relations , '' a foreign ministry statement 
+n:nsubj:v<-provide<-v:ccomp:v<-say->v:nsubj:n	xy	X=police	Y=force	phrases=Police had previously also provided the gunmen with phials of morphine , security forces 
+n:conj:n<-electronics->n:conj:n	xy	X=building	Y=construction	phrases=building , power industries , food processing , garments , everyday consumer goods manufacturing industries , building materials , pharmaceuticals , chemical industries , construction 
+n:nn:n<-material<-n:conj:n<-electronics->n:conj:n	xy	X=building	Y=construction	phrases=building materials , pharmaceuticals , chemical industries , construction 
+n:prep:IN->of->IN:pobj:n	xy	X=output	Y=product	phrases=output of finished products 
+n:conj:JJ<-south->JJ:prep:IN->of->IN:pobj:n	xy	X=center	Y=country	phrases=center of the country 
+n:conj:n	xy	X=self-esteem	Y=pride	phrases=self-esteem and national pride 
+n:prep:IN->for->IN:pobj:n->measure->n:conj:n	xy	X=expense	Y=cost	phrases=expenses for revenue-increasing measures and fixed-property removal costs 
+n:prep:IN->on->IN:pobj:n	xy	X=Conference	Y=meeting	phrases=Conference on Natural Disaster Reduction meeting 
+n:nn:n	xy	X=election	Y=vote	phrases=election run-off vote 
+n:conj:n	xy	X=house	Y=home	phrases=house , luxury yacht and holiday homes 
+n:nn:n	xy	X=landslide	Y=victory	phrases=landslide victory 
+n:nsubj:v<-hijack->v:partmod:v->take->v:iobj:n	xy	X=man	Y=adult	phrases=men , ethnic Chechens armed with submachine guns and a grenade , hijacked the schoolbus Thursday near the Caucasus village of Mineralnye Voday , taking 23 adults 
+n:dobj:v<-carry->v:prep:IN->from->IN:pobj:n	xy	X=troops	Y=force	phrases=troops from the elite `` Alpha '' interior ministry forces 
+n:prep:TO->to->TO:pobj:n	xy	X=reference	Y=remark	phrases=reference to remarks 
+n:prep:IN->about->IN:pobj:n->rate->n:nn:n	xy	X=concern	Y=interest	phrases=concern about interest 
+n:poss:n	xy	X=military	Y=force	phrases=military 's Suranari task force 
+n:nn:n	xy	X=election	Y=vote	phrases=election run-off vote 
+n:conj:n	xy	X=journalist	Y=writer	phrases=journalist and writer 
+n:conj:n	xy	X=journalist	Y=writer	phrases=journalists , writers 
+n:conj:n<-craft->n:conj:n	xy	X=battleship	Y=warship	phrases=battleships , one monitor warship 
+n:rcmod:v->take->v:prep:IN->in->IN:pobj:n	xy	X=area	Y=region	phrases=area where the landing took place in the Le Havre\/Cherbourg region 
+n:dobj:v<-give->v:prep:IN->as->IN:pobj:n	xy	X=influence	Y=power	phrases=influence as a leading Asian economic power 
+n:nn:n	xy	X=peacekeeping	Y=operation	phrases=peacekeeping operation 
+n:conj:n	xy	X=house	Y=home	phrases=house , luxury yacht and holiday homes 
+n:prep:IN->of->IN:pobj:n	xy	X=ray	Y=light	phrases=ray of light 
+n:nn:n	xy	X=crop	Y=yield	phrases=crop yields 
+n:prep:IN->of->IN:pobj:n	xy	X=troops	Y=force	phrases=Troops of the African multi-national ECOMOG peacekeeping force 
+n:nn:n	xy	X=election	Y=vote	phrases=election run-off vote 
+n:nn:n	xy	X=board	Y=committee	phrases=board executive committee 
+n:dobj:v<-implement->v:prep:IN->in->IN:pobj:n	xy	X=adjustment	Y=advance	phrases=adjustments in advance 
+n:prep:IN->in->IN:pobj:n	xy	X=feeling	Y=state	phrases=feelings in the state 
+n:conj:n	xy	X=journalist	Y=writer	phrases=journalists , writers 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:prep:IN->of->IN:pobj:n	xy	X=ray	Y=light	phrases=ray of light 
+n:prep:IN->of->IN:pobj:n	xy	X=troops	Y=force	phrases=troops of the remaining British forces 
+n:dobj:v<-implement->v:prep:IN->in->IN:pobj:n	xy	X=adjustment	Y=advance	phrases=adjustments in advance 
+n:nsubj:v<-follow->v:dobj:n	xy	X=zinc	Y=metal	phrases=zinc followed the other metals 
+n:nsubj:v<-rise->v:conj:JJ->popular->JJ:nsubj:n	xy	X=nickel	Y=metal	phrases=nickel rose in line with copper as commodities soared across the board , but the metal 
+n:nsubjpass:v<-injure<-v:ccomp:v<-say->v:nsubj:n	xy	X=prosecutor	Y=official	phrases=prosecutor in the self-proclaimed republic of Dniestr was seriously injured and his wife killed in a bomb attack , city officials 
+n:conj:n	xy	X=machete	Y=knife	phrases=machetes , knives 
+n:prep:IN->of->IN:pobj:n	xy	X=matter	Y=concern	phrases=matter of international concern 
+n:nsubj:v<-break->v:dobj:n	xy	X=fighting	Y=struggle	phrases=fighting broke in a power struggle 
+n:nn:n	xy	X=safeguard	Y=measure	phrases=safeguard measures 
+n:nn:n	xy	X=safeguard	Y=measure	phrases=safeguards measures 
+n:nn:n	xy	X=safeguard	Y=measure	phrases=safeguard measures 
+n:nn:n	xy	X=House	Y=building	phrases=House parliament building 
+n:prep:v->exclude->v:pobj:n	xy	X=company	Y=institution	phrases=companies excluding financial institutions 
+n:nn:n<-Arabia->n:conj:n->Fund->n:nn:n	xy	X=Saudi	Y=Arab	phrases=Saudi Arabia , the Arab 
+n:amod:n	xy	X=year	Y=period	phrases=year grace period 
+n:conj:n	xy	X=machete	Y=knife	phrases=machetes , knives 
+n:nn:n	xy	X=safeguard	Y=measure	phrases=safeguard measures 
+n:prep:TO->to->TO:pobj:n	xy	X=response	Y=issue	phrases=response to the 1994 issue 
+n:nn:n	xy	X=Daily	Y=newspaper	phrases=Daily newspaper 
+n:nn:n	xy	X=Daily	Y=newspaper	phrases=Daily Star newspaper 
+n:nn:n	xy	X=Daily	Y=newspaper	phrases=Daily newspaper 
+n:nn:n	xy	X=House	Y=building	phrases=House parliament building 
+n:nn:n	xy	X=safeguard	Y=measure	phrases=safeguard measures 
+n:rcmod:JJ->subject->JJ:nsubj:n	xy	X=status	Y=state	phrases=status '' whereby the hardline communist state 
+n:conj:n	xy	X=reconciliation	Y=cooperation	phrases=reconciliation and cooperation 
+n:poss:n	xy	X=military	Y=force	phrases=military 's Suranari task force 
+n:rcmod:v->say->v:ccomp:JJ->subject->JJ:nsubj:n	xy	X=status	Y=state	phrases=status '' under which it said the hardline communist state 
+n:nsubj:v<-hijack->v:partmod:v->take->v:iobj:n	xy	X=man	Y=adult	phrases=men , ethnic Chechens armed with submachine-guns and a grenade , hijacked the schoolbus Thursday near the Caucasus town of Mineralnye Vody , taking 23 adults 
+n:rcmod:JJ->subject->JJ:nsubj:n	xy	X=status	Y=state	phrases=status '' whereby the hardline communist state 
+n:rcmod:v->cite->v:dobj:n	xy	X=report	Y=document	phrases=report , which cited internal secret service documents 
+n:nsubj:v<-hijack->v:partmod:v->take->v:iobj:n	xy	X=man	Y=adult	phrases=men , three of whom were said to be ethnic Chechens armed with submachine-guns and a grenade , hijacked the bus , taking 23 adults 
+n:nsubj:n	xy	X=fighting	Y=conflict	phrases=fighting in the African country was an ethnic conflict 
+n:conj:n	xy	X=ache	Y=pain	phrases=aches and pains 
+n:nn:n<-net->n:nn:n	xy	X=security	Y=safety	phrases=security safety 
+n:nsubj:v<-be->v:prep:IN->with->IN:pobj:n	xy	X=plan	Y=idea	phrases=plan was in tune with his own ideas 
+n:dobj:v<-register->v:prep:IN->as->IN:pobj:n	xy	X=yacht	Y=vessel	phrases=yacht as a commercial vessel 
+n:nsubj:n<-daughter->n:prep:IN->of->IN:pobj:n	xy	X=girl	Y=woman	phrases=girl who introduced Wilson to Capriati is , according to Wilson , the daughter of a woman 
+n:prep:IN->with->IN:pobj:n	xy	X=leap	Y=jump	phrases=leap of 7.30 m , ahead of Australian Nicole Boegman with a jump 
+n:rcmod:v->form->v:dobj:n	xy	X=Alliance	Y=coalition	phrases=Alliance of Free Democrats -LRB- SZDSZ -RRB- , with whom the socialists could form a coalition 
+n:nn:n	xy	X=Daily	Y=newspaper	phrases=Daily Business Weekly newspaper 
+n:nsubj:n<-cause->n:prep:IN->for->IN:pobj:n	xy	X=matter	Y=concern	phrases=matter was cause for concern 
+n:rcmod:v->form->v:dobj:n	xy	X=Alliance	Y=coalition	phrases=Alliance of Free Democrats -LRB- SZDSZ -RRB- , with whom the socialists could form a coalition 
+n:dep:n->form->n:prep:IN->of->IN:pobj:n	xy	X=vehicle	Y=transport	phrases=vehicle -- a favorite form of mass transport 
+n:prep:IN->of->IN:pobj:n	xy	X=integrity	Y=state	phrases=integrity of a friendly neighboring state 
+n:conj:n	xy	X=insurgency	Y=rebellion	phrases=insurgency and a Moslem rebellion 
+n:conj:n	xy	X=medallist	Y=winner	phrases=medallist at the 1990 Beijing Asian Games and also the winner 
+n:conj:n	xy	X=refinery	Y=plant	phrases=refinery and heating plant 
+n:nsubj:v<-coincide->v:prep:IN->with->IN:pobj:n	xy	X=comment	Y=statement	phrases=comments coincided with press statements 
+n:conj:n	xy	X=jihad	Y=war	phrases=jihad '' or holy war 
+n:nsubj:JJ<-first->JJ:prep:IN->since->IN:pobj:n	xy	X=win	Y=victory	phrases=win was the first for Williams since his victory 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:nn:n	xy	X=police	Y=personnel	phrases=police personnel 
+n:nsubj:JJ<-first->JJ:prep:IN->since->IN:pobj:n	xy	X=win	Y=victory	phrases=win was the first for Williams since his victory 
+n:rcmod:v->cite->v:dobj:n	xy	X=report	Y=document	phrases=report , which cited internal secret service documents 
+n:prep:IN->with->IN:pobj:n	xy	X=accordance	Y=agreement	phrases=accordance with an agreement 
+n:prep:IN->in->IN:pobj:n	xy	X=area	Y=region	phrases=areas in central and southern regions 
+n:nn:n	xy	X=landslide	Y=victory	phrases=landslide victory 
+n:nsubjpass:v<-announce->v:prep:IN->in->IN:pobj:n	xy	X=boycott	Y=protest	phrases=boycott had been announced in February in protest 
+n:conj:n	xy	X=prosecutor	Y=lawyer	phrases=prosecutor , lawyer 
+n:conj:n	xy	X=journalist	Y=writer	phrases=journalists , writers 
+n:nn:n<-Graf->n:conj:n->Pierce->n:nn:n	xy	X=champion	Y=rival	phrases=champion Steffi Graf and 19-year-old French rival 
+n:dep:n->goal->n:prep:IN->for->IN:pobj:n	xy	X=position	Y=point	phrases=positions -LRB- played , won , drawn , lost , goals for , against , points 
+n:nsubj:v<-condemn->v:prep:IN->at->IN:pobj:n	xy	X=conference	Y=meeting	phrases=conference here condemned the treatment of women in war-torn Bosnia Sunday at its inaugural meeting 
+n:dobj:v<-jam->v:partmod:v->join->v:dobj:n	xy	X=grandstand	Y=audience	phrases=grandstands , joining a global television audience 
+n:appos:n->party->n:conj:n->partner->n:nn:n	xy	X=Alliance	Y=coalition	phrases=Alliance of Free Democrats , the main opposition party in the outgoing parliament and a probable coalition 
+n:conj:n	xy	X=housing	Y=construction	phrases=Housing and Construction 
+n:conj:n	xy	X=prosecutor	Y=lawyer	phrases=prosecutor , lawyer 
+n:nn:n	xy	X=landslide	Y=victory	phrases=landslide victory 
+n:conj:n	xy	X=leader	Y=person	phrases=leader and at least one other other person 
+n:prep:IN->of->IN:pobj:n	xy	X=chief	Y=leader	phrases=chief of state and party leader 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:conj:n	xy	X=Union	Y=organization	phrases=Union and other European organizations 
+n:nn:n	xy	X=import	Y=commodity	phrases=import commodities 
+n:nsubj:v<-inject->v:prep:IN->for->IN:pobj:n	xy	X=enterprise	Y=project	phrases=enterprises have injected some 13 billion US dollars in the mainland for various projects 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:rcmod:v->create->v:prep:IN->in->IN:pobj:n	xy	X=emergency	Y=crisis	phrases=emergency which might be created by North Korea in a crisis 
+n:dobj:v<-sign<-v:ccomp:v<-say->v:nsubj:n	xy	X=agreement	Y=statement	phrases=agreement in response to `` mediation efforts by President Sheikh Zayed ibn Sultan al-Nahayan and Vice President and Prime Minister Sheikh Maktum ibn Rashid al-Maktum , '' the statement 
+n:nn:n	xy	X=union	Y=organization	phrases=union organization 
+n:prep:IN->in->IN:pobj:n	xy	X=fighting	Y=conflict	phrases=Fighting in the government-guerrilla conflict 
+n:nsubj:v<-come->v:conj:n->partner->n:nn:n	xy	X=Alliance	Y=coalition	phrases=Alliance of Free Democracts , which took 70 seats , came second and is a possible coalition 
+n:nn:n	xy	X=ballot	Y=papers	phrases=ballot papers 
+n:nn:n<-Rocard<-n:nsubj:n	xy	X=Socialist	Y=politician	phrases=Socialist Party leader Michel Rocard , who appeared the most vulnerable to the Sarajevo list , was the only major politician 
+n:nn:n<-bosna->n:nn:n	xy	X=documentary	Y=film	phrases=documentary film 
+n:nn:n	xy	X=estate	Y=holding	phrases=estate holdings 
+n:dobj:v<-give->v:prep:v->follow->v:pobj:n	xy	X=conference	Y=meeting	phrases=conference following their meetings 
+n:rcmod:v->take->v:conj:n->partner->n:nn:n	xy	X=Alliance	Y=coalition	phrases=Alliance of Free Democracts -LRB- SZDSZ -RRB- , which took 70 seats and is a probable coalition 
+n:nn:n	xy	X=month	Y=period	phrases=month period 
+n:nn:n	xy	X=ballot	Y=papers	phrases=ballot papers 
+n:nn:n<-Rocard<-n:nsubj:n	xy	X=Socialist	Y=politician	phrases=Socialist Party leader Michel Rocard , who appeared the most vulnerable to the Sarajevo list , was the only major politician 
+n:nn:n<-bosna->n:nn:n	xy	X=documentary	Y=film	phrases=documentary film 
+n:nsubj:v<-predict->v:conj:v->forecast->v:dobj:n	xy	X=firm	Y=business	phrases=firms predicted a slight improvement on the world non - ferrous metal market and all but one of them forecast slightly better business 
+n:nn:n	xy	X=Social	Y=party	phrases=Social Democrat party 
+n:dobj:v<-remove->v:conj:v->have->v:nsubj:n	xy	X=military	Y=force	phrases=military and reinstate President Jean-Bertrand Aristide , but an international force 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:appos:n->part->n:prep:IN->of->IN:pobj:n	xy	X=Alliance	Y=coalition	phrases=Alliance , part of the ruling coalition 
+n:nn:n	xy	X=police	Y=force	phrases=police force 
+n:dobj:v<-accept->v:conj:v->write->v:dobj:n	xy	X=invitation	Y=letter	phrases=invitation by the organisers and had written a `` very courteous letter 
+n:dobj:v<-un->v:advcl:v->be->v:nsubj:n	xy	X=troops	Y=force	phrases=troops to their shelters , as Serb forces 
+n:dobj:v<-give->v:prep:v->follow->v:pobj:n	xy	X=conference	Y=meeting	phrases=conference following their meetings 
+n:conj:n<-canon->n:conj:n	xy	X=vehicle	Y=transport	phrases=vehicles , Rooivalk combat helicopters and mine-resistant troop transports 
+n:pobj:IN<-of<-IN:prep:n<-Organisation->n:conj:n	xy	X=Unity	Y=state	phrases=Unity and its member states 
+n:nn:n	xy	X=ballot	Y=papers	phrases=ballot papers 
+n:amod:JJ->sympathetic->JJ:prep:TO->to->TO:pobj:n	xy	X=someone	Y=cause	phrases=someone sympathetic to their cause 
+n:nn:n<-bosna->n:nn:n	xy	X=documentary	Y=film	phrases=documentary film 
+n:dobj:v<-put->v:prep:IN->in->IN:pobj:n	xy	X=left	Y=position	phrases=left in the best position 
+n:prep:IN->in->IN:pobj:n->Chiapas->n:appos:n	xy	X=condition	Y=state	phrases=conditions in Chiapas , Mexico 's poorest state 
+n:dep:n	xy	X=position	Y=point	phrases=position in brackets -LRB- played , won , lost , drawn , batting bonus points 
+n:dep:n->point->n:appos:n	xy	X=position	Y=point	phrases=position in brackets -LRB- played , won , lost , drawn , batting bonus points , bowling bonus points 
+n:dep:n->point->n:appos:n	xy	X=position	Y=point	phrases=position in brackets -LRB- played , won , lost , drawn , batting bonus points , bowling bonus points , points 
+n:nsubj:n	xy	X=summit	Y=point	phrases=summit -- bringing together Britain , Canada , France , Germany , Italy , Japan and the United States -- in the Italian city of Naples in July would be a `` cut-off point 
+n:nsubj:v<-point->v:prep:IN->in->IN:pobj:n	xy	X=trend	Y=direction	phrases=trend has been pointing in the right direction 
+n:nn:n	xy	X=police	Y=force	phrases=police task force 
+n:nn:n	xy	X=subcompact	Y=car	phrases=subcompact cars 
+n:nn:n	xy	X=brand	Y=name	phrases=brand name 
+n:nn:n	xy	X=subcompact	Y=car	phrases=subcompact car 
+n:prep:IN->from->IN:prep:TO->to->TO:pobj:n	xy	X=commander	Y=officer	phrases=commanders from generals to platoon officers 
+n:prep:IN->by->IN:pobj:n	xy	X=process	Y=activity	phrases=process by violent activities 
+n:appos:n<-Chi-wen->n:conj:n->Zhi->n:nn:n	xy	X=owner	Y=businessman	phrases=owner , and Taiwan businessman 
+n:nn:n	xy	X=education	Y=activity	phrases=Education and cultural activities 
+n:dobj:v<-enforce->v:prep:IN->until->IN:pobj:n	xy	X=ban	Y=order	phrases=ban on the conference `` until further orders 
+n:nn:n	xy	X=month	Y=period	phrases=month period 
+n:nn:n	xy	X=ballpoint	Y=pen	phrases=ballpoint pens 
+n:nn:n	xy	X=ballpoint	Y=pen	phrases=ballpoint pen 
+n:prep:IN->of->IN:pcomp:v->bring->v:dobj:n	xy	X=aim	Y=end	phrases=aim of bringing an end 
+n:nsubj:v<-follow->v:dobj:n	xy	X=remark	Y=statement	phrases=remarks followed a UN Security Council statement 
+n:nsubjpass:v<-plan->v:advcl:v->end->v:nsubj:n	xy	X=conference	Y=meeting	phrases=conference was planned when the meetings 
+n:rcmod:v->seek->v:xcomp:v->delay->v:dobj:n	xy	X=hearing	Y=proceedings	phrases=hearing in which Bond 's lawyers are seeking to delay fraud proceedings 
+n:conj:n	xy	X=intelligence	Y=ability	phrases=intelligence and reasoning ability 
+n:partmod:v->serve->v:prep:IN->with->IN:pobj:n	xy	X=troops	Y=force	phrases=troops serving with UN peacekeeping forces 
+n:nsubjpass:v<-term->v:dobj:n->shinchugun->n:conj:n	xy	X=troops	Y=force	phrases=troops deployed in Japan after 1945 are also termed `` shinchugun , '' or `` stationed forces 
+n:nsubj:JJ<-due->JJ:xcomp:v->debate->v:dobj:n	xy	X=fighting	Y=conflict	phrases=fighting flared as the UN Security Council was due to debate the conflict 
+n:nn:n	xy	X=party	Y=organization	phrases=party organizations 
+n:prep:IN->from->IN:pobj:n	xy	X=shrapnel	Y=shell	phrases=shrapnel from a shell 
+n:nsubj:v<-stunt->v:dobj:n	xy	X=rise	Y=growth	phrases=rises in April have not stunted economic growth 
+n:nn:n	xy	X=safeguard	Y=measure	phrases=safeguard measures 
+n:prep:IN->of->IN:pobj:n	xy	X=population	Y=people	phrases=population of more than 58 million people 
+n:prep:IN->from->IN:pobj:n	xy	X=shrapnel	Y=shell	phrases=shrapnel from a shell 
+n:nsubj:JJ<-due->JJ:xcomp:v->debate->v:dobj:n	xy	X=fighting	Y=conflict	phrases=fighting flared as the UN Security Council was due to debate the conflict 
+n:prep:IN->of->IN:pobj:n	xy	X=round	Y=ammunition	phrases=rounds of ammunition 
+n:poss:n<-Party<-n:appos:n<-Party->n:appos:n	xy	X=People	Y=group	phrases=People 's Party -RRB- , the country 's main opposition group 
+n:nn:n	xy	X=police	Y=force	phrases=police and paramilitary forces 
+n:nn:n	xy	X=ballpoint	Y=pen	phrases=ballpoint pens 
+n:nn:n	xy	X=ballpoint	Y=pen	phrases=ballpoint pen 
+n:conj:n->rule->n:prep:IN->on->IN:pobj:n	xy	X=district	Y=region	phrases=district of Sunja and direct Moscow rule on the region 
+n:prep:IN->in->IN:pobj:n->eurocorp->n:nn:n	xy	X=troops	Y=force	phrases=troops in the multinational European force 
+n:nsubj:JJ<-due->JJ:xcomp:v->debate->v:dobj:n	xy	X=fighting	Y=conflict	phrases=fighting in the four-week civil war flared as the UN Security Council was due to debate the conflict 
+n:conj:n	xy	X=troops	Y=force	phrases=troops loyal to President Ali Abdallah Saleh and southern forces 
+n:conj:n	xy	X=station	Y=facility	phrases=station and port facilities 
+n:nn:n	xy	X=party	Y=organization	phrases=party organization 
+n:prep:IN->for->IN:pobj:n	xy	X=concern	Y=interest	phrases=concerns '' for the public interest 
+n:conj:n	xy	X=militia	Y=force	phrases=militia and ethnic Uzbek forces 
+n:conj:n<-aluminum->n:conj:n	xy	X=bauxite	Y=mineral	phrases=bauxite , hydroelectric power , and other minerals 
+n:prep:IN->for->IN:pobj:n	xy	X=concern	Y=interest	phrases=concerns '' for the public interest 
+n:nn:n	xy	X=peacekeeping	Y=operation	phrases=peacekeeping operations 
+n:nsubj:JJ<-responsible->JJ:conj:v->begin->v:nsubj:n	xy	X=investigation	Y=enquiry	phrases=investigations into secret political financing were partly responsible for the Socialist Party 's defeat in last year 's parliamentary elections , and similar enquiries 
+n:appos:n<-Coeme->n:conj:n	xy	X=socialist	Y=politician	phrases=socialist , and two leading regional Socialist politicians 
+n:prep:IN->of->IN:pobj:n	xy	X=matter	Y=concern	phrases=matter of urgent concern 
+n:conj:n	xy	X=station	Y=facility	phrases=station and port facilities 
+n:conj:n	xy	X=troops	Y=force	phrases=troops loyal to President Ali Abdallah Saleh and southern forces 
