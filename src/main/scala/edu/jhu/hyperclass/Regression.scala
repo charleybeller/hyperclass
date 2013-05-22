@@ -93,7 +93,7 @@ object Regression extends App {
 	println("Initializing...")
 	var dm : DataMatrix = new DataMatrix(new Array[PhrasePair](0));
 
-	val posFile = "output/xy.txt"
+	val posFile = "output/xy4.txt"
 	val allFile = "output/joined.small"
 
 	dm.initializeFromFile(posFile, allFile)
