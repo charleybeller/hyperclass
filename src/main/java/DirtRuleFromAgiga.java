@@ -117,7 +117,7 @@ public class DirtRuleFromAgiga {
         List<Tree> paths = this.root.pathNodeToNode(iNode, jNode);
         // if path.size()==2, we have rules like this:
         // ??/NNP<-nn<-NNP/??
-        if (paths == null || paths.size() < 3 || paths.size() > 5) continue;
+        if (paths == null || paths.size() < 3 || paths.size() > 4) continue;
         // [poured, Smith, died, earlier, attack, aged, 55]
         String x = "", y = "";
         TreeGraphNode xNode = (TreeGraphNode) paths.get(0);
