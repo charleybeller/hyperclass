@@ -1,5 +1,6 @@
 import scala.io.Source._;
 import scala.collection.immutable.HashMap;
+import scala.collection.immutable.HashSet;
 
 import java.util.Collection;
 import java.util.Random;
@@ -18,12 +19,15 @@ class DataMatrix(phrasePairs : Array[PhrasePair]){
  	* Initialize DataMatrix by reading PhrasePairs from file
  	*/
 	def initializeFromFile(posFileName: String, allFileName : String) = {
-		pairs = new Array(0);
+//		pairs = new Array(0);
+		var pairss : HashSet[PhrasePair] = new HashSet();
 		println("Reading File")
 		for(line <- fromFile(allFileName).getLines){
 			val comps : Array[String] = line.split('\t')
-			pairs = pairs :+ new PhrasePair(comps(2).split("=")(1), comps(3).split("=")(1))
+			//pairs = pairs :+ new PhrasePair(comps(2).split("=")(1), comps(3).split("=")(1))
+			pairss = pairss + new PhrasePair(comps(2).split("=")(1), comps(3).split("=")(1))
 		}
+		pairs = pairss.toArray
 		println("Getting Labels")
 		getLabelsFromFile(posFileName);
 		println("Getting Features")
@@ -111,14 +115,12 @@ class DataMatrix(phrasePairs : Array[PhrasePair]){
  	*/
 	def extractFeaturesFromFile(fileName : String) = {
 		
-//		for(p <- pairs ){
 		var idx : Int = 1;
 		var wordFeatures : Array[Feature] = new Array[Feature](0);
 		var fs = parseFeaturesFromFile(fileName)
 		for((p,f) <- pairs.zip(fs)){
 			p.features = f
 		}
-//		}
 	} 
 
 	/**

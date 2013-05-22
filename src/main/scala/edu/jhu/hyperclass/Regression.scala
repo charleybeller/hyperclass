@@ -8,7 +8,7 @@ import de.bwaldvogel.liblinear.Parameter;
 import de.bwaldvogel.liblinear.Problem;
 import de.bwaldvogel.liblinear.SolverType;
 
-object Regression {
+object Regression extends App {
 
 	/**
  	* Train a model on X with labels Y 
@@ -34,49 +34,90 @@ object Regression {
 	/**
  	* Test model on X with known labels Y 
  	*/
-	def test(model : Model, dm : DataMatrix) : (Double, Double, Double) = {
-		val X : Array[Array[Feature]] = dm.getX();
-		val Y : Array[Double] = dm.getY();
-		
+	def baselineTest(traindm : DataMatrix, testdm : DataMatrix) : (Double, Double, Double, Double) = {
+		val X : Array[Array[Feature]] = testdm.getX();
+		val Y : Array[Double] = testdm.getY();
+	
+		val yhat = traindm.getY().groupBy(identity).mapValues(_.size).maxBy(_._2)._1
+	
 		var tp : Float = 0
 		var fp : Float = 0
 		var fn : Float = 0
-		var yhat : Double = 0;
+		var t : Float = 0
 		for((x,y) <- X.zip(Y)){
-			yhat = Linear.predict(model, x);
-			println("Predicted: " + yhat + " True:  " + y)
 			if(y == 1 && yhat == 1) tp = tp + 1
 			if(y == 0 && yhat == 1) fp = fp + 1
 			if(y == 1 && yhat == 0) fn = fn + 1
+			t = t + 1
 		}	
+		val a = (t - fp - fn) / t
 		val p = tp / (tp + fp)
 		val r = tp / (tp + fn)
 		val f = 2 * (p * r) / (p + r)
-		(p, r, f)	
+		(p, r, f, a)	
+	}
+
+	/**
+ 	* Test model on X with known labels Y 
+ 	*/
+	def test(model : Model, dm : DataMatrix) : (Double, Double, Double, Double) = {
+		val X : Array[Array[Feature]] = dm.getX();
+		val Y : Array[Double] = dm.getY();
+	
+		val out = new java.io.FileWriter("log")
+	
+		var tp : Float = 0
+		var fp : Float = 0
+		var fn : Float = 0
+		var t : Float = 0
+		var c : Float = 0
+		var yhat : Double = 0;
+		for(((x,y),p) <- X.zip(Y).zip(dm.pairs)){
+			yhat = Linear.predict(model, x);
+			out.write("Predicted: " + yhat + " True:  " + y + " " + p + "\n")
+			if(y == 1 && yhat == 1) tp = tp + 1
+			if(y == 0 && yhat == 1) fp = fp + 1
+			if(y == 1 && yhat == 0) fn = fn + 1
+			if(y == yhat) c = c + 1
+			t = t + 1
+		}	
+		out.close
+		val a = c / t
+		val p = tp / (tp + fp)
+		val r = tp / (tp + fn)
+		val f = 2 * (p * r) / (p + r)
+		(p, r, f, a)	
 	}
 	
-	def main(args : Array[String]){
 
-		println("Initializing...")
-		var dm : DataMatrix = new DataMatrix(new Array[PhrasePair](0));
+	println("Initializing...")
+	var dm : DataMatrix = new DataMatrix(new Array[PhrasePair](0));
 
-		val posFile = "output/xy.txt"
-		val allFile = "output/joined.txt"
+	val posFile = "output/xy.txt"
+	val allFile = "output/joined.small"
 
-		dm.initializeFromFile(posFile, allFile)
-		
-		println("Splitting train and test...")
-		val (trainDM : DataMatrix, testDM : DataMatrix) = dm splitTrainTest 10;
-
-		println("Training...")
-		train(trainDM);
-		var model : Model = train(trainDM);
-		
-		//var modelFile : File = new File("model");
-		//model save modelFile;
+	dm.initializeFromFile(posFile, allFile)
 	
-		println("Testing...")
-		val (p, r, f) = test(model, testDM)
-		println("Precision: " + p + " Recall: " + r + " Fscore: " + f)
-	}
+	println("Splitting train and test...")
+	val (trainDM : DataMatrix, testDM : DataMatrix) = dm splitTrainTest 10;
+
+	println("Training...")
+	train(trainDM);
+	var model : Model = train(trainDM);
+	
+	var modelFile : File = new File("model");
+	model save modelFile;
+	
+	println("Testing...")
+
+	val out = new java.io.FileWriter("results")
+	val (p0, r0, f0, t0) = baselineTest(trainDM, testDM)
+	println("Majority Guess Baseline - Precision: " + p0 + " Recall: " + r0 + " Fscore: " + f0 )
+	out.write("Majority Guess Baseline - Precision: " + p0 + " Recall: " + r0 + " Fscore: " + f0 + " Accuracy: " + t0 + "\n")
+
+	val (p, r, f, t) = test(model, testDM)
+	println("Parse Features - Precision: " + p + " Recall: " + r + " Fscore: " + f )
+	out.write("Parse Features - Precision: " + p + " Recall: " + r + " Fscore: " + f + " Accuracy: " + t + "\n")
+
+	out.close
 }
