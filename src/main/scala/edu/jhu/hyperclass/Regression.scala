@@ -7,6 +7,7 @@ import de.bwaldvogel.liblinear.Model;
 import de.bwaldvogel.liblinear.Parameter;
 import de.bwaldvogel.liblinear.Problem;
 import de.bwaldvogel.liblinear.SolverType;
+import scala.collection.mutable.ListBuffer
 
 object Regression extends App {
 
@@ -16,7 +17,9 @@ object Regression extends App {
 	def train(dm : DataMatrix) = { 
 		val X : Array[Array[Feature]] = dm.getX();
 		val Y : Array[Double] = dm.getY();
-		
+	
+		println(X.length)
+	
 		val problem : Problem = new Problem();
 		problem.x = X;  // feature nodes
 		problem.y = Y;  // target values
@@ -91,7 +94,7 @@ object Regression extends App {
 	
 
 	println("Initializing...")
-	var dm : DataMatrix = new DataMatrix(new Array[PhrasePair](0));
+	var dm : DataMatrix = new DataMatrix(Vector.empty);
 
 	val posFile = "output/xy4.txt"
 	val allFile = "output/joined.small"
