@@ -13,37 +13,52 @@
 [0m[[0minfo[0m] [0mResolving com.github.retronym#sbt-onejar;0.8 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.github.retronym#sbt-onejar;0.8 {compile=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: no namespace defined: using system[0m
-[0m[[0mdebug[0m] [0m	no ivy file in cache for com.github.retronym#sbt-onejar;0.8: tried /home/hltcoe/epavlick/.ivy2/cache/scala_2.9.2/sbt_0.12/com.github.retronym/sbt-onejar/ivy-0.8.xml[0m
+[0m[[0mdebug[0m] [0mNo entry is found in the ModuleDescriptorCache : /home/hltcoe/epavlick/.ivy2/cache/scala_2.9.2/sbt_0.12/com.github.retronym/sbt-onejar/ivy-0.8.xml[0m
+[0m[[0mdebug[0m] [0mpost 1.3 ivy file: using exact as default matcher[0m
+[0m[[0mdebug[0m] [0m	found ivy file in cache for com.github.retronym#sbt-onejar;0.8 (resolved by sbt-plugin-releases): /home/hltcoe/epavlick/.ivy2/cache/scala_2.9.2/sbt_0.12/com.github.retronym/sbt-onejar/ivy-0.8.xml[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.github.retronym#sbt-onejar;0.8[0m
 [0m[[0mdebug[0m] [0msbt-chain: no latest strategy defined: using default[0m
 [0m[[0mdebug[0m] [0mtypesafe-ivy-releases: no namespace defined: using system[0m
-[0m[[0mdebug[0m] [0m	no ivy file in cache for com.github.retronym#sbt-onejar;0.8: tried /home/hltcoe/epavlick/.ivy2/cache/scala_2.9.2/sbt_0.12/com.github.retronym/sbt-onejar/ivy-0.8.xml[0m
-[0m[[0mdebug[0m] [0m	 trying http://repo.typesafe.com/typesafe/ivy-releases/com.github.retronym/sbt-onejar/scala_2.9.2/sbt_0.12/0.8/ivys/ivy.xml[0m
-[0m[[0mdebug[0m] [0m		tried http://repo.typesafe.com/typesafe/ivy-releases/com.github.retronym/sbt-onejar/scala_2.9.2/sbt_0.12/0.8/ivys/ivy.xml[0m
-[0m[[0mdebug[0m] [0mHTTP response status: 404 url=http://repo.typesafe.com/typesafe/ivy-releases/com.github.retronym/sbt-onejar/scala_2.9.2/sbt_0.12/0.8/ivys/ivy.xml[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/ivy-releases/com.github.retronym/sbt-onejar/scala_2.9.2/sbt_0.12/0.8/ivys/ivy.xml[0m
-[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: resource not reachable for com.github.retronym#sbt-onejar;0.8: res=http://repo.typesafe.com/typesafe/ivy-releases/com.github.retronym/sbt-onejar/scala_2.9.2/sbt_0.12/0.8/ivys/ivy.xml[0m
-[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: no ivy file found for com.github.retronym#sbt-onejar;0.8[0m
-[0m[[0mdebug[0m] [0msbt-plugin-releases: no namespace defined: using system[0m
-[0m[[0mdebug[0m] [0m	no ivy file in cache for com.github.retronym#sbt-onejar;0.8: tried /home/hltcoe/epavlick/.ivy2/cache/scala_2.9.2/sbt_0.12/com.github.retronym/sbt-onejar/ivy-0.8.xml[0m
-[0m[[0mdebug[0m] [0m	 trying http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/com.github.retronym/sbt-onejar/scala_2.9.2/sbt_0.12/0.8/ivys/ivy.xml[0m
-[0m[[0mdebug[0m] [0m		tried http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/com.github.retronym/sbt-onejar/scala_2.9.2/sbt_0.12/0.8/ivys/ivy.xml[0m
-[0m[[0mdebug[0m] [0m	sbt-plugin-releases: found md file for com.github.retronym#sbt-onejar;0.8[0m
-[0m[[0mdebug[0m] [0m		=> http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/com.github.retronym/sbt-onejar/scala_2.9.2/sbt_0.12/0.8/ivys/ivy.xml (0.8)[0m
-[0m[[0mdebug[0m] [0m	parser = ivy parser[0m
-[0m[[0mdebug[0m] [0m	no ivy file in cache for com.github.retronym#sbt-onejar;0.8: tried /home/hltcoe/epavlick/.ivy2/cache/scala_2.9.2/sbt_0.12/com.github.retronym/sbt-onejar/ivy-0.8.xml[0m
-[0m[[0mdebug[0m] [0mdownloading http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/com.github.retronym/sbt-onejar/scala_2.9.2/sbt_0.12/0.8/ivys/ivy.xml ...[0m
-[0m[[0mdebug[0m] [0m	sbt-plugin-releases: downloading http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/com.github.retronym/sbt-onejar/scala_2.9.2/sbt_0.12/0.8/ivys/ivy.xml[0m
-[0m[[0mdebug[0m] [0m		to /home/hltcoe/epavlick/.ivy2/cache/scala_2.9.2/sbt_0.12/com.github.retronym/sbt-onejar/ivy-0.8.xml.original.part[0m
-[0m[[0mdebug[0m] [0msha1 file found for http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/com.github.retronym/sbt-onejar/scala_2.9.2/sbt_0.12/0.8/ivys/ivy.xml: checking...[0m
-[0m[[0mdebug[0m] [0m	sbt-plugin-releases: downloading http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/com.github.retronym/sbt-onejar/scala_2.9.2/sbt_0.12/0.8/ivys/ivy.xml.sha1[0m
-[0m[[0mdebug[0m] [0m		to /tmp/ivytmp1597602442049898297sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/com.github.retronym/sbt-onejar/scala_2.9.2/sbt_0.12/0.8/ivys/ivy.xml[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.retronym#sbt-onejar;0.8!ivy.xml(ivy.original) (131ms)[0m
-[0m[[0mdebug[0m] [0mpost 1.3 ivy file: using exact as default matcher[0m
-[0m[[0mdebug[0m] [0m	default-cache: parsed downloaded md file for com.github.retronym#sbt-onejar;0.8; parsed=com.github.retronym#sbt-onejar;0.8[0m
+[0m[[0mdebug[0m] [0mEntry is found in the ModuleDescriptorCache : /home/hltcoe/epavlick/.ivy2/cache/scala_2.9.2/sbt_0.12/com.github.retronym/sbt-onejar/ivy-0.8.xml[0m
+[0m[[0mdebug[0m] [0m	found ivy file in cache for com.github.retronym#sbt-onejar;0.8 (resolved by sbt-plugin-releases): /home/hltcoe/epavlick/.ivy2/cache/scala_2.9.2/sbt_0.12/com.github.retronym/sbt-onejar/ivy-0.8.xml[0m
+[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: com.github.retronym#sbt-onejar;0.8[0m
 [0m[[0mdebug[0m] [0m	checking com.github.retronym#sbt-onejar;0.8 from sbt-plugin-releases against [none][0m
 [0m[[0mdebug[0m] [0m	module revision kept as first found: com.github.retronym#sbt-onejar;0.8 from sbt-plugin-releases[0m
 [0m[[0mdebug[0m] [0m	found com.github.retronym#sbt-onejar;0.8 in sbt-plugin-releases[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#default-794259;0.1-SNAPSHOT->com.typesafe.sbt#sbt-start-script;0.6.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0mloadData of com.typesafe.sbt#sbt-start-script;0.6.0 of rootConf=compile[0m
+[0m[[0mdebug[0m] [0m	using sbt-chain to resolve com.typesafe.sbt#sbt-start-script;0.6.0[0m
+[0m[[0minfo[0m] [0mResolving com.typesafe.sbt#sbt-start-script;0.6.0 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.typesafe.sbt#sbt-start-script;0.6.0 {compile=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0m	no ivy file in cache for com.typesafe.sbt#sbt-start-script;0.6.0: tried /home/hltcoe/epavlick/.ivy2/cache/scala_2.9.2/sbt_0.12/com.typesafe.sbt/sbt-start-script/ivy-0.6.0.xml[0m
+[0m[[0mdebug[0m] [0m	no ivy file in cache for com.typesafe.sbt#sbt-start-script;0.6.0: tried /home/hltcoe/epavlick/.ivy2/cache/scala_2.9.2/sbt_0.12/com.typesafe.sbt/sbt-start-script/ivy-0.6.0.xml[0m
+[0m[[0mdebug[0m] [0m	 trying http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbt/sbt-start-script/scala_2.9.2/sbt_0.12/0.6.0/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbt/sbt-start-script/scala_2.9.2/sbt_0.12/0.6.0/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0mHTTP response status: 404 url=http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbt/sbt-start-script/scala_2.9.2/sbt_0.12/0.6.0/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbt/sbt-start-script/scala_2.9.2/sbt_0.12/0.6.0/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: resource not reachable for com.typesafe.sbt#sbt-start-script;0.6.0: res=http://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbt/sbt-start-script/scala_2.9.2/sbt_0.12/0.6.0/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: no ivy file found for com.typesafe.sbt#sbt-start-script;0.6.0[0m
+[0m[[0mdebug[0m] [0msbt-plugin-releases: no namespace defined: using system[0m
+[0m[[0mdebug[0m] [0m	no ivy file in cache for com.typesafe.sbt#sbt-start-script;0.6.0: tried /home/hltcoe/epavlick/.ivy2/cache/scala_2.9.2/sbt_0.12/com.typesafe.sbt/sbt-start-script/ivy-0.6.0.xml[0m
+[0m[[0mdebug[0m] [0m	 trying http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-start-script/scala_2.9.2/sbt_0.12/0.6.0/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-start-script/scala_2.9.2/sbt_0.12/0.6.0/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	sbt-plugin-releases: found md file for com.typesafe.sbt#sbt-start-script;0.6.0[0m
+[0m[[0mdebug[0m] [0m		=> http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-start-script/scala_2.9.2/sbt_0.12/0.6.0/ivys/ivy.xml (0.6.0)[0m
+[0m[[0mdebug[0m] [0m	parser = ivy parser[0m
+[0m[[0mdebug[0m] [0m	no ivy file in cache for com.typesafe.sbt#sbt-start-script;0.6.0: tried /home/hltcoe/epavlick/.ivy2/cache/scala_2.9.2/sbt_0.12/com.typesafe.sbt/sbt-start-script/ivy-0.6.0.xml[0m
+[0m[[0mdebug[0m] [0mdownloading http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-start-script/scala_2.9.2/sbt_0.12/0.6.0/ivys/ivy.xml ...[0m
+[0m[[0mdebug[0m] [0m	sbt-plugin-releases: downloading http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-start-script/scala_2.9.2/sbt_0.12/0.6.0/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		to /home/hltcoe/epavlick/.ivy2/cache/scala_2.9.2/sbt_0.12/com.typesafe.sbt/sbt-start-script/ivy-0.6.0.xml.original.part[0m
+[0m[[0mdebug[0m] [0msha1 file found for http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-start-script/scala_2.9.2/sbt_0.12/0.6.0/ivys/ivy.xml: checking...[0m
+[0m[[0mdebug[0m] [0m	sbt-plugin-releases: downloading http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-start-script/scala_2.9.2/sbt_0.12/0.6.0/ivys/ivy.xml.sha1[0m
+[0m[[0mdebug[0m] [0m		to /tmp/ivytmp5975787322338971533sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-start-script/scala_2.9.2/sbt_0.12/0.6.0/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.typesafe.sbt#sbt-start-script;0.6.0!ivy.xml(ivy.original) (133ms)[0m
+[0m[[0mdebug[0m] [0mpost 1.3 ivy file: using exact as default matcher[0m
+[0m[[0mdebug[0m] [0m	default-cache: parsed downloaded md file for com.typesafe.sbt#sbt-start-script;0.6.0; parsed=com.typesafe.sbt#sbt-start-script;0.6.0[0m
+[0m[[0mdebug[0m] [0m	checking com.typesafe.sbt#sbt-start-script;0.6.0 from sbt-plugin-releases against [none][0m
+[0m[[0mdebug[0m] [0m	module revision kept as first found: com.typesafe.sbt#sbt-start-script;0.6.0 from sbt-plugin-releases[0m
+[0m[[0mdebug[0m] [0m	found com.typesafe.sbt#sbt-start-script;0.6.0 in sbt-plugin-releases[0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#default-794259;0.1-SNAPSHOT [runtime][0m
 [0m[[0mdebug[0m] [0mloadData of default#default-794259;0.1-SNAPSHOT of rootConf=runtime[0m
@@ -52,6 +67,8 @@
 [0m[[0mdebug[0m] [0mruntime is loaded and no conf to load.  Skip loading[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#default-794259;0.1-SNAPSHOT->com.github.retronym#sbt-onejar;0.8 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0mloadData of com.github.retronym#sbt-onejar;0.8 of rootConf=runtime[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#default-794259;0.1-SNAPSHOT->com.typesafe.sbt#sbt-start-script;0.6.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0mloadData of com.typesafe.sbt#sbt-start-script;0.6.0 of rootConf=runtime[0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#default-794259;0.1-SNAPSHOT [test][0m
 [0m[[0mdebug[0m] [0mloadData of default#default-794259;0.1-SNAPSHOT of rootConf=test[0m
@@ -63,6 +80,8 @@
 [0m[[0mdebug[0m] [0mtest is loaded and no conf to load.  Skip loading[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#default-794259;0.1-SNAPSHOT->com.github.retronym#sbt-onejar;0.8 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0mloadData of com.github.retronym#sbt-onejar;0.8 of rootConf=test[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#default-794259;0.1-SNAPSHOT->com.typesafe.sbt#sbt-start-script;0.6.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0mloadData of com.typesafe.sbt#sbt-start-script;0.6.0 of rootConf=test[0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'provided'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#default-794259;0.1-SNAPSHOT [provided][0m
 [0m[[0mdebug[0m] [0mloadData of default#default-794259;0.1-SNAPSHOT of rootConf=provided[0m
@@ -148,8 +167,6 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#scala-library;2.9.2 {compile=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0mNo entry is found in the ModuleDescriptorCache : /home/hltcoe/epavlick/.ivy2/cache/org.scala-lang/scala-library/ivy-2.9.2.xml[0m
 [0m[[0mdebug[0m] [0mpost 1.3 ivy file: using exact as default matcher[0m
-[0m[[0mdebug[0m] [0m	resolver not found: Maven Central => trying to use the one configured for org.scala-lang#scala-library;2.9.2[0m
-[0m[[0mdebug[0m] [0m	configured resolver found for org.scala-lang#scala-library;2.9.2: sbt-chain: saving this data[0m
 [0m[[0mdebug[0m] [0m	found ivy file in cache for org.scala-lang#scala-library;2.9.2 (resolved by sbt-chain): /home/hltcoe/epavlick/.ivy2/cache/org.scala-lang/scala-library/ivy-2.9.2.xml[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.9.2[0m
 [0m[[0mdebug[0m] [0mEntry is found in the ModuleDescriptorCache : /home/hltcoe/epavlick/.ivy2/cache/org.scala-lang/scala-library/ivy-2.9.2.xml[0m
@@ -264,8 +281,6 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#scala-compiler;2.9.2 {compile=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0mNo entry is found in the ModuleDescriptorCache : /home/hltcoe/epavlick/.ivy2/cache/org.scala-lang/scala-compiler/ivy-2.9.2.xml[0m
 [0m[[0mdebug[0m] [0mpost 1.3 ivy file: using exact as default matcher[0m
-[0m[[0mdebug[0m] [0m	resolver not found: Maven Central => trying to use the one configured for org.scala-lang#scala-compiler;2.9.2[0m
-[0m[[0mdebug[0m] [0m	configured resolver found for org.scala-lang#scala-compiler;2.9.2: sbt-chain: saving this data[0m
 [0m[[0mdebug[0m] [0m	found ivy file in cache for org.scala-lang#scala-compiler;2.9.2 (resolved by sbt-chain): /home/hltcoe/epavlick/.ivy2/cache/org.scala-lang/scala-compiler/ivy-2.9.2.xml[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-compiler;2.9.2[0m
 [0m[[0mdebug[0m] [0mEntry is found in the ModuleDescriptorCache : /home/hltcoe/epavlick/.ivy2/cache/org.scala-lang/scala-compiler/ivy-2.9.2.xml[0m
@@ -356,8 +371,6 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: jline#jline;1.0 {compile=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0mNo entry is found in the ModuleDescriptorCache : /home/hltcoe/epavlick/.ivy2/cache/jline/jline/ivy-1.0.xml[0m
 [0m[[0mdebug[0m] [0mpost 1.3 ivy file: using exact as default matcher[0m
-[0m[[0mdebug[0m] [0m	resolver not found: Maven Central => trying to use the one configured for jline#jline;1.0[0m
-[0m[[0mdebug[0m] [0m	configured resolver found for jline#jline;1.0: sbt-chain: saving this data[0m
 [0m[[0mdebug[0m] [0m	found ivy file in cache for jline#jline;1.0 (resolved by sbt-chain): /home/hltcoe/epavlick/.ivy2/cache/jline/jline/ivy-1.0.xml[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: jline#jline;1.0[0m
 [0m[[0mdebug[0m] [0mEntry is found in the ModuleDescriptorCache : /home/hltcoe/epavlick/.ivy2/cache/jline/jline/ivy-1.0.xml[0m
@@ -595,8 +608,6 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-tools.sbinary#sbinary_2.9.0;0.4.0 {compile=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0mNo entry is found in the ModuleDescriptorCache : /home/hltcoe/epavlick/.ivy2/cache/org.scala-tools.sbinary/sbinary_2.9.0/ivy-0.4.0.xml[0m
 [0m[[0mdebug[0m] [0mpost 1.3 ivy file: using exact as default matcher[0m
-[0m[[0mdebug[0m] [0m	resolver not found: Maven Central => trying to use the one configured for org.scala-tools.sbinary#sbinary_2.9.0;0.4.0[0m
-[0m[[0mdebug[0m] [0m	configured resolver found for org.scala-tools.sbinary#sbinary_2.9.0;0.4.0: sbt-chain: saving this data[0m
 [0m[[0mdebug[0m] [0m	found ivy file in cache for org.scala-tools.sbinary#sbinary_2.9.0;0.4.0 (resolved by sbt-chain): /home/hltcoe/epavlick/.ivy2/cache/org.scala-tools.sbinary/sbinary_2.9.0/ivy-0.4.0.xml[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-tools.sbinary#sbinary_2.9.0;0.4.0[0m
 [0m[[0mdebug[0m] [0mEntry is found in the ModuleDescriptorCache : /home/hltcoe/epavlick/.ivy2/cache/org.scala-tools.sbinary/sbinary_2.9.0/ivy-0.4.0.xml[0m
@@ -723,8 +734,6 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.ivy#ivy;2.3.0-rc1 {compile=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0mNo entry is found in the ModuleDescriptorCache : /home/hltcoe/epavlick/.ivy2/cache/org.apache.ivy/ivy/ivy-2.3.0-rc1.xml[0m
 [0m[[0mdebug[0m] [0mpost 1.3 ivy file: using exact as default matcher[0m
-[0m[[0mdebug[0m] [0m	resolver not found: Maven Central => trying to use the one configured for org.apache.ivy#ivy;2.3.0-rc1[0m
-[0m[[0mdebug[0m] [0m	configured resolver found for org.apache.ivy#ivy;2.3.0-rc1: sbt-chain: saving this data[0m
 [0m[[0mdebug[0m] [0m	found ivy file in cache for org.apache.ivy#ivy;2.3.0-rc1 (resolved by sbt-chain): /home/hltcoe/epavlick/.ivy2/cache/org.apache.ivy/ivy/ivy-2.3.0-rc1.xml[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.apache.ivy#ivy;2.3.0-rc1[0m
 [0m[[0mdebug[0m] [0mEntry is found in the ModuleDescriptorCache : /home/hltcoe/epavlick/.ivy2/cache/org.apache.ivy/ivy/ivy-2.3.0-rc1.xml[0m
@@ -746,8 +755,6 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.jcraft#jsch;0.1.46 {compile=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0mNo entry is found in the ModuleDescriptorCache : /home/hltcoe/epavlick/.ivy2/cache/com.jcraft/jsch/ivy-0.1.46.xml[0m
 [0m[[0mdebug[0m] [0mpost 1.3 ivy file: using exact as default matcher[0m
-[0m[[0mdebug[0m] [0m	resolver not found: Maven Central => trying to use the one configured for com.jcraft#jsch;0.1.46[0m
-[0m[[0mdebug[0m] [0m	configured resolver found for com.jcraft#jsch;0.1.46: sbt-chain: saving this data[0m
 [0m[[0mdebug[0m] [0m	found ivy file in cache for com.jcraft#jsch;0.1.46 (resolved by sbt-chain): /home/hltcoe/epavlick/.ivy2/cache/com.jcraft/jsch/ivy-0.1.46.xml[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.jcraft#jsch;0.1.46[0m
 [0m[[0mdebug[0m] [0mEntry is found in the ModuleDescriptorCache : /home/hltcoe/epavlick/.ivy2/cache/com.jcraft/jsch/ivy-0.1.46.xml[0m
@@ -769,8 +776,6 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: commons-httpclient#commons-httpclient;3.1 {compile=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0mNo entry is found in the ModuleDescriptorCache : /home/hltcoe/epavlick/.ivy2/cache/commons-httpclient/commons-httpclient/ivy-3.1.xml[0m
 [0m[[0mdebug[0m] [0mpost 1.3 ivy file: using exact as default matcher[0m
-[0m[[0mdebug[0m] [0m	resolver not found: Maven Central => trying to use the one configured for commons-httpclient#commons-httpclient;3.1[0m
-[0m[[0mdebug[0m] [0m	configured resolver found for commons-httpclient#commons-httpclient;3.1: sbt-chain: saving this data[0m
 [0m[[0mdebug[0m] [0m	found ivy file in cache for commons-httpclient#commons-httpclient;3.1 (resolved by sbt-chain): /home/hltcoe/epavlick/.ivy2/cache/commons-httpclient/commons-httpclient/ivy-3.1.xml[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: commons-httpclient#commons-httpclient;3.1[0m
 [0m[[0mdebug[0m] [0mEntry is found in the ModuleDescriptorCache : /home/hltcoe/epavlick/.ivy2/cache/commons-httpclient/commons-httpclient/ivy-3.1.xml[0m
@@ -790,8 +795,6 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: commons-logging#commons-logging;1.0.4 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
 [0m[[0mdebug[0m] [0mNo entry is found in the ModuleDescriptorCache : /home/hltcoe/epavlick/.ivy2/cache/commons-logging/commons-logging/ivy-1.0.4.xml[0m
 [0m[[0mdebug[0m] [0mpost 1.3 ivy file: using exact as default matcher[0m
-[0m[[0mdebug[0m] [0m	resolver not found: Maven Central => trying to use the one configured for commons-logging#commons-logging;1.0.4[0m
-[0m[[0mdebug[0m] [0m	configured resolver found for commons-logging#commons-logging;1.0.4: sbt-chain: saving this data[0m
 [0m[[0mdebug[0m] [0m	found ivy file in cache for commons-logging#commons-logging;1.0.4 (resolved by sbt-chain): /home/hltcoe/epavlick/.ivy2/cache/commons-logging/commons-logging/ivy-1.0.4.xml[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: commons-logging#commons-logging;1.0.4[0m
 [0m[[0mdebug[0m] [0mEntry is found in the ModuleDescriptorCache : /home/hltcoe/epavlick/.ivy2/cache/commons-logging/commons-logging/ivy-1.0.4.xml[0m
@@ -809,8 +812,6 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: commons-codec#commons-codec;1.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
 [0m[[0mdebug[0m] [0mNo entry is found in the ModuleDescriptorCache : /home/hltcoe/epavlick/.ivy2/cache/commons-codec/commons-codec/ivy-1.2.xml[0m
 [0m[[0mdebug[0m] [0mpost 1.3 ivy file: using exact as default matcher[0m
-[0m[[0mdebug[0m] [0m	resolver not found: Maven Central => trying to use the one configured for commons-codec#commons-codec;1.2[0m
-[0m[[0mdebug[0m] [0m	configured resolver found for commons-codec#commons-codec;1.2: sbt-chain: saving this data[0m
 [0m[[0mdebug[0m] [0m	found ivy file in cache for commons-codec#commons-codec;1.2 (resolved by sbt-chain): /home/hltcoe/epavlick/.ivy2/cache/commons-codec/commons-codec/ivy-1.2.xml[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: commons-codec#commons-codec;1.2[0m
 [0m[[0mdebug[0m] [0mEntry is found in the ModuleDescriptorCache : /home/hltcoe/epavlick/.ivy2/cache/commons-codec/commons-codec/ivy-1.2.xml[0m
@@ -1111,8 +1112,6 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-tools.testing#test-interface;0.5 {compile=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0mNo entry is found in the ModuleDescriptorCache : /home/hltcoe/epavlick/.ivy2/cache/org.scala-tools.testing/test-interface/ivy-0.5.xml[0m
 [0m[[0mdebug[0m] [0mpost 1.3 ivy file: using exact as default matcher[0m
-[0m[[0mdebug[0m] [0m	resolver not found: Maven Central => trying to use the one configured for org.scala-tools.testing#test-interface;0.5[0m
-[0m[[0mdebug[0m] [0m	configured resolver found for org.scala-tools.testing#test-interface;0.5: sbt-chain: saving this data[0m
 [0m[[0mdebug[0m] [0m	found ivy file in cache for org.scala-tools.testing#test-interface;0.5 (resolved by sbt-chain): /home/hltcoe/epavlick/.ivy2/cache/org.scala-tools.testing/test-interface/ivy-0.5.xml[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-tools.testing#test-interface;0.5[0m
 [0m[[0mdebug[0m] [0mEntry is found in the ModuleDescriptorCache : /home/hltcoe/epavlick/.ivy2/cache/org.scala-tools.testing/test-interface/ivy-0.5.xml[0m
@@ -1418,6 +1417,8 @@
 [0m[[0mdebug[0m] [0mcompile-internal is loaded and no conf to load.  Skip loading[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#default-794259;0.1-SNAPSHOT->com.github.retronym#sbt-onejar;0.8 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0mloadData of com.github.retronym#sbt-onejar;0.8 of rootConf=compile-internal[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#default-794259;0.1-SNAPSHOT->com.typesafe.sbt#sbt-start-script;0.6.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0mloadData of com.typesafe.sbt#sbt-start-script;0.6.0 of rootConf=compile-internal[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#default-794259;0.1-SNAPSHOT [optional][0m
 [0m[[0mdebug[0m] [0mloadData of default#default-794259;0.1-SNAPSHOT of rootConf=compile-internal[0m
 [0m[[0mdebug[0m] [0mcompile-internal is loaded and no conf to load.  Skip loading[0m
@@ -2256,6 +2257,8 @@
 [0m[[0mdebug[0m] [0mruntime-internal is loaded and no conf to load.  Skip loading[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#default-794259;0.1-SNAPSHOT->com.github.retronym#sbt-onejar;0.8 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0mloadData of com.github.retronym#sbt-onejar;0.8 of rootConf=runtime-internal[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#default-794259;0.1-SNAPSHOT->com.typesafe.sbt#sbt-start-script;0.6.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0mloadData of com.typesafe.sbt#sbt-start-script;0.6.0 of rootConf=runtime-internal[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#default-794259;0.1-SNAPSHOT [optional][0m
 [0m[[0mdebug[0m] [0mloadData of default#default-794259;0.1-SNAPSHOT of rootConf=runtime-internal[0m
 [0m[[0mdebug[0m] [0mruntime-internal is loaded and no conf to load.  Skip loading[0m
@@ -2273,6 +2276,8 @@
 [0m[[0mdebug[0m] [0mtest-internal is loaded and no conf to load.  Skip loading[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#default-794259;0.1-SNAPSHOT->com.github.retronym#sbt-onejar;0.8 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0mloadData of com.github.retronym#sbt-onejar;0.8 of rootConf=test-internal[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#default-794259;0.1-SNAPSHOT->com.typesafe.sbt#sbt-start-script;0.6.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0mloadData of com.typesafe.sbt#sbt-start-script;0.6.0 of rootConf=test-internal[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#default-794259;0.1-SNAPSHOT [optional][0m
 [0m[[0mdebug[0m] [0mloadData of default#default-794259;0.1-SNAPSHOT of rootConf=test-internal[0m
 [0m[[0mdebug[0m] [0mtest-internal is loaded and no conf to load.  Skip loading[0m
@@ -3112,12 +3117,19 @@
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'pom'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#default-794259;0.1-SNAPSHOT [pom][0m
 [0m[[0mdebug[0m] [0mloadData of default#default-794259;0.1-SNAPSHOT of rootConf=pom[0m
-[0m[[0mdebug[0m] [0mNbr of module to sort : 42[0m
+[0m[[0mdebug[0m] [0mNbr of module to sort : 43[0m
 [0m[[0mdebug[0m] [0mSort dependencies of : com.github.retronym#sbt-onejar;0.8 / Number of dependencies = 2[0m
 [0m[[0mdebug[0m] [0mNon matching revision detected when sorting.  com.github.retronym#sbt-onejar depends on org.scala-sbt#sbt;0.12.0-RC3, doesn't match org.scala-sbt#sbt;0.12.1[0m
 [0m[[0mdebug[0m] [0mSort dependencies of : org.scala-lang#scala-library;2.9.2 / Number of dependencies = 0[0m
 [0m[[0mdebug[0m] [0mSort done for : org.scala-lang#scala-library;2.9.2[0m
 [0m[[0mdebug[0m] [0mSort done for : com.github.retronym#sbt-onejar;0.8[0m
+[0m[[0mdebug[0m] [0mSort dependencies of : com.typesafe.sbt#sbt-start-script;0.6.0 / Number of dependencies = 5[0m
+[0m[[0mdebug[0m] [0mNon matching revision detected when sorting.  com.typesafe.sbt#sbt-start-script depends on org.scala-sbt#sbt;0.12.0, doesn't match org.scala-sbt#sbt;0.12.1[0m
+[0m[[0mdebug[0m] [0mModule descriptor is processed : org.scala-lang#scala-library;2.9.2[0m
+[0m[[0mdebug[0m] [0mNon matching revision detected when sorting.  com.typesafe.sbt#sbt-start-script depends on org.scala-sbt#io;0.12.0, doesn't match org.scala-sbt#io;0.12.1[0m
+[0m[[0mdebug[0m] [0mNon matching revision detected when sorting.  com.typesafe.sbt#sbt-start-script depends on org.scala-sbt#logging;0.12.0, doesn't match org.scala-sbt#logging;0.12.1[0m
+[0m[[0mdebug[0m] [0mNon matching revision detected when sorting.  com.typesafe.sbt#sbt-start-script depends on org.scala-sbt#process;0.12.0, doesn't match org.scala-sbt#process;0.12.1[0m
+[0m[[0mdebug[0m] [0mSort done for : com.typesafe.sbt#sbt-start-script;0.6.0[0m
 [0m[[0mdebug[0m] [0mSort dependencies of : org.scala-sbt#sbt;0.12.1 / Number of dependencies = 6[0m
 [0m[[0mdebug[0m] [0mSort dependencies of : org.scala-sbt#main;0.12.1 / Number of dependencies = 12[0m
 [0m[[0mdebug[0m] [0mSort dependencies of : org.scala-sbt#actions;0.12.1 / Number of dependencies = 16[0m
@@ -3358,16 +3370,17 @@
 [0m[[0mdebug[0m] [0morg.scala-lang#scala-compiler;2.9.2 in compile-internal: excluding org.scala-lang#scala-compiler;2.9.2!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	resolved ivy file produced in /home/hltcoe/epavlick/hyperclass/repo/project/target/resolution-cache/default/default-794259/scala_2.9.2/sbt_0.12/0.1-SNAPSHOT/resolved.xml.xml[0m
 [0m[[0mdebug[0m] [0m:: downloading artifacts ::[0m
-[0m[[0mdebug[0m] [0m	 trying http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/com.github.retronym/sbt-onejar/scala_2.9.2/sbt_0.12/0.8/jars/sbt-onejar.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/com.github.retronym/sbt-onejar/scala_2.9.2/sbt_0.12/0.8/jars/sbt-onejar.jar[0m
-[0m[[0minfo[0m] [0mdownloading http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/com.github.retronym/sbt-onejar/scala_2.9.2/sbt_0.12/0.8/jars/sbt-onejar.jar ...[0m
-[0m[[0mdebug[0m] [0m	sbt-plugin-releases: downloading http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/com.github.retronym/sbt-onejar/scala_2.9.2/sbt_0.12/0.8/jars/sbt-onejar.jar[0m
-[0m[[0mdebug[0m] [0m		to /home/hltcoe/epavlick/.ivy2/cache/scala_2.9.2/sbt_0.12/com.github.retronym/sbt-onejar/jars/sbt-onejar-0.8.jar.part[0m
-[0m[[0mdebug[0m] [0msha1 file found for http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/com.github.retronym/sbt-onejar/scala_2.9.2/sbt_0.12/0.8/jars/sbt-onejar.jar: checking...[0m
-[0m[[0mdebug[0m] [0m	sbt-plugin-releases: downloading http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/com.github.retronym/sbt-onejar/scala_2.9.2/sbt_0.12/0.8/jars/sbt-onejar.jar.sha1[0m
-[0m[[0mdebug[0m] [0m		to /tmp/ivytmp4002911251141513484sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/com.github.retronym/sbt-onejar/scala_2.9.2/sbt_0.12/0.8/jars/sbt-onejar.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.github.retronym#sbt-onejar;0.8!sbt-onejar.jar (168ms)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.github.retronym#sbt-onejar;0.8!sbt-onejar.jar[0m
+[0m[[0mdebug[0m] [0m	 trying http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-start-script/scala_2.9.2/sbt_0.12/0.6.0/jars/sbt-start-script.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-start-script/scala_2.9.2/sbt_0.12/0.6.0/jars/sbt-start-script.jar[0m
+[0m[[0minfo[0m] [0mdownloading http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-start-script/scala_2.9.2/sbt_0.12/0.6.0/jars/sbt-start-script.jar ...[0m
+[0m[[0mdebug[0m] [0m	sbt-plugin-releases: downloading http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-start-script/scala_2.9.2/sbt_0.12/0.6.0/jars/sbt-start-script.jar[0m
+[0m[[0mdebug[0m] [0m		to /home/hltcoe/epavlick/.ivy2/cache/scala_2.9.2/sbt_0.12/com.typesafe.sbt/sbt-start-script/jars/sbt-start-script-0.6.0.jar.part[0m
+[0m[[0mdebug[0m] [0msha1 file found for http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-start-script/scala_2.9.2/sbt_0.12/0.6.0/jars/sbt-start-script.jar: checking...[0m
+[0m[[0mdebug[0m] [0m	sbt-plugin-releases: downloading http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-start-script/scala_2.9.2/sbt_0.12/0.6.0/jars/sbt-start-script.jar.sha1[0m
+[0m[[0mdebug[0m] [0m		to /tmp/ivytmp8550933666450753529sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-start-script/scala_2.9.2/sbt_0.12/0.6.0/jars/sbt-start-script.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.typesafe.sbt#sbt-start-script;0.6.0!sbt-start-script.jar (155ms)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#sbt;0.12.1!sbt.jar[0m
 [0m[[0mdebug[0m] [0morg.scala-lang#scala-library;2.9.2 in test-internal: excluding org.scala-lang#scala-library;2.9.2!scala-library.jar[0m
 [0m[[0mdebug[0m] [0morg.scala-lang#scala-library;2.9.2 in provided: excluding org.scala-lang#scala-library;2.9.2!scala-library.jar[0m
@@ -3420,18 +3433,24 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#cache;0.12.1!cache.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#test-agent;0.12.1!test-agent.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-tools.testing#test-interface;0.5!test-interface.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 1866ms :: artifacts dl 237ms[0m
-[0m[[0mdebug[0m] [0mNbr of module to sort : 1[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 9507ms :: artifacts dl 303ms[0m
+[0m[[0mdebug[0m] [0mNbr of module to sort : 2[0m
 [0m[[0mdebug[0m] [0mSort dependencies of : com.github.retronym#sbt-onejar;0.8 / Number of dependencies = 2[0m
 [0m[[0mdebug[0m] [0mSort done for : com.github.retronym#sbt-onejar;0.8[0m
+[0m[[0mdebug[0m] [0mSort dependencies of : com.typesafe.sbt#sbt-start-script;0.6.0 / Number of dependencies = 5[0m
+[0m[[0mdebug[0m] [0mSort done for : com.typesafe.sbt#sbt-start-script;0.6.0[0m
 [0m[[0mdebug[0m] [0m	report for default#default-794259;0.1-SNAPSHOT compile produced in /home/hltcoe/epavlick/hyperclass/repo/project/target/resolution-cache/reports/default-default-794259/compile-resolved.xml[0m
-[0m[[0mdebug[0m] [0mNbr of module to sort : 1[0m
+[0m[[0mdebug[0m] [0mNbr of module to sort : 2[0m
 [0m[[0mdebug[0m] [0mSort dependencies of : com.github.retronym#sbt-onejar;0.8 / Number of dependencies = 2[0m
 [0m[[0mdebug[0m] [0mSort done for : com.github.retronym#sbt-onejar;0.8[0m
+[0m[[0mdebug[0m] [0mSort dependencies of : com.typesafe.sbt#sbt-start-script;0.6.0 / Number of dependencies = 5[0m
+[0m[[0mdebug[0m] [0mSort done for : com.typesafe.sbt#sbt-start-script;0.6.0[0m
 [0m[[0mdebug[0m] [0m	report for default#default-794259;0.1-SNAPSHOT runtime produced in /home/hltcoe/epavlick/hyperclass/repo/project/target/resolution-cache/reports/default-default-794259/runtime-resolved.xml[0m
-[0m[[0mdebug[0m] [0mNbr of module to sort : 1[0m
+[0m[[0mdebug[0m] [0mNbr of module to sort : 2[0m
 [0m[[0mdebug[0m] [0mSort dependencies of : com.github.retronym#sbt-onejar;0.8 / Number of dependencies = 2[0m
 [0m[[0mdebug[0m] [0mSort done for : com.github.retronym#sbt-onejar;0.8[0m
+[0m[[0mdebug[0m] [0mSort dependencies of : com.typesafe.sbt#sbt-start-script;0.6.0 / Number of dependencies = 5[0m
+[0m[[0mdebug[0m] [0mSort done for : com.typesafe.sbt#sbt-start-script;0.6.0[0m
 [0m[[0mdebug[0m] [0m	report for default#default-794259;0.1-SNAPSHOT test produced in /home/hltcoe/epavlick/hyperclass/repo/project/target/resolution-cache/reports/default-default-794259/test-resolved.xml[0m
 [0m[[0mdebug[0m] [0mNbr of module to sort : 41[0m
 [0m[[0mdebug[0m] [0mSort dependencies of : org.scala-sbt#sbt;0.12.1 / Number of dependencies = 6[0m
@@ -3670,12 +3689,19 @@
 [0m[[0mdebug[0m] [0m	report for default#default-794259;0.1-SNAPSHOT provided produced in /home/hltcoe/epavlick/hyperclass/repo/project/target/resolution-cache/reports/default-default-794259/provided-resolved.xml[0m
 [0m[[0mdebug[0m] [0mNbr of module to sort : 0[0m
 [0m[[0mdebug[0m] [0m	report for default#default-794259;0.1-SNAPSHOT optional produced in /home/hltcoe/epavlick/hyperclass/repo/project/target/resolution-cache/reports/default-default-794259/optional-resolved.xml[0m
-[0m[[0mdebug[0m] [0mNbr of module to sort : 42[0m
+[0m[[0mdebug[0m] [0mNbr of module to sort : 43[0m
 [0m[[0mdebug[0m] [0mSort dependencies of : com.github.retronym#sbt-onejar;0.8 / Number of dependencies = 2[0m
 [0m[[0mdebug[0m] [0mNon matching revision detected when sorting.  com.github.retronym#sbt-onejar depends on org.scala-sbt#sbt;0.12.0-RC3, doesn't match org.scala-sbt#sbt;0.12.1[0m
 [0m[[0mdebug[0m] [0mSort dependencies of : org.scala-lang#scala-library;2.9.2 / Number of dependencies = 0[0m
 [0m[[0mdebug[0m] [0mSort done for : org.scala-lang#scala-library;2.9.2[0m
 [0m[[0mdebug[0m] [0mSort done for : com.github.retronym#sbt-onejar;0.8[0m
+[0m[[0mdebug[0m] [0mSort dependencies of : com.typesafe.sbt#sbt-start-script;0.6.0 / Number of dependencies = 5[0m
+[0m[[0mdebug[0m] [0mNon matching revision detected when sorting.  com.typesafe.sbt#sbt-start-script depends on org.scala-sbt#sbt;0.12.0, doesn't match org.scala-sbt#sbt;0.12.1[0m
+[0m[[0mdebug[0m] [0mModule descriptor is processed : org.scala-lang#scala-library;2.9.2[0m
+[0m[[0mdebug[0m] [0mNon matching revision detected when sorting.  com.typesafe.sbt#sbt-start-script depends on org.scala-sbt#io;0.12.0, doesn't match org.scala-sbt#io;0.12.1[0m
+[0m[[0mdebug[0m] [0mNon matching revision detected when sorting.  com.typesafe.sbt#sbt-start-script depends on org.scala-sbt#logging;0.12.0, doesn't match org.scala-sbt#logging;0.12.1[0m
+[0m[[0mdebug[0m] [0mNon matching revision detected when sorting.  com.typesafe.sbt#sbt-start-script depends on org.scala-sbt#process;0.12.0, doesn't match org.scala-sbt#process;0.12.1[0m
+[0m[[0mdebug[0m] [0mSort done for : com.typesafe.sbt#sbt-start-script;0.6.0[0m
 [0m[[0mdebug[0m] [0mSort dependencies of : org.scala-sbt#sbt;0.12.1 / Number of dependencies = 6[0m
 [0m[[0mdebug[0m] [0mSort dependencies of : org.scala-sbt#main;0.12.1 / Number of dependencies = 12[0m
 [0m[[0mdebug[0m] [0mSort dependencies of : org.scala-sbt#actions;0.12.1 / Number of dependencies = 16[0m
@@ -3909,16 +3935,25 @@
 [0m[[0mdebug[0m] [0mModule descriptor is processed : org.scala-sbt#precompiled-2_8_2;0.12.1[0m
 [0m[[0mdebug[0m] [0mModule descriptor is processed : org.scala-sbt#precompiled-2_10_0-m7;0.12.1[0m
 [0m[[0mdebug[0m] [0m	report for default#default-794259;0.1-SNAPSHOT compile-internal produced in /home/hltcoe/epavlick/hyperclass/repo/project/target/resolution-cache/reports/default-default-794259/compile-internal-resolved.xml[0m
-[0m[[0mdebug[0m] [0mNbr of module to sort : 1[0m
+[0m[[0mdebug[0m] [0mNbr of module to sort : 2[0m
 [0m[[0mdebug[0m] [0mSort dependencies of : com.github.retronym#sbt-onejar;0.8 / Number of dependencies = 2[0m
 [0m[[0mdebug[0m] [0mSort done for : com.github.retronym#sbt-onejar;0.8[0m
+[0m[[0mdebug[0m] [0mSort dependencies of : com.typesafe.sbt#sbt-start-script;0.6.0 / Number of dependencies = 5[0m
+[0m[[0mdebug[0m] [0mSort done for : com.typesafe.sbt#sbt-start-script;0.6.0[0m
 [0m[[0mdebug[0m] [0m	report for default#default-794259;0.1-SNAPSHOT runtime-internal produced in /home/hltcoe/epavlick/hyperclass/repo/project/target/resolution-cache/reports/default-default-794259/runtime-internal-resolved.xml[0m
-[0m[[0mdebug[0m] [0mNbr of module to sort : 42[0m
+[0m[[0mdebug[0m] [0mNbr of module to sort : 43[0m
 [0m[[0mdebug[0m] [0mSort dependencies of : com.github.retronym#sbt-onejar;0.8 / Number of dependencies = 2[0m
 [0m[[0mdebug[0m] [0mNon matching revision detected when sorting.  com.github.retronym#sbt-onejar depends on org.scala-sbt#sbt;0.12.0-RC3, doesn't match org.scala-sbt#sbt;0.12.1[0m
 [0m[[0mdebug[0m] [0mSort dependencies of : org.scala-lang#scala-library;2.9.2 / Number of dependencies = 0[0m
 [0m[[0mdebug[0m] [0mSort done for : org.scala-lang#scala-library;2.9.2[0m
 [0m[[0mdebug[0m] [0mSort done for : com.github.retronym#sbt-onejar;0.8[0m
+[0m[[0mdebug[0m] [0mSort dependencies of : com.typesafe.sbt#sbt-start-script;0.6.0 / Number of dependencies = 5[0m
+[0m[[0mdebug[0m] [0mNon matching revision detected when sorting.  com.typesafe.sbt#sbt-start-script depends on org.scala-sbt#sbt;0.12.0, doesn't match org.scala-sbt#sbt;0.12.1[0m
+[0m[[0mdebug[0m] [0mModule descriptor is processed : org.scala-lang#scala-library;2.9.2[0m
+[0m[[0mdebug[0m] [0mNon matching revision detected when sorting.  com.typesafe.sbt#sbt-start-script depends on org.scala-sbt#io;0.12.0, doesn't match org.scala-sbt#io;0.12.1[0m
+[0m[[0mdebug[0m] [0mNon matching revision detected when sorting.  com.typesafe.sbt#sbt-start-script depends on org.scala-sbt#logging;0.12.0, doesn't match org.scala-sbt#logging;0.12.1[0m
+[0m[[0mdebug[0m] [0mNon matching revision detected when sorting.  com.typesafe.sbt#sbt-start-script depends on org.scala-sbt#process;0.12.0, doesn't match org.scala-sbt#process;0.12.1[0m
+[0m[[0mdebug[0m] [0mSort done for : com.typesafe.sbt#sbt-start-script;0.6.0[0m
 [0m[[0mdebug[0m] [0mSort dependencies of : org.scala-sbt#sbt;0.12.1 / Number of dependencies = 6[0m
 [0m[[0mdebug[0m] [0mSort dependencies of : org.scala-sbt#main;0.12.1 / Number of dependencies = 12[0m
 [0m[[0mdebug[0m] [0mSort dependencies of : org.scala-sbt#actions;0.12.1 / Number of dependencies = 16[0m
@@ -4160,5 +4195,5 @@
 [0m[[0mdebug[0m] [0m	report for default#default-794259;0.1-SNAPSHOT docs produced in /home/hltcoe/epavlick/hyperclass/repo/project/target/resolution-cache/reports/default-default-794259/docs-resolved.xml[0m
 [0m[[0mdebug[0m] [0mNbr of module to sort : 0[0m
 [0m[[0mdebug[0m] [0m	report for default#default-794259;0.1-SNAPSHOT pom produced in /home/hltcoe/epavlick/hyperclass/repo/project/target/resolution-cache/reports/default-default-794259/pom-resolved.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (1866ms resolve - 237ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (9507ms resolve - 303ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

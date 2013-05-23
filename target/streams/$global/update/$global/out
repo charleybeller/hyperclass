@@ -309,49 +309,13 @@
 [0m[[0mdebug[0m] [0m	using sbt-chain to resolve edu.mit#jwi;2.2.3[0m
 [0m[[0minfo[0m] [0mResolving edu.mit#jwi;2.2.3 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: edu.mit#jwi;2.2.3 {compile=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0m	no ivy file in cache for edu.mit#jwi;2.2.3: tried /home/hltcoe/epavlick/.ivy2/cache/edu.mit/jwi/ivy-2.2.3.xml[0m
-[0m[[0mdebug[0m] [0m	no ivy file in cache for edu.mit#jwi;2.2.3: tried /home/hltcoe/epavlick/.ivy2/cache/edu.mit/jwi/ivy-2.2.3.xml[0m
-[0m[[0mdebug[0m] [0m	 trying /home/hltcoe/epavlick/.ivy2/local/edu.mit/jwi/2.2.3/ivys/ivy.xml[0m
-[0m[[0mdebug[0m] [0m		tried /home/hltcoe/epavlick/.ivy2/local/edu.mit/jwi/2.2.3/ivys/ivy.xml[0m
-[0m[[0mdebug[0m] [0m	local: resource not reachable for edu.mit#jwi;2.2.3: res=/home/hltcoe/epavlick/.ivy2/local/edu.mit/jwi/2.2.3/ivys/ivy.xml[0m
-[0m[[0mdebug[0m] [0m	local: no ivy file found for edu.mit#jwi;2.2.3[0m
-[0m[[0mdebug[0m] [0mSonatype Snapshots: no namespace defined: using system[0m
-[0m[[0mdebug[0m] [0m	no ivy file in cache for edu.mit#jwi;2.2.3: tried /home/hltcoe/epavlick/.ivy2/cache/edu.mit/jwi/ivy-2.2.3.xml[0m
-[0m[[0mdebug[0m] [0m	 trying https://oss.sonatype.org/content/repositories/snapshots/edu/mit/jwi/2.2.3/jwi-2.2.3.pom[0m
-[0m[[0mdebug[0m] [0m		tried https://oss.sonatype.org/content/repositories/snapshots/edu/mit/jwi/2.2.3/jwi-2.2.3.pom[0m
-[0m[[0mdebug[0m] [0mHTTP response status: 404 url=https://oss.sonatype.org/content/repositories/snapshots/edu/mit/jwi/2.2.3/jwi-2.2.3.pom[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Item not found for request "ResourceStoreRequest{requestPath='/edu/mit/jwi/2.2.3/jwi-2.2.3.pom', requestContext=RequestContext{this={request.address=128.220.159.10, request.remoteOnly=false, request.url=http://oss.sonatype.org/content/repositories/snapshots/edu/mit/jwi/2.2.3/jwi-2.2.3.pom, request.user=anonymous, request.localOnly=false, request.agent=Apache Ivy/2.3.0-rc1, request.asExpired=false, request.appRootUrl=https://oss.sonatype.org/}, parent=null}, pathStack=[/repositories/snapshots/edu/mit/jwi/2.2.3/jwi-2.2.3.pom], processedRepositories=[snapshots], appliedMappings={}}" in repository ""Snapshots" [id=snapshots]"! url=https://oss.sonatype.org/content/repositories/snapshots/edu/mit/jwi/2.2.3/jwi-2.2.3.pom[0m
-[0m[[0mdebug[0m] [0m	Sonatype Snapshots: resource not reachable for edu/mit#jwi;2.2.3: res=https://oss.sonatype.org/content/repositories/snapshots/edu/mit/jwi/2.2.3/jwi-2.2.3.pom[0m
-[0m[[0mdebug[0m] [0m	Sonatype Snapshots: no ivy file found for edu.mit#jwi;2.2.3[0m
-[0m[[0mdebug[0m] [0mpublic: no namespace defined: using system[0m
-[0m[[0mdebug[0m] [0m	no ivy file in cache for edu.mit#jwi;2.2.3: tried /home/hltcoe/epavlick/.ivy2/cache/edu.mit/jwi/ivy-2.2.3.xml[0m
-[0m[[0mdebug[0m] [0m	 trying http://repo1.maven.org/maven2/edu/mit/jwi/2.2.3/jwi-2.2.3.pom[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/edu/mit/jwi/2.2.3/jwi-2.2.3.pom[0m
-[0m[[0mdebug[0m] [0m	public: found md file for edu.mit#jwi;2.2.3[0m
-[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/edu/mit/jwi/2.2.3/jwi-2.2.3.pom (2.2.3)[0m
-[0m[[0mdebug[0m] [0m	parser = sbt.CustomPomParser@76612299[0m
-[0m[[0mdebug[0m] [0m	no ivy file in cache for edu.mit#jwi;2.2.3: tried /home/hltcoe/epavlick/.ivy2/cache/edu.mit/jwi/ivy-2.2.3.xml[0m
-[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/edu/mit/jwi/2.2.3/jwi-2.2.3.pom ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/edu/mit/jwi/2.2.3/jwi-2.2.3.pom[0m
-[0m[[0mdebug[0m] [0m		to /home/hltcoe/epavlick/.ivy2/cache/edu.mit/jwi/ivy-2.2.3.xml.original.part[0m
-[0m[[0mdebug[0m] [0msha1 file found for http://repo1.maven.org/maven2/edu/mit/jwi/2.2.3/jwi-2.2.3.pom: checking...[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/edu/mit/jwi/2.2.3/jwi-2.2.3.pom.sha1[0m
-[0m[[0mdebug[0m] [0m		to /tmp/ivytmp313119817558251012sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/edu/mit/jwi/2.2.3/jwi-2.2.3.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] edu.mit#jwi;2.2.3!jwi.pom(pom.original) (50ms)[0m
-[0m[[0mdebug[0m] [0m	 trying /home/hltcoe/epavlick/.ivy2/local/edu.mit/jwi/2.2.3/jars/jwi.jar[0m
-[0m[[0mdebug[0m] [0m		tried /home/hltcoe/epavlick/.ivy2/local/edu.mit/jwi/2.2.3/jars/jwi.jar[0m
-[0m[[0mdebug[0m] [0m	local: resource not reachable for edu.mit#jwi;2.2.3: res=/home/hltcoe/epavlick/.ivy2/local/edu.mit/jwi/2.2.3/jars/jwi.jar[0m
-[0m[[0mdebug[0m] [0m	 trying https://oss.sonatype.org/content/repositories/snapshots/edu/mit/jwi/2.2.3/jwi-2.2.3.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://oss.sonatype.org/content/repositories/snapshots/edu/mit/jwi/2.2.3/jwi-2.2.3.jar[0m
-[0m[[0mdebug[0m] [0mHTTP response status: 404 url=https://oss.sonatype.org/content/repositories/snapshots/edu/mit/jwi/2.2.3/jwi-2.2.3.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Item not found for request "ResourceStoreRequest{requestPath='/edu/mit/jwi/2.2.3/jwi-2.2.3.jar', requestContext=RequestContext{this={request.address=128.220.159.10, request.remoteOnly=false, request.url=http://oss.sonatype.org/content/repositories/snapshots/edu/mit/jwi/2.2.3/jwi-2.2.3.jar, request.user=anonymous, request.localOnly=false, request.agent=Apache Ivy/2.3.0-rc1, request.asExpired=false, request.appRootUrl=https://oss.sonatype.org/}, parent=null}, pathStack=[/repositories/snapshots/edu/mit/jwi/2.2.3/jwi-2.2.3.jar], processedRepositories=[snapshots], appliedMappings={}}" in repository ""Snapshots" [id=snapshots]"! url=https://oss.sonatype.org/content/repositories/snapshots/edu/mit/jwi/2.2.3/jwi-2.2.3.jar[0m
-[0m[[0mdebug[0m] [0m	Sonatype Snapshots: resource not reachable for edu/mit#jwi;2.2.3: res=https://oss.sonatype.org/content/repositories/snapshots/edu/mit/jwi/2.2.3/jwi-2.2.3.jar[0m
-[0m[[0mdebug[0m] [0m	 trying http://repo1.maven.org/maven2/edu/mit/jwi/2.2.3/jwi-2.2.3.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/edu/mit/jwi/2.2.3/jwi-2.2.3.jar[0m
-[0m[[0mdebug[0m] [0mno source artifact found for edu.mit#jwi;2.2.3[0m
-[0m[[0mdebug[0m] [0mno javadoc artifact found for edu.mit#jwi;2.2.3[0m
-[0m[[0mdebug[0m] [0m	default-cache: parsed downloaded md file for edu.mit#jwi;2.2.3; parsed=edu.mit#jwi;2.2.3[0m
+[0m[[0mdebug[0m] [0mNo entry is found in the ModuleDescriptorCache : /home/hltcoe/epavlick/.ivy2/cache/edu.mit/jwi/ivy-2.2.3.xml[0m
+[0m[[0mdebug[0m] [0mpost 1.3 ivy file: using exact as default matcher[0m
+[0m[[0mdebug[0m] [0m	found ivy file in cache for edu.mit#jwi;2.2.3 (resolved by public): /home/hltcoe/epavlick/.ivy2/cache/edu.mit/jwi/ivy-2.2.3.xml[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: edu.mit#jwi;2.2.3[0m
+[0m[[0mdebug[0m] [0mEntry is found in the ModuleDescriptorCache : /home/hltcoe/epavlick/.ivy2/cache/edu.mit/jwi/ivy-2.2.3.xml[0m
+[0m[[0mdebug[0m] [0m	found ivy file in cache for edu.mit#jwi;2.2.3 (resolved by public): /home/hltcoe/epavlick/.ivy2/cache/edu.mit/jwi/ivy-2.2.3.xml[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: edu.mit#jwi;2.2.3[0m
 [0m[[0mdebug[0m] [0m	checking edu.mit#jwi;2.2.3 from public against [none][0m
 [0m[[0mdebug[0m] [0m	module revision kept as first found: edu.mit#jwi;2.2.3 from public[0m
 [0m[[0mdebug[0m] [0m	found edu.mit#jwi;2.2.3 in public[0m
@@ -6215,16 +6179,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] commons-lang#commons-lang;2.6!commons-lang.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] log4j#log4j;1.2.17!log4j.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] edu.stanford.nlp#stanford-corenlp;1.3.4!stanford-corenlp.jar[0m
-[0m[[0mdebug[0m] [0m	 trying http://repo1.maven.org/maven2/edu/mit/jwi/2.2.3/jwi-2.2.3.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/edu/mit/jwi/2.2.3/jwi-2.2.3.jar[0m
-[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/edu/mit/jwi/2.2.3/jwi-2.2.3.jar ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/edu/mit/jwi/2.2.3/jwi-2.2.3.jar[0m
-[0m[[0mdebug[0m] [0m		to /home/hltcoe/epavlick/.ivy2/cache/edu.mit/jwi/jars/jwi-2.2.3.jar.part[0m
-[0m[[0mdebug[0m] [0msha1 file found for http://repo1.maven.org/maven2/edu/mit/jwi/2.2.3/jwi-2.2.3.jar: checking...[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/edu/mit/jwi/2.2.3/jwi-2.2.3.jar.sha1[0m
-[0m[[0mdebug[0m] [0m		to /tmp/ivytmp2379111923774689130sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/edu/mit/jwi/2.2.3/jwi-2.2.3.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] edu.mit#jwi;2.2.3!jwi.jar (79ms)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] edu.mit#jwi;2.2.3!jwi.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalanlp#breeze-math_2.10;0.2.3!breeze-math_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalanlp#breeze-learn_2.10;0.2.3!breeze-learn_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalanlp#breeze-process_2.10;0.2.3!breeze-process_2.10.jar[0m
@@ -6257,7 +6212,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] bouncycastle#bcprov-jdk14;138!bcprov-jdk14.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalatest#scalatest_2.10;1.9.1!scalatest_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-actors;2.10.0!scala-actors.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 4770ms :: artifacts dl 604ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 2138ms :: artifacts dl 207ms[0m
 [0m[[0mdebug[0m] [0mNbr of module to sort : 36[0m
 [0m[[0mdebug[0m] [0mSort dependencies of : org.scala-lang#scala-library;2.10.0 / Number of dependencies = 0[0m
 [0m[[0mdebug[0m] [0mSort done for : org.scala-lang#scala-library;2.10.0[0m
@@ -7082,5 +7037,5 @@
 [0m[[0mdebug[0m] [0m	report for hyperclass#hyperclass_2.10;0.1-SNAPSHOT docs produced in /home/hltcoe/epavlick/hyperclass/repo/target/resolution-cache/reports/hyperclass-hyperclass_2.10/docs-resolved.xml[0m
 [0m[[0mdebug[0m] [0mNbr of module to sort : 0[0m
 [0m[[0mdebug[0m] [0m	report for hyperclass#hyperclass_2.10;0.1-SNAPSHOT pom produced in /home/hltcoe/epavlick/hyperclass/repo/target/resolution-cache/reports/hyperclass-hyperclass_2.10/pom-resolved.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (4770ms resolve - 604ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (2138ms resolve - 207ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

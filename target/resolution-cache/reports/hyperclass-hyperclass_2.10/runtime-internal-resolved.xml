@@ -7,7 +7,7 @@
 		revision="0.1-SNAPSHOT"
 		conf="runtime-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom"
-		date="20130521122924"/>
+		date="20130523151242"/>
 	<dependencies>
 		<module organisation="org.scalanlp" name="breeze-viz_2.10">
 			<revision name="0.2.3" status="release" pubdate="20130413133137" resolver="public" artresolver="public" homepage="http://scalanlp.org/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="26">
@@ -316,12 +316,12 @@
 			</revision>
 		</module>
 		<module organisation="edu.mit" name="jwi">
-			<revision name="2.2.3" status="release" pubdate="20120327111929" resolver="public" artresolver="public" homepage="http://projects.csail.mit.edu/jwi/" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="11">
+			<revision name="2.2.3" status="release" pubdate="20120327111929" resolver="public" artresolver="public" homepage="http://projects.csail.mit.edu/jwi/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="11">
 				<license name="Creative Commons Attribution-NonCommerical Version 3.0 Unported License" url="http://creativecommons.org/licenses/by-nc/3.0/legalcode"/>
-				<metadata-artifact status="successful" details="" size="1188" time="50" location="/home/hltcoe/epavlick/.ivy2/cache/edu.mit/jwi/ivy-2.2.3.xml" searched="true" original-local-location="/home/hltcoe/epavlick/.ivy2/cache/edu.mit/jwi/ivy-2.2.3.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/edu/mit/jwi/2.2.3/jwi-2.2.3.pom"/>
+				<metadata-artifact status="no" details="" size="2630" time="0" location="/home/hltcoe/epavlick/.ivy2/cache/edu.mit/jwi/ivy-2.2.3.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/edu/mit/jwi/2.2.3/jwi-2.2.3.pom"/>
 				<caller organisation="hyperclass" name="hyperclass_2.10" conf="optional, compile, runtime, runtime-internal" rev="2.2.3" rev-constraint-default="2.2.3" rev-constraint-dynamic="2.2.3" callerrev="0.1-SNAPSHOT"/>
 				<artifacts>
-					<artifact name="jwi" type="jar" ext="jar" status="successful" details="" size="142040" time="79" location="/home/hltcoe/epavlick/.ivy2/cache/edu.mit/jwi/jars/jwi-2.2.3.jar">
+					<artifact name="jwi" type="jar" ext="jar" status="no" details="" size="142040" time="0" location="/home/hltcoe/epavlick/.ivy2/cache/edu.mit/jwi/jars/jwi-2.2.3.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/edu/mit/jwi/2.2.3/jwi-2.2.3.jar"/>
 					</artifact>
 				</artifacts>

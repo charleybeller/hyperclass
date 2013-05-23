@@ -1,6 +1,5 @@
 import scala.io.Source._;
 import scala.collection.immutable.HashMap;
-import scala.collection.immutable.HashSet;
 import scala.collection.immutable.Vector;
 
 import java.util.Collection;
@@ -89,6 +88,7 @@ class DataMatrix(phrasePairs : Vector[PhrasePair]){
 		
 		//first pass to get all string feature types to initialize FeatureEncoder
 
+		println("Building feature matrix")
 		var features : Vector[String] = new Vector(0, 0, 0)
 		for(line <- fromFile(fileName).getLines){
 			features = line.split('\t')(0) +: features
@@ -97,6 +97,8 @@ class DataMatrix(phrasePairs : Vector[PhrasePair]){
 		//second pass, to save all features into feature array 
 	
 		var fm : FeatureMatrix[PhrasePair, String] = new FeatureMatrix[PhrasePair, String](features);
+	
+		println("Encoding features")
 		for(line <- fromFile(fileName).getLines){
 			val comps : Array[String] = line.split('\t')
 			val p : PhrasePair = new PhrasePair(comps(2).split("=")(1), comps(3).split("=")(1))
