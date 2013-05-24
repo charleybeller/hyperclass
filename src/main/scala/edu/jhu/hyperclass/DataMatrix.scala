@@ -98,7 +98,7 @@ class DataMatrix(phrasePairs : Vector[PhrasePair]){
 	
 		//second pass, to save all features into feature array 
 	
-		var fm : FeatureMatrix[PhrasePair, String] = new FeatureMatrix[PhrasePair, String](features, num);
+		var fm : FeatureMatrix[PhrasePair, String] = new FeatureMatrix[PhrasePair, String](features);
 	
 		println("Encoding features")
 		for(line <- fromFile(fileName).getLines){
@@ -112,15 +112,32 @@ class DataMatrix(phrasePairs : Vector[PhrasePair]){
 	}
 
 	/**
+ 	* Get the parse features each PhrasePair 
+ 	*/
+	def parseRawFeaturesFromFile(fileName : String) : Vector[String] = {
+		
+		var fm : Vector[String] = new Vector(0, 0, 0)
+	
+		for(line <- fromFile(fileName).getLines){
+			val comps : Array[String] = line.split('\t')
+			val parse : String = comps(0)
+			fm = parse +: fm
+		}
+		
+		return fm	
+	}
+
+	/**
  	* Extract features for each PhrasePair is pairs
  	*/
 	def extractFeaturesFromFile(fileName : String) = {
 		
 		var idx : Int = 1;
 		var wordFeatures = Vector.empty 
-		var fs = parseFeaturesFromFile(fileName)
+		var fs = parseRawFeaturesFromFile(fileName)
 		for((p,f) <- pairs.zip(fs)){
-			p.addFeatures(f)
+		//	p.addFeatures(f)
+			p.addRawFeature(f)
 		}
 	} 
 

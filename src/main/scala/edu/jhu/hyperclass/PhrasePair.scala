@@ -12,6 +12,7 @@ class PhrasePair(AA : String, BB : String){
 	var B : String = BB;
 	var hypernym : Double = 0;
 	var features : Vector[Feature] = new Vector(0, 0, 0)
+	var rawFeatures : Vector[String] = new Vector(0, 0, 0)
 
 	override def toString() = "(" + this.A + ", " + this.B + ")";
 
@@ -26,6 +27,8 @@ class PhrasePair(AA : String, BB : String){
 	def getFeatures = features
 	
 	def addFeature(f: Feature) = { features = f +: features }
+	
+	def addRawFeature(f: String) = { rawFeatures = f +: rawFeatures }
 	
 	def addFeatures(f: Vector[Feature]) = { features = f ++: features }
 }
