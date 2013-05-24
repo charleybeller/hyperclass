@@ -16,7 +16,7 @@ scalacOptions ++= Seq(
 	"-language:reflectiveCalls"
 )
 
-javaOptions += "-Xmx9G"
+javaOptions += "-Xmx25G"
 
 libraryDependencies  ++= Seq(
 	"commons-lang" % "commons-lang" % "2.6",

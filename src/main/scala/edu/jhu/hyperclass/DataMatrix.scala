@@ -90,13 +90,15 @@ class DataMatrix(phrasePairs : Vector[PhrasePair]){
 
 		println("Building feature matrix")
 		var features : Vector[String] = new Vector(0, 0, 0)
+		var num : Int = 0
 		for(line <- fromFile(fileName).getLines){
 			features = line.split('\t')(0) +: features
+			num = num + 1
 		}
 	
 		//second pass, to save all features into feature array 
 	
-		var fm : FeatureMatrix[PhrasePair, String] = new FeatureMatrix[PhrasePair, String](features);
+		var fm : FeatureMatrix[PhrasePair, String] = new FeatureMatrix[PhrasePair, String](features, num);
 	
 		println("Encoding features")
 		for(line <- fromFile(fileName).getLines){
