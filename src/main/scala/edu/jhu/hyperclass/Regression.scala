@@ -177,7 +177,7 @@ object Regression extends App {
 	val posFile = "output/xy5.txt"
 	val allFile = "output/joined.txt"
 
-	dm.initializeFromFile(posFile, allFile)
+	dm.initializeFromFile(posFile, allFile, false, 10)
 
 	crossValidate(dm, 3)
 
