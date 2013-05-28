@@ -27,5 +27,10 @@ libraryDependencies  ++= Seq(
 )
 
 resolvers ++= Seq(
-            "Sonatype Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots/"
+    	"Sonatype Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots/"
 )
+
+
+
+
+
