@@ -1,5 +1,6 @@
 import scala.io.Source._;
 import scala.collection.immutable.HashMap;
+import scala.collection.immutable.Vector;
 
 import java.util.Collection;
 import java.util.Random;
@@ -10,19 +11,18 @@ import de.bwaldvogel.liblinear.FeatureNode;
 /**
  * Holds the list of word pairs do be used in classifier training/testing
  * */
-class DataMatrix(phrasePairs : Array[PhrasePair]){ 
+class DataMatrix(phrasePairs : Vector[PhrasePair]){ 
 
-	var pairs : Array[PhrasePair] = phrasePairs
+	var pairs : Vector[PhrasePair] = phrasePairs
 
 	/**
  	* Initialize DataMatrix by reading PhrasePairs from file
  	*/
 	def initializeFromFile(posFileName: String, allFileName : String) = {
-		pairs = new Array(0);
 		println("Reading File")
 		for(line <- fromFile(allFileName).getLines){
 			val comps : Array[String] = line.split('\t')
-			pairs = pairs :+ new PhrasePair(comps(2).split("=")(1), comps(3).split("=")(1))
+			pairs = new PhrasePair(comps(2).split("=")(1), comps(3).split("=")(1)) +: pairs
 		}
 		println("Getting Labels")
 		getLabelsFromFile(posFileName);
@@ -37,14 +37,14 @@ class DataMatrix(phrasePairs : Array[PhrasePair]){
 
 	def splitTrainTest(testPcnt : Int) : (DataMatrix, DataMatrix) = {
 		
-		var train : Array[PhrasePair] = new Array(0);
-		var test : Array[PhrasePair] = new Array(0);
+		var train : Vector[PhrasePair] = new Vector(0, 0, 0)
+		var test : Vector[PhrasePair] = new Vector(0, 0, 0)
 		var i : Int = 0;
 		var r : Random = new Random(); 
 		for(p <- pairs){
 			i = r.nextInt(100);
-			if(i <= testPcnt){ test = test :+ p; }
-			else{ train = train :+ p; }
+			if(i <= testPcnt){ test = p +: test }
+			else{ train = p +: train }
 		}	
 		(new DataMatrix(train), new DataMatrix(test));
 	}
@@ -67,35 +67,40 @@ class DataMatrix(phrasePairs : Array[PhrasePair]){
 	/**
  	* Get the coordinate features for a pair of words
  	*/
-	def coordinateFeatures(p : PhrasePair) : Array[Int] = {
+	def coordinateFeatures(p : PhrasePair) : Vector[Int] = {
 	
-		var features : Array[Int] = new Array[Int](0);
-		features :+ 0;
+		var features = Vector.empty
+		0 +: features
 	}
 
 	/**
  	* Get the parse features for a pair of words
  	*/
-	def parseFeatures(p : PhrasePair) : Array[Int] = {
-		var features : Array[Int] = new Array[Int](0);
-		features :+ 0;
+	def parseFeatures(p : PhrasePair) : Vector[Int] = {
+		var features = Vector.empty
+		0 +: features
 	}
 
 	/**
  	* Get the parse features each PhrasePair 
  	*/
-	def parseFeaturesFromFile(fileName : String) : Array[Array[Feature]] = {
+	def parseFeaturesFromFile(fileName : String) : Vector[Vector[Feature]] = {
 		
 		//first pass to get all string feature types to initialize FeatureEncoder
 
-		var features : Array[String] = new Array[String](0);
+		println("Building feature matrix")
+		var features : Vector[String] = new Vector(0, 0, 0)
+		var num : Int = 0
 		for(line <- fromFile(fileName).getLines){
-			features = features :+ line.split('\t')(0)
+			features = line.split('\t')(0) +: features
+			num = num + 1
 		}
-		
+	
 		//second pass, to save all features into feature array 
 	
 		var fm : FeatureMatrix[PhrasePair, String] = new FeatureMatrix[PhrasePair, String](features);
+	
+		println("Encoding features")
 		for(line <- fromFile(fileName).getLines){
 			val comps : Array[String] = line.split('\t')
 			val p : PhrasePair = new PhrasePair(comps(2).split("=")(1), comps(3).split("=")(1))
@@ -107,18 +112,33 @@ class DataMatrix(phrasePairs : Array[PhrasePair]){
 	}
 
 	/**
+ 	* Get the parse features each PhrasePair 
+ 	*/
+	def parseRawFeaturesFromFile(fileName : String) : Vector[String] = {
+		
+		var fm : Vector[String] = new Vector(0, 0, 0)
+	
+		for(line <- fromFile(fileName).getLines){
+			val comps : Array[String] = line.split('\t')
+			val parse : String = comps(0)
+			fm = parse +: fm
+		}
+		
+		return fm	
+	}
+
+	/**
  	* Extract features for each PhrasePair is pairs
  	*/
 	def extractFeaturesFromFile(fileName : String) = {
 		
-//		for(p <- pairs ){
 		var idx : Int = 1;
-		var wordFeatures : Array[Feature] = new Array[Feature](0);
-		var fs = parseFeaturesFromFile(fileName)
+		var wordFeatures = Vector.empty 
+		var fs = parseRawFeaturesFromFile(fileName)
 		for((p,f) <- pairs.zip(fs)){
-			p.features = f
+		//	p.addFeatures(f)
+			p.addRawFeature(f)
 		}
-//		}
 	} 
 
 	/**
@@ -126,11 +146,13 @@ class DataMatrix(phrasePairs : Array[PhrasePair]){
  	*/
 	def getX() : Array[Array[Feature]] = {
 		
-		var X : Array[Array[Feature]] = new Array[Array[Feature]](0);
+		var X : Vector[Array[Feature]] = new Vector(0, 0, 0)
+
 		for(p <- pairs){
-			X = X :+ p.features
+			X = p.features.toArray +: X
 		}
-		return X 
+	
+		return X.toArray
 
 	}
 
@@ -139,11 +161,11 @@ class DataMatrix(phrasePairs : Array[PhrasePair]){
  	*/
 	def getY() : Array[Double] = {
 		
-		var Y : Array[Double] = new Array(0);
+		var Y : Vector[Double] = new Vector(0, 0, 0)
 		for(p <- pairs){
-			Y = Y :+ p.hypernym; 
+			Y = p.hypernym +: Y
 		}
-		return Y
+		return Y.toArray
 	}
 
 	/**

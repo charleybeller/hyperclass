@@ -1,0 +1,7 @@
+[0m[[0minfo[0m] [0m[32mWordNetTest:[0m[0m
+[0m[[0minfo[0m] [0m[32mWordNet [0m[0m
+[0m[[0minfo[0m] [0m[32m- should provide the synset of a word[0m[0m
+[0m[[0minfo[0m] [0m[31m- should provide the hypernyms of a word *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  Set(canine, canid, domestic_animal, domesticated_animal) was not equal to Set(support, scoundrel, cuss, disagreeable_woman, villain, domesticated_animal, sausage, gent, stop, canid, blighter, unpleasant_woman, canine, fellow, feller, domestic_animal, lad, bloke, catch, chap, fella) (WordNetTest.scala:19)[0m[0m
+[0m[[0minfo[0m] [0m[31m- should tell you if X is a Y *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  false was not true (WordNetTest.scala:25)[0m[0m

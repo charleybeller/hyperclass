@@ -1,8 +1,12 @@
+import com.typesafe.sbt.SbtStartScript
+
 name := "hyperclass"
 
 scalaVersion := "2.10.0" 
 
 retrieveManaged := true
+
+seq(SbtStartScript.startScriptForClassesSettings: _*)
 
 seq(com.github.retronym.SbtOneJar.oneJarSettings: _*)
 
@@ -11,6 +15,8 @@ scalacOptions ++= Seq(
 	"-feature",
 	"-language:reflectiveCalls"
 )
+
+javaOptions += "-Xmx25G"
 
 libraryDependencies  ++= Seq(
 	"commons-lang" % "commons-lang" % "2.6",
