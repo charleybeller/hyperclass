@@ -13,7 +13,7 @@ import edu.stanford.nlp.trees._
 object HyperClass {
   /**
    * Traverses agiga documents in directory (args(0)) that match prefix (args(1))
-   * writes dependency paths to file (args(2))
+   * writes dependency paths to files in output directory (args(2))
    */
   def main(args: Array[String]) = {
     if (args.length != 3) println("Usage: HyperClass [agiga-directory] [agiga-prefix] [output-file]")
@@ -26,10 +26,13 @@ object HyperClass {
 
       val agiga = new java.io.File(args(0))
       val prefix = new PrefixFileFilter(args(1))
-      val rulesWriter = FileManager.getWriter(args(2))
+      val outdir = new java.io.File(args(2))
+      outdir.mkdirs
       
       listFiles(agiga, prefix, null).asScala foreach { item =>
         val arg = item.toString 
+        val outFile = arg.split(".")(0) + ".out"
+        val rulesWriter = FileManager.getWriter(args(2) + "/" +outFile)
         log.info("Parsing XML file "+arg)
 
         val prefs = new AgigaPrefs
@@ -43,8 +46,8 @@ object HyperClass {
         }
 
         log.info("Number of sentences: " + reader.getNumSents())
+        rulesWriter.close()  
       }
-      rulesWriter.close()  
     }
   }
 }
