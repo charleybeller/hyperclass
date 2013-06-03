@@ -1,5 +1,6 @@
 import scala.io.Source._;
 import scala.collection.immutable.HashMap;
+import scala.collection.immutable.HashSet;
 import scala.collection.immutable.Vector;
 
 import java.util.Collection;
@@ -14,15 +15,30 @@ import de.bwaldvogel.liblinear.FeatureNode;
 class DataMatrix(phrasePairs : Vector[PhrasePair]){ 
 
 	var pairs : Vector[PhrasePair] = phrasePairs
-
+	var featureSize : Int = 0
+	var filter : Boolean = false
+	var threshold : Int = 10
+	
 	/**
  	* Initialize DataMatrix by reading PhrasePairs from file
  	*/
-	def initializeFromFile(posFileName: String, allFileName : String) = {
+	def initializeFromFile(posFileName: String, allFileName : String, f : Boolean, t : Int) = {
 		println("Reading File")
+		filter = f
+		threshold = t
+		var alreadySeen : HashSet[String] = new HashSet()
 		for(line <- fromFile(allFileName).getLines){
 			val comps : Array[String] = line.split('\t')
-			pairs = new PhrasePair(comps(2).split("=")(1), comps(3).split("=")(1)) +: pairs
+			val w1 = comps(2).split("=")(1)
+			val w2 = comps(3).split("=")(1)
+			if(filter){
+				if(!alreadySeen.contains(w1+w2)){
+					alreadySeen = alreadySeen + (w1+w2)
+					pairs = pairs :+ new PhrasePair(w1, w2)// +: pairs
+				}
+			}else{
+				pairs = pairs :+ new PhrasePair(w1, w2)// +: pairs
+			}
 		}
 		println("Getting Labels")
 		getLabelsFromFile(posFileName);
@@ -43,10 +59,14 @@ class DataMatrix(phrasePairs : Vector[PhrasePair]){
 		var r : Random = new Random(); 
 		for(p <- pairs){
 			i = r.nextInt(100);
-			if(i <= testPcnt){ test = p +: test }
-			else{ train = p +: train }
+			if(i <= testPcnt){ test = test :+ p } //p +: test }
+			else{ train = train :+ p } //p +: train }
 		}	
-		(new DataMatrix(train), new DataMatrix(test));
+		var trainDM = new DataMatrix(train)
+		var testDM = new DataMatrix(test)
+		trainDM.featureSize = featureSize
+		testDM.featureSize = featureSize
+		(trainDM, testDM)
 	}
 	
 	/**
@@ -62,23 +82,6 @@ class DataMatrix(phrasePairs : Vector[PhrasePair]){
 			labels = labels + ((p, 1))
 		}
 		for(p <- pairs ){ p.setHypernym(if(labels contains p) 1 else 0) }
-	}
-
-	/**
- 	* Get the coordinate features for a pair of words
- 	*/
-	def coordinateFeatures(p : PhrasePair) : Vector[Int] = {
-	
-		var features = Vector.empty
-		0 +: features
-	}
-
-	/**
- 	* Get the parse features for a pair of words
- 	*/
-	def parseFeatures(p : PhrasePair) : Vector[Int] = {
-		var features = Vector.empty
-		0 +: features
 	}
 
 	/**
@@ -117,13 +120,52 @@ class DataMatrix(phrasePairs : Vector[PhrasePair]){
 	def parseRawFeaturesFromFile(fileName : String) : Vector[String] = {
 		
 		var fm : Vector[String] = new Vector(0, 0, 0)
-	
+		var alreadySeen : HashSet[String] = new HashSet()
+		var paths: HashSet[String] = new HashSet()
+		var pathCounts: HashMap[String, Int] = new HashMap()
+
+		//filter out uncommon paths	
 		for(line <- fromFile(fileName).getLines){
 			val comps : Array[String] = line.split('\t')
 			val parse : String = comps(0)
-			fm = parse +: fm
+			val w1 = comps(2).split("=")(1)
+			val w2 = comps(3).split("=")(1)
+			if(filter){
+				if(!alreadySeen.contains(w1+w2)){
+					alreadySeen = alreadySeen + (w1+w2)
+					if(!pathCounts.contains(parse)) pathCounts = pathCounts.updated(parse, 0) 
+					pathCounts = pathCounts.updated(parse, pathCounts.get(parse).get + 1)
+				}
+			}
+			else{
+				if(!pathCounts.contains(parse)) pathCounts = pathCounts.updated(parse, 0) 
+				pathCounts = pathCounts.updated(parse, pathCounts.get(parse).get + 1)
+			}
 		}
 		
+		alreadySeen = new HashSet()
+
+		for(line <- fromFile(fileName).getLines){
+			val comps : Array[String] = line.split('\t')
+			val parse : String = comps(0)
+			val w1 = comps(2).split("=")(1)
+			val w2 = comps(3).split("=")(1)
+			if(filter){
+				if(!alreadySeen.contains(w1+w2) && pathCounts.contains(parse) && pathCounts.get(parse).get > threshold){
+					alreadySeen = alreadySeen + (w1+w2)
+					paths = paths + parse
+					fm =fm :+ parse // parse +: fm
+				}
+			}
+			else{
+				if(pathCounts.get(parse).get > threshold){
+					alreadySeen = alreadySeen + (w1+w2)
+					paths = paths + parse
+					fm = fm :+ parse //+: fm
+				}
+			}
+		}
+		featureSize = paths.size
 		return fm	
 	}
 
@@ -136,7 +178,6 @@ class DataMatrix(phrasePairs : Vector[PhrasePair]){
 		var wordFeatures = Vector.empty 
 		var fs = parseRawFeaturesFromFile(fileName)
 		for((p,f) <- pairs.zip(fs)){
-		//	p.addFeatures(f)
 			p.addRawFeature(f)
 		}
 	} 
@@ -149,7 +190,7 @@ class DataMatrix(phrasePairs : Vector[PhrasePair]){
 		var X : Vector[Array[Feature]] = new Vector(0, 0, 0)
 
 		for(p <- pairs){
-			X = p.features.toArray +: X
+			X = X :+ p.features.toArray //+: X
 		}
 	
 		return X.toArray
@@ -163,7 +204,7 @@ class DataMatrix(phrasePairs : Vector[PhrasePair]){
 		
 		var Y : Vector[Double] = new Vector(0, 0, 0)
 		for(p <- pairs){
-			Y = p.hypernym +: Y
+			Y = Y :+ p.hypernym // +: Y
 		}
 		return Y.toArray
 	}
