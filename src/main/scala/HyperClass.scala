@@ -16,7 +16,7 @@ object HyperClass {
    * writes dependency paths to files in output directory (args(2))
    */
   def main(args: Array[String]) = {
-    if (args.length != 3) println("Usage: HyperClass [agiga-directory] [agiga-prefix] [output-file]")
+    if (args.length < 2 || args.length > 3) println("Usage: HyperClass [agiga-directory] [agiga-prefix] ([output-file])")
     else {
       val cAppender = new ConsoleAppender(new PatternLayout("%d{HH:mm:ss,SSS} [%t] %c %x -%m%n"))
       BasicConfigurator.configure(cAppender)
@@ -26,12 +26,16 @@ object HyperClass {
 
       val agiga = new java.io.File(args(0))
       val prefix = new PrefixFileFilter(args(1))
-      val outdir = new java.io.File(args(2))
+      val outdir = args.length match {
+        case 3 => new java.io.File(args.last)
+        case 2 => new java.io.File(args.last + ".output")
+      }
       outdir.mkdirs
       
       listFiles(agiga, prefix, null).asScala foreach { item =>
         val arg = item.toString 
-        val outFile = arg.split(".")(0) + ".out"
+        val file = arg.split("/").last
+        val outFile = file.split("""\.""")(0) + ".out"
         val rulesWriter = FileManager.getWriter(args(2) + "/" +outFile)
         log.info("Parsing XML file "+arg)
 

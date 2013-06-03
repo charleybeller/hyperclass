@@ -29,6 +29,10 @@ object WordNet {
     val synsets = wordIDs.map{ wid => dict.getWord(wid).getSynset }
     synsets
   }
+
+  def inWordNet(word: String): Boolean = {
+    ! getSynsets(word).isEmpty
+  }
   
   def getHypernyms(word: String): Set[String] = {
     val synsets = getSynsets(word)
