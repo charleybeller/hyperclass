@@ -29,7 +29,8 @@ libraryDependencies  ++= Seq(
 	"org.scalanlp" %% "breeze-learn" % "0.2.3",
 	"org.scalanlp" %% "breeze-process" % "0.2.3",
 	"org.scalanlp" %% "breeze-viz" % "0.2.3",
-	"de.bwaldvogel" % "liblinear" % "1.92"
+	"de.bwaldvogel" % "liblinear" % "1.92",
+	"cc.mallet" % "mallet" % "2.0.7-RC2"
 )
 
 resolvers ++= Seq(
