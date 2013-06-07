@@ -124,17 +124,11 @@ public class DirtRuleFromAgiga {
         TreeGraphNode yNode = (TreeGraphNode) paths.get(paths.size() - 1);
         x = xNode.label().lemma();
         y = yNode.label().lemma();
-        String hypernymRelation = "unknown";
-        if (WordNet.inWordNet(x) && WordNet.inWordNet(y)) {
-          if (WordNet.isa(x,y))
-            hypernymRelation = "xy";
-          else if (WordNet.isa(y,x))
-            hypernymRelation = "yx";
-          else if (WordNet.isnota(x,y) && WordNet.isnota(y,x))
-            hypernymRelation = "zz";
-	}
+	//label WordNet relations from wordnet
+	String wordNetRelations = WordNet.wordNetRelations(x,y);
+	//
         StringBuilder dirtRule = this.buildRule(paths);
-        dirtRule.append("\t"+hypernymRelation+"\tX="+x+"\tY="+y+"\tphrases=");
+        dirtRule.append("\t"+wordNetRelations+"\tX="+x+"\tY="+y+"\tphrases=");
         for (int k=i; k<=j; k++) {
           dirtRule.append(this.labels.get(k).word()+" ");
         }

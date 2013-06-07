@@ -36,7 +36,7 @@ object HyperClass {
         val arg = item.toString 
         val file = arg.split("/").last
         val outFile = file.split("""\.""")(0) + ".out"
-        val rulesWriter = FileManager.getWriter(args(2) + "/" +outFile)
+        val rulesWriter = FileManager.getWriter(outdir + "/" + outFile)
         log.info("Parsing XML file "+arg)
 
         val prefs = new AgigaPrefs
