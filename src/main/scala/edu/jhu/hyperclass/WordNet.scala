@@ -11,7 +11,7 @@ import scala.collection.JavaConverters.collectionAsScalaIterableConverter
 class WordNet
 object WordNet {
   val logger = Logger.getLogger(this.getClass.getName())
-  val wordnetPath = "data/wordnet/dict"
+  val wordNetPath = "data/wordnet/dict"
   val countsPath = "data/wordnet/dict/cntlist.rev"
 
   /**
@@ -20,10 +20,10 @@ object WordNet {
    *    frequently used sense of the word (the first sense)
    */
 
-  type LexInfoSet = Set[(Int, Int, Int)]
+  type LexInfoSet = Set[(Int, Int, Int, String)]
   type CountMap = Map[String, LexInfoSet]
 
-  case class CountlistEntry(lemma: String, ssType: Int, senseNumber: Int, count: Int) 
+  case class CountlistEntry(lemma: String, ssType: Int, senseNumber: Int, count: Int, senseKey: String) 
 
   def readCountline(countLine: String) = {
     val (senseKey, num, count) = countLine.split(" ") match {
@@ -33,7 +33,7 @@ object WordNet {
       case Array(w, l) => (w, l)
     }
     val ssType = lexSense.split(":").head.toInt
-    new CountlistEntry(word, ssType, num, count)
+    new CountlistEntry(word, ssType, num, count, senseKey)
   }
 
   def buildCountMap(file: Iterator[String]): CountMap = {
@@ -42,7 +42,7 @@ object WordNet {
       else {
         val entry = readCountline(file.next)
         val word = entry.lemma
-        val info = (entry.ssType, entry.senseNumber, entry.count)
+        val info = (entry.ssType, entry.senseNumber, entry.count, entry.senseKey)
         val cmap1 = cmap.get(word) match {
           case Some(x:LexInfoSet) => cmap + (word -> (x + info))
           case None => cmap + (word -> Set(info))
@@ -63,7 +63,7 @@ object WordNet {
 
   def singleFrequents(entry:(String, LexInfoSet))(pos: Int):Boolean = {
     val (w, i) = entry
-    val (ssType: Int, senseNumber: Int, count: Int) = i.head
+    val (ssType: Int, senseNumber: Int, count: Int, senseKey: String) = i.head
     i.size == 1 && ssType == pos && senseNumber == 1
   }
 
@@ -79,8 +79,8 @@ object WordNet {
    */
   lazy val dict = {
     try {
-      val wnDir = new File(wordnetPath)
-      logger.info("loading wordnet data from " + wnDir.getPath())
+      val wnDir = new File(wordNetPath)
+      logger.info("loading WordNet data from " + wnDir.getPath())
       val dict = new RAMDictionary(wnDir, ILoadPolicy.IMMEDIATE_LOAD)
       dict.open()
       dict
@@ -88,46 +88,170 @@ object WordNet {
     catch { case e:Throwable => throw new RuntimeException(e) }
   }
 
-  def getSynsets(word: String): List[ISynset] = {
+  def getWords(word: String): List[IWord] = {
     val idxWords = List(Option(dict.getIndexWord(word,POS.NOUN))).flatten
     val wordIDs = idxWords.map{ iw => iw.getWordIDs.asScala }.flatten
-    val synsets = wordIDs.map{ wid => dict.getWord(wid).getSynset }
-    synsets
+    wordIDs.map{ wid => dict.getWord(wid) }
   }
 
   
-  def getHypernyms(word: String): Set[String] = {
-    val synsets = getSynsets(word)
-    def loop(synset:ISynset, hypernyms: Set[String]): Set[String] = {
-      val next = synset.getRelatedSynsets(Pointer.HYPERNYM).asScala 
-      if (next.isEmpty) hypernyms
+  def getSynsets(word: String): List[ISynset] = {
+    getWords(word).map { w => w.getSynset }
+  }
+
+  /**
+   * Synonym methods
+   */
+  def collectSynonyms(synset: ISynset): Set[String] = {
+    val words = synset.getWords().asScala
+    words.map{w => w.getLemma}.toSet
+  }
+
+  def getFirstSenseSynonyms(word: String): Set[String] = {
+    getSynsets(word) match {
+      case Nil => Set()
+      case x::xs => collectSynonyms(x)
+    }
+  }
+
+  def getAllSenseSynonyms(word: String): Set[String] = {
+    def loop(synsets: List[ISynset], synonyms: Set[String]): Set[String] = {
+      if (synsets.isEmpty) synonyms
       else {
-        val hyps = dict.getSynset(next.head)
-        val words = hyps.getWords().asScala
-        val hypernyms1 = hypernyms ++ words.map{w => w.getLemma}.toSet
-        loop(hyps, hypernyms1)
+        val syn1 = synonyms ++ collectSynonyms(synsets.head)
+        loop(synsets.tail, syn1)
       }
     }
-    synsets match {
-      case Nil => Set()
-      case x::xs => loop(x, Set.empty)
+    val synsets = getSynsets(word)
+    loop(synsets, Set.empty)
+  }
+
+  def synonymous(x: String, y: String): Boolean = {
+    getFirstSenseSynonyms(x)(y)
+  }
+
+  def notSynonymous(x: String, y: String): Boolean = {
+    !getAllSenseSynonyms(x)(y)
+  }
+
+  /**
+   * Hypernym methods
+   */
+  def collectHypernyms(synset: ISynset, hypernyms: Set[String], maxHeight: Int): Set[String] = {
+    val h = synset.getRelatedSynsets(Pointer.HYPERNYM).asScala 
+    val hi = synset.getRelatedSynsets(Pointer.HYPERNYM_INSTANCE).asScala 
+    val next = h ++ hi
+    if (next.isEmpty || maxHeight <= 0) hypernyms
+    else {
+      val hyps = dict.getSynset(next.head)
+      val words = hyps.getWords().asScala
+      val hypernyms1 = hypernyms ++ words.map{w => w.getLemma}.toSet
+      collectHypernyms(hyps, hypernyms1, maxHeight-1)
     }
   }
 
-  def getAllSenseHypernyms(word: String): Set[String] = {
-    val synset = getSynsets(word)
-    val synsetID = synset.map{ s => s.getRelatedSynsets(Pointer.HYPERNYM).asScala}.flatten
-    val words = synsetID.map{ sid => dict.getSynset(sid).getWords().asScala}.flatten
-    words.map{ w => w.getLemma }.toSet
+  def getFirstSenseHypernyms(word: String, maxHeight: Int = 1000): Set[String] = {
+    getSynsets(word) match {
+      case Nil => Set()
+      case x::xs => collectHypernyms(x, Set.empty, maxHeight)
+    }
   }
 
-  def isa(x: String, y:String): Boolean = {
-    getHypernyms(x)(y)
+  def getAllSenseHypernyms(word: String, maxHeight: Int = 1000): Set[String] = {
+    def loop(synsets: List[ISynset], hypernyms: Set[String]): Set[String] = {
+      if (synsets.isEmpty) hypernyms
+      else {
+        val hyp1 = collectHypernyms(synsets.head, hypernyms, maxHeight)
+        loop(synsets.tail, hyp1)
+      }
+    }
+    val synsets = getSynsets(word)
+    loop(synsets, Set.empty)
   }
 
-  def isnota(x: String, y:String): Boolean = {
+  def kindOf(x: String, y:String): Boolean = {
+    getFirstSenseHypernyms(x)(y)
+  }
+
+  def notKindOf(x: String, y:String): Boolean = {
     !getAllSenseHypernyms(x)(y)
   }
+
+  /**
+   * Antonym methods
+   */
+  def collectAntonyms(word: IWord): Set[String] = {
+    val antonyms =  word.getRelatedWords(Pointer.ANTONYM).asScala 
+    antonyms.map{a => a.getLemma}.toSet
+  }
+
+  def getFirstSenseAntonyms(word: String): Set[String] = {
+    getWords(word) match {
+      case Nil => Set()
+      case x::xs => collectAntonyms(x)
+    }
+  }
+
+  def getAllSenseAntonyms(word: String): Set[String] = {
+    def loop(words: List[IWord], antonyms: Set[String]): Set[String] = {
+      if (words.isEmpty) antonyms
+      else {
+        val ant1 = antonyms ++ collectAntonyms(words.head)
+        loop(words.tail, ant1)
+      }
+    }
+    val words = getWords(word)
+    loop(words, Set.empty)
+  }
+
+  def antonymous(x: String, y: String): Boolean = {
+    getFirstSenseAntonyms(x)(y)
+  }
+
+  def notAntonymous(x: String, y: String): Boolean = {
+    !getAllSenseAntonyms(x)(y)
+  }
+
+  /**
+   * Alternation methods
+   */
+  def collectLevelHypernyms(synset: ISynset, maxHeight: Int): Set[String] = {
+    val h = synset.getRelatedSynsets(Pointer.HYPERNYM).asScala 
+    val hi = synset.getRelatedSynsets(Pointer.HYPERNYM_INSTANCE).asScala 
+    val next = h ++ hi
+    if (next.isEmpty || maxHeight < 0) Set()
+    else if (maxHeight == 0) {
+      val hyps = dict.getSynset(next.head)
+      val words = hyps.getWords().asScala
+      words.map{w => w.getLemma}.toSet
+    }
+    else {
+      collectLevelHypernyms(dict.getSynset(next.head), maxHeight-1)
+    }
+  }
+
+  def heightAlternation(x: ISynset, y: ISynset, height: Int): Set[String] = {
+    val fx = collectLevelHypernyms(x, height)
+    val fy = collectLevelHypernyms(y, height)
+    fx.intersect(fy)
+  }
+
+  def alternation(x: String, y: String, maxHeight: Int = 2): Boolean = {
+    def climb(x: ISynset, y: ISynset, currentHeight: Int): Boolean = {
+      if (currentHeight >= maxHeight) false
+      else { 
+        val intersect = heightAlternation(x, y, currentHeight)
+        if (intersect.nonEmpty) true
+        else climb(x, y, currentHeight+1)
+      }
+    }
+    
+    val fx = getSynsets(x) 
+    val fy = getSynsets(y) 
+    if (fx.isEmpty || fy.isEmpty) false
+    else climb(fx.head, fy.head, 0) 
+  }
+
 
   def wordNetRelations(x:String, y:String): String = {
     val string = if (singleSenseNoun(x) && singleSenseNoun(y)) {
@@ -136,7 +260,7 @@ object WordNet {
       lazy val synonym = tagSynonym(x,y)
       lazy val antonym = tagAntonym(x,y)
       lazy val alternation = tagAlternation(x,y)
-      Array(hypernym, hyponym, synonym, antonym, alternation).mkString("\t")
+      Array(synonym, hypernym, hyponym, antonym, alternation).mkString("\t")
     }
     else {
       Array("unknown", "unknown", "unknown", "unknown", "unknown").mkString("\t")
@@ -145,21 +269,36 @@ object WordNet {
   }
 
   def tagHypernym(x:String, y:String): String = {
-    if (isa(x, y)) "hyper"
-    else if (isnota(x, y)) "nonhyper"
-    else "unknown"
+    if (kindOf(x, y)) "hypernym"
+    else if (notKindOf(x, y)) "nonhypernym"
+    else "unclear"
   }
 
   def tagHyponym(x:String, y:String): String = {
-    if (isa(y, x)) "hypo"
-    else if (isnota(y, x)) "nonhypo"
-    else "unknown"
+    if (kindOf(y, x)) "hyponym"
+    else if (notKindOf(y, x)) "nonhyponym"
+    else "unclear"
   }
 
+  def tagSynonym(x:String, y:String): String = {
+    if (x == y) "identical"
+    else if (synonymous(x, y)) "synonym"
+    else if (notSynonymous(x, y)) "nonsynonym"
+    else "unclear"
+  }
 
-  def tagSynonym(x:String, y:String): String = "TODO"
-  def tagAntonym(x:String, y:String): String = "TODO"
-  def tagAlternation(x:String, y:String): String = "TODO"
+  def tagAntonym(x:String, y:String): String = {
+    if (antonymous(x, y)) "antonym"
+    else if (notAntonymous(x, y)) "nonantonym"
+    else "unclear"
+  }
+
+  def tagAlternation(x:String, y:String): String = {
+    if (synonymous(x,y)) "nonalternation"
+    else if (alternation(x, y)) "alternation"
+    else if (kindOf(x, y) || antonymous(x, y)) "nonalternation"
+    else "unclear"
+  }
 
     
 }

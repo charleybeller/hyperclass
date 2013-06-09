@@ -16,7 +16,7 @@ object HyperClass {
    * writes dependency paths to files in output directory (args(2))
    */
   def main(args: Array[String]) = {
-    if (args.length < 2 || args.length > 3) println("Usage: HyperClass [agiga-directory] [agiga-prefix] ([output-file])")
+    if (args.length < 2 || args.length > 3) println("Usage: HyperClass [agiga-directory] [agiga-prefix] ([output-directory])")
     else {
       val cAppender = new ConsoleAppender(new PatternLayout("%d{HH:mm:ss,SSS} [%t] %c %x -%m%n"))
       BasicConfigurator.configure(cAppender)
