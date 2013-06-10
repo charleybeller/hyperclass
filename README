@@ -1,9 +1,74 @@
 hyperclass
 ==========
 
-Feature setup for automatic hypernym classification based on Snow et al 2005
+Feature setup for automatic hypernym classification based on Snow et al (2005)
 ( http://ai.stanford.edu/~rion/papers/hypernym_nips05.pdf )
 
-To run from within sbt with input file test.xml.gz and output file output.txt:
-run test.xml.gz output.txt
+This package includes code to extract pairs of nouns from the Annotated Gigaword
+corpus and label them according to relations indicated in WordNet (Fellbaum
+1998; http://wordnet.princeton.edu ). In addition to hypernym relations this
+code includes tags for hyponyms, synonyms, antonyms, and alternations (sibling
+terms).
 
+Also included is code to classify unlabeled noun pairs according to those
+relations (currently only hypernym classification is supported).
+
+To tag nounpairs from Annotated Gigaword:
+From the root project directory enter:
+
+./target/start HyperClass [agiga directory] [file_prefix] ([output_directory])
+
+If no output directory is specified output will go to [file_prefix].output/ .
+Individual output files will have the same name as the agiga input file.
+
+The output files are in tab-delimited columns with the following fields:
+
+1. Dependency path between two nouns
+2-6. WordNet relations
+7-8. Noun identities
+9. Word span containing the two nouns
+
+The WordNet relation fields are:
+
+[synonym] [hypernym] [hyponym] [antonym] [alternations] 
+
+negative values prefix non, e.g. "nonsynonym"
+
+The synonym column can also take the value "identical" if the words match.
+
+If one or both of the words are not in WordNet or have more than one frequently
+used sense then all columns will be tagged "unknown".  If the words are both in
+WordNet but are related through a less frequent sense, or are not clearly
+positive for some other reason, they are labeled "unclear".
+
+
+
+Possibly more than you wanted to know on the labelling decisions:
+
+Synonyms are tagged positively if the second word is in the first synset of the
+first word. They are tagged negatively if the second word is not in any of the
+synsets of the first word.  Otherwise they are tagged "unclear".
+
+Hypernyms are tagged positively if the second word is in the hypernym hierarchy
+of the first sense of the first word.  Negatively if the second word is not in
+the hypernym hierarchy of any senses of the first word. Unclear otherwise
+
+Hyponyms are extracted in the same way that hypernyms are but with the words
+switched.
+
+Antonyms are tagged positively if the second word is related to the first sense
+of the first word with an antonym pointer.  Negatively if the second word is not
+related to any sense of the first word with an antonym pointer.  Unclear
+otherwise.  This relation is between words and not synsets for some reason.
+There are only a handful of nouns that have antonyms: e.g. husband/wife,
+winner/loser, employee/employer.
+
+Alternations are tagged positively if there is overlap at the same level
+hypernym set of the first senses of both nouns.   If the first level hypernyms
+don't overlap the algorithm looks up the next level in the tree up till the
+third level.  Because of the idiosyncracies of the WordNet taxonomy it is better
+to allow this leeway.  If we only allowed words that shared a first level
+hypernym we would fail to label e.g. 'cat' and 'dog' as an alternation because
+'feline' and 'canine' are their immediate hypernyms.  Currently wordpairs are
+labeled negatively if they are in one of the other relations.  Unclear
+otherwise.
