@@ -127,11 +127,13 @@ object WordNet {
   }
 
   def synonymous(x: String, y: String): Boolean = {
-    getFirstSenseSynonyms(x)(y)
+    val syns = getFirstSenseSynonyms(x).map(_.toLowerCase)
+    syns(y)
   }
 
   def notSynonymous(x: String, y: String): Boolean = {
-    !getAllSenseSynonyms(x)(y)
+    val syns = getAllSenseSynonyms(x).map(_.toLowerCase)
+    !syns(y)
   }
 
   /**
@@ -294,7 +296,7 @@ object WordNet {
   }
 
   def tagAlternation(x:String, y:String): String = {
-    if (synonymous(x,y)) "nonalternation"
+    if (x == y || synonymous(x,y)) "nonalternation"
     else if (alternation(x, y)) "alternation"
     else if (kindOf(x, y) || antonymous(x, y)) "nonalternation"
     else "unclear"
