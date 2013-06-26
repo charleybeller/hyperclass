@@ -19,7 +19,6 @@ object WordNet {
    *   Positive classification only if there is a single 
    *    frequently used sense of the word (the first sense)
    */
-
   type LexInfoSet = Set[(Int, Int, Int, String)]
   type CountMap = Map[String, LexInfoSet]
 
@@ -238,7 +237,7 @@ object WordNet {
     fx.intersect(fy)
   }
 
-  def alternation(x: String, y: String, maxHeight: Int = 2): Boolean = {
+  def sibling(x: String, y: String, maxHeight: Int = 2): Boolean = {
     def climb(x: ISynset, y: ISynset, currentHeight: Int): Boolean = {
       if (currentHeight >= maxHeight) false
       else { 
@@ -254,7 +253,21 @@ object WordNet {
     else climb(fx.head, fy.head, 0) 
   }
 
+  def alternation(x: String, y: String): Boolean = {
+    val fx = getFirstSenseHypernyms(x)
+    val fy = getFirstSenseHypernyms(y)
+    fx.intersect(fy).nonEmpty
+  }
+  
+  def nonAlternation(x: String, y: String): Boolean = {
+    val fx = getAllSenseHypernyms(x)
+    val fy = getAllSenseHypernyms(y)
+    fx.intersect(fy).isEmpty
+  }
 
+  /**
+   * Labeling methods
+   */
   def wordNetRelations(x:String, y:String): String = {
     val string = if (singleSenseNoun(x) && singleSenseNoun(y)) {
       lazy val hypernym = tagHypernym(x,y)
@@ -297,8 +310,10 @@ object WordNet {
 
   def tagAlternation(x:String, y:String): String = {
     if (x == y || synonymous(x,y)) "nonalternation"
+    else if (sibling(x, y)) "sibling"
+    else if (kindOf(x, y) || kindOf(y, x) || antonymous(x, y)) "nonalternation"
     else if (alternation(x, y)) "alternation"
-    else if (kindOf(x, y) || antonymous(x, y)) "nonalternation"
+    else if (nonAlternation(x, y)) "nonalternation"
     else "unclear"
   }
 
