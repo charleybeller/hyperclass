@@ -30,6 +30,7 @@ libraryDependencies  ++= Seq(
 	"org.scalanlp" %% "breeze-process" % "0.2.3",
 	"org.scalanlp" %% "breeze-viz" % "0.2.3",
 	"de.bwaldvogel" % "liblinear" % "1.92",
+  "redis.clients" % "jedis" % "2.0.0",
 	"cc.mallet" % "mallet" % "2.0.7-RC2"
 )
 
