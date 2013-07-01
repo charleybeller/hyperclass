@@ -7,7 +7,7 @@ import redis.clients.jedis._
 /**
  * Wrapper around Redis that check a bloomfilter before querying
  */
-class Redis(host: String, port: Int) { 
+class RedisPPDB(host: String, port: Int) { 
 	import edu.jhu.jerboa.counting.BloomFilter
 
 	private lazy val redis = {
