@@ -39,45 +39,39 @@ import edu.jhu.hyperclass.WordNet;
  * @author Charley Beller
  *	added functionality to label rules with WordNet relations,
  *	deal with collapsed, possibly cyclic, dependencies
+ *	prints three dependency paths: basic, collapsed, propagated
  *
  */
-public class DirtRuleFromAgiga {
-	
+public class AllDependencyRule {
+
 	private static Logger log = Logger.getLogger(DirtRuleFromAgiga.class);
-	
+
 	private List<WordLemmaTag> labels;
 	private List<TreeGraphNode> tree;
-	private List<TypedDependency> dependencies;
-	protected Boolean collapsed = false;
-	protected Boolean cyclic;
+	private List<TypedDependency> basic_deps;
+	private List<TypedDependency> collapsed_deps;
+	private List<TypedDependency> propagated_deps;
 	protected TreeGraphNode root = null;
-	protected HashMap<Pair<TreeGraphNode, TreeGraphNode>, TypedDependency> nodes2dep = null;
-	protected HashMap<TreeGraphNode, Set<TreeGraphNode>> arcsMap = null;
-	
-	public DirtRuleFromAgiga (AgigaSentence sentence, DependencyForm form){
-		this.labels = sentence.getStanfordWordLemmaTags();
-		this.tree = sentence.getStanfordTreeGraphNodes(form);
-		this.dependencies = sentence.getStanfordTypedDependencies(form);
-		this.root = this.tree.get(0);
-		this.collapsed = form != DependencyForm.BASIC_DEPS;
-		for (int i=0; i<labels.size(); i++) {
-			this.tree.get(i+1).label().setLemma(labels.get(i).lemma());
-		}
-	}
+	protected HashMap<Pair<TreeGraphNode, TreeGraphNode>, TypedDependency> nodes2dep_basic = null;
+	protected HashMap<Pair<TreeGraphNode, TreeGraphNode>, TypedDependency> nodes2dep_collapsed = null;
+	protected HashMap<Pair<TreeGraphNode, TreeGraphNode>, TypedDependency> nodes2dep_propagated = null;
+	protected HashMap<TreeGraphNode, Set<TreeGraphNode>> arcsMap_collapsed = null;
+	protected HashMap<TreeGraphNode, Set<TreeGraphNode>> arcsMap_propagated = null;
 
-	public DirtRuleFromAgiga (List<WordLemmaTag> labels, List<TreeGraphNode> tree, List<TypedDependency> dependencies){
-		this.labels = labels;
-		this.tree = tree;
-		this.dependencies = dependencies;
-		// 0th of tree is ROOT, while 0th of labels is the first word in the sentence
+
+				
+	public AllDependencyRule(AgigaSentence sentence) {
+		this.labels = sentence.getStanfordWordLemmaTags();
+		this.tree = sentence.getStanfordTreeGraphNodes(DependencyForm.BASIC_DEPS);
+		this.basic_deps = sentence.getStanfordTypedDependencies(DependencyForm.BASIC_DEPS);
+		this.collapsed_deps = sentence.getStanfordTypedDependencies(DependencyForm.COL_DEPS);
+		this.propagated_deps = sentence.getStanfordTypedDependencies(DependencyForm.COL_CCPROC_DEPS);
 		this.root = this.tree.get(0);
-		//System.out.println(this.labels.get(0).lemma());
-		//this.tree.get(1).label().setLemma(this.labels.get(0).lemma());
 		for (int i=0; i<labels.size(); i++) {
 			this.tree.get(i+1).label().setLemma(labels.get(i).lemma());
 		}
 	}
-	
+		
 	public int getSize() {
 		return this.tree.size();
 	}
@@ -90,43 +84,18 @@ public class DirtRuleFromAgiga {
 		return tree;
 	}
 
-	public List<TypedDependency> getDependencies() {
-		return dependencies;
-	}
-
-	public Boolean isCollapsed() {
-		return collapsed;
-	}
-
-
-	@SuppressWarnings("unchecked")
-	public Boolean isCyclic() {
-		if (this.cyclic != null) return this.cyclic;
-		if (this.isCollapsed()) {
-			Set<Pair<TreeGraphNode, TreeGraphNode>> keys = nodes2dep().keySet();
-			for (Pair<TreeGraphNode, TreeGraphNode> pair : keys) {
-				if (keys.contains(new Pair(pair.second, pair.first))) {
-					this.cyclic = true;
-					return this.cyclic;
-				}
-			}
-		}
-		this.cyclic = false;
-		return this.cyclic;
-	}
-
-	public List<Tree> cyclicPathNodeToNode(Tree start, Tree goal) {
-		for (int depth=0; depth<arcsMap().size(); depth++) {
-			List<Tree> path = depthLimitedSearch(start, goal, depth);
+	public List<Tree> cyclicPathNodeToNode(Tree start, Tree goal, HashMap<TreeGraphNode, Set<TreeGraphNode>> arcsMap) {
+		for (int depth=0; depth<arcsMap.size(); depth++) {
+			List<Tree> path = depthLimitedSearch(start, goal, depth, arcsMap);
 			if (path != null) return path;
 		}
 		return null;
 	}
-
+	
 	@SuppressWarnings("unchecked")
-	private List<Tree> depthLimitedSearch(Tree start, Tree goal, int maxDepth) {
+	private List<Tree> depthLimitedSearch(Tree start, Tree goal, int maxDepth, HashMap<TreeGraphNode, Set<TreeGraphNode>> arcsMap) {
 		//check that start and goal are valid
-		if (arcsMap().containsKey(start) && arcsMap().containsKey(goal)) {
+		if (arcsMap.containsKey(start) && arcsMap.containsKey(goal)) {
 			int depth = 0;
 			List<Tree> path = new java.util.ArrayList();
 			Set<Tree> visited = new java.util.HashSet();
@@ -144,7 +113,7 @@ public class DirtRuleFromAgiga {
 				//System.out.println("depth: " + depth);
 				if (node == goal) return path; //success!
 				else {
-					for (Tree t : arcsMap().get(node)) {
+					for (Tree t : arcsMap.get(node)) {
 						if (! visited.contains(t)) {
 							stack.push(t);
 							deadEnd = false;
@@ -159,7 +128,7 @@ public class DirtRuleFromAgiga {
 						path.remove(path.size() - 1);
 						if (path.isEmpty()) return null;
 						Tree previous = path.get(path.size() - 1);
-						for (Tree t : arcsMap().get(previous)) {
+						for (Tree t : arcsMap.get(previous)) {
 							if (! visited.contains(t)) deadEnd = false;
 						}
 					}
@@ -191,37 +160,66 @@ public class DirtRuleFromAgiga {
 		return this.root;
 	}
 
-	public HashMap<TreeGraphNode, Set<TreeGraphNode>> arcsMap() {
-		if (this.arcsMap != null) return this.arcsMap;
-		this.arcsMap = new HashMap<TreeGraphNode, Set<TreeGraphNode>>();
-		for (Pair<TreeGraphNode,TreeGraphNode> key : nodes2dep().keySet()) {
-			addEntry(key);
+	public HashMap<TreeGraphNode, Set<TreeGraphNode>> arcsMap_collapsed() {
+		if (this.arcsMap_collapsed != null) return this.arcsMap_collapsed;
+		this.arcsMap_collapsed = new HashMap<TreeGraphNode, Set<TreeGraphNode>>();
+		for (Pair<TreeGraphNode,TreeGraphNode> key : nodes2dep_collapsed().keySet()) {
+			addEntry(key, this.arcsMap_collapsed);
 		}
-		return this.arcsMap;
-	}
-	
-	private void addEntry(Pair<TreeGraphNode,TreeGraphNode> entry){
-		if (this.arcsMap.get(entry.first) == null)
-			this.arcsMap.put(entry.first, new HashSet<TreeGraphNode>());
-		this.arcsMap.get(entry.first).add(entry.second);
-		if (this.arcsMap.get(entry.second) == null)
-			this.arcsMap.put(entry.second, new HashSet<TreeGraphNode>());
-		this.arcsMap.get(entry.second).add(entry.first);
+		return this.arcsMap_collapsed;
 	}
 
-	public HashMap<Pair<TreeGraphNode, TreeGraphNode>, TypedDependency> nodes2dep() {
-		if (this.nodes2dep != null) return this.nodes2dep;
-		this.nodes2dep = new HashMap<Pair<TreeGraphNode, TreeGraphNode>, TypedDependency>();
-		for (TypedDependency dep:this.dependencies) {
-			this.nodes2dep.put(new Pair<TreeGraphNode, TreeGraphNode>(dep.gov(), dep.dep()), dep);
+	public HashMap<TreeGraphNode, Set<TreeGraphNode>> arcsMap_propagated() {
+		if (this.arcsMap_propagated != null) return this.arcsMap_propagated;
+		this.arcsMap_propagated = new HashMap<TreeGraphNode, Set<TreeGraphNode>>();
+		for (Pair<TreeGraphNode,TreeGraphNode> key : nodes2dep_propagated().keySet()) {
+			addEntry(key, this.arcsMap_propagated);
 		}
-		return this.nodes2dep;
+		return this.arcsMap_propagated;
+	}
+
+	private void addEntry(Pair<TreeGraphNode,TreeGraphNode> entry, HashMap<TreeGraphNode, Set<TreeGraphNode>> arcsMap){
+		if (arcsMap.get(entry.first) == null)
+			arcsMap.put(entry.first, new HashSet<TreeGraphNode>());
+		arcsMap.get(entry.first).add(entry.second);
+		if (arcsMap.get(entry.second) == null)
+			arcsMap.put(entry.second, new HashSet<TreeGraphNode>());
+		arcsMap.get(entry.second).add(entry.first);
+	}
+
+	public HashMap<Pair<TreeGraphNode, TreeGraphNode>, TypedDependency> nodes2dep_basic() {
+		if (this.nodes2dep_basic != null) return this.nodes2dep_basic;
+		this.nodes2dep_basic = new HashMap<Pair<TreeGraphNode, TreeGraphNode>, TypedDependency>();
+		for (TypedDependency dep:this.basic_deps) {
+			this.nodes2dep_basic.put(new Pair<TreeGraphNode, TreeGraphNode>(dep.gov(), dep.dep()), dep);
+		}
+		return this.nodes2dep_basic;
+	}
+	
+	public HashMap<Pair<TreeGraphNode, TreeGraphNode>, TypedDependency> nodes2dep_collapsed() {
+		if (this.nodes2dep_collapsed != null) return this.nodes2dep_collapsed;
+		this.nodes2dep_collapsed = new HashMap<Pair<TreeGraphNode, TreeGraphNode>, TypedDependency>();
+		for (TypedDependency dep:this.collapsed_deps) {
+			this.nodes2dep_collapsed.put(new Pair<TreeGraphNode, TreeGraphNode>(dep.gov(), dep.dep()), dep);
+		}
+		return this.nodes2dep_collapsed;
+	}
+	
+	public HashMap<Pair<TreeGraphNode, TreeGraphNode>, TypedDependency> nodes2dep_propagated() {
+		if (this.nodes2dep_propagated != null) return this.nodes2dep_propagated;
+		this.nodes2dep_propagated = new HashMap<Pair<TreeGraphNode, TreeGraphNode>, TypedDependency>();
+		for (TypedDependency dep:this.propagated_deps) {
+			this.nodes2dep_propagated.put(new Pair<TreeGraphNode, TreeGraphNode>(dep.gov(), dep.dep()), dep);
+		}
+		return this.nodes2dep_propagated;
 	}
 	
 	public void extractDIRTdependencies(BufferedWriter rulesWriter, boolean print_to_stdout) throws IOException {
 		if (this.root == null) this.getRoot();
 
-		HashMap<Pair<TreeGraphNode, TreeGraphNode>, TypedDependency> nodes2dep = this.nodes2dep();
+		HashMap<Pair<TreeGraphNode, TreeGraphNode>, TypedDependency> nodes2dep_basic = this.nodes2dep_basic();
+		HashMap<Pair<TreeGraphNode, TreeGraphNode>, TypedDependency> nodes2dep_collapsed = this.nodes2dep_collapsed();
+		HashMap<Pair<TreeGraphNode, TreeGraphNode>, TypedDependency> nodes2dep_propagated = this.nodes2dep_propagated();
 		for (int i=0; i<this.labels.size()-1; i++) {
 			WordLemmaTag iLabel = this.labels.get(i);
 			// slot fillers have to be nouns
@@ -233,24 +231,28 @@ public class DirtRuleFromAgiga {
 				if (!jLabel.tag().startsWith("NN")) continue;
 				TreeGraphNode iNode = this.tree.get(i+1);
 				TreeGraphNode jNode = this.tree.get(j+1);
-				List<Tree> paths;	 
-				if (this.isCollapsed())
-					paths = this.cyclicPathNodeToNode(iNode, jNode);
-				else 
-					paths = this.root.pathNodeToNode(iNode, jNode);
+				List<Tree> paths_basic = this.root.pathNodeToNode(iNode, jNode);
+				List<Tree> paths_collapsed = this.cyclicPathNodeToNode(iNode, jNode, arcsMap_collapsed());
+				List<Tree> paths_propagated = this.cyclicPathNodeToNode(iNode, jNode, arcsMap_propagated());
 				// if path.size()==2, we have rules like this:
 				// ??/NNP<-nn<-NNP/??
-				if (paths == null || paths.size() < 3 || paths.size() > 4) continue;
+				if (paths_basic == null || paths_basic.size() < 2) continue;
+        if (paths_collapsed == null || paths_collapsed.size() < 2) continue;
+        if (paths_propagated == null || paths_propagated.size() < 2 || paths_propagated.size() > 4) continue;
 				// [poured, Smith, died, earlier, attack, aged, 55]
 				String x = "", y = "";
-				TreeGraphNode xNode = (TreeGraphNode) paths.get(0);
-				TreeGraphNode yNode = (TreeGraphNode) paths.get(paths.size() - 1);
+				TreeGraphNode xNode = (TreeGraphNode) paths_propagated.get(0);
+				TreeGraphNode yNode = (TreeGraphNode) paths_propagated.get(paths_propagated.size() - 1);
 				x = xNode.label().value();
 				y = yNode.label().value();
 				//label WordNet relations from wordnet
 				String wordNetRelations = WordNet.wordNetRelations(x,y);
 				//
-				StringBuilder dirtRule = this.buildRule(paths);
+				StringBuilder dirtRule = this.buildRule(paths_basic, nodes2dep_basic());
+				dirtRule.append("\t");
+				dirtRule.append(this.buildRule(paths_collapsed, nodes2dep_collapsed()));
+				dirtRule.append("\t");
+				dirtRule.append(this.buildRule(paths_propagated, nodes2dep_propagated()));
 				dirtRule.append("\t"+wordNetRelations+"\tX="+x+"\tY="+y+"\tphrases=");
 				for (int k=i; k<=j; k++) {
 					dirtRule.append(this.labels.get(k).word()+" ");
@@ -263,13 +265,13 @@ public class DirtRuleFromAgiga {
 		}
 	}
 
-	private StringBuilder buildRule(List<Tree> paths) {
+	private StringBuilder buildRule(List<Tree> paths, HashMap<Pair<TreeGraphNode, TreeGraphNode>, TypedDependency> nodes2dep) {
 		StringBuilder dirtRule = new StringBuilder(); 
+    assert(paths.size()>=2);
 		TreeGraphNode xNode = (TreeGraphNode) paths.get(0);
 		dirtRule.append(getReducedTag(xNode.label().tag()));
 		dirtRule.append(":");
 		TreeGraphNode yNode;
-		this.nodes2dep();
 		for (int k=0; k<paths.size()-1; k++) {
 			xNode = (TreeGraphNode) paths.get(k);
 			yNode = (TreeGraphNode) paths.get(k+1);
@@ -340,3 +342,4 @@ public class DirtRuleFromAgiga {
 //	}
 
 }
+

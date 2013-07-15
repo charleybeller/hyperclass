@@ -13,6 +13,7 @@ object WordNet {
   val logger = Logger.getLogger(this.getClass.getName())
   val wordNetPath = "data/wordnet/dict"
   val countsPath = "data/wordnet/dict/cntlist.rev"
+  val nounPath = "data/wordnet/dict/index.noun"
 
   /**
    * Code to deal with cntlist.rev
@@ -70,6 +71,28 @@ object WordNet {
 
   def singleSenseNoun(word:String) ={
     singleNouns(word)
+  }
+
+  /**
+   * All nouns in WordNet
+   */
+  def buildNounSet(file: Iterator[String]): Set[String] = {
+    def loop(file: Iterator[String], nset: Set[String]): Set[String] = {
+      if (! file.hasNext) nset
+      else {
+        val noun = file.next.split(" ")(0)
+        val nset1 = if (noun.isEmpty) nset else nset + noun
+        loop(file, nset1)
+      }
+    }
+    loop(file, Set.empty)
+  }
+  lazy val inVocab = {
+    try {
+      val nounfile = scala.io.Source.fromFile(nounPath).getLines
+      buildNounSet(nounfile)
+    }
+    catch { case e:Throwable => throw new RuntimeException(e) }
   }
 
 
@@ -141,13 +164,15 @@ object WordNet {
   def collectHypernyms(synset: ISynset, hypernyms: Set[String], maxHeight: Int): Set[String] = {
     val h = synset.getRelatedSynsets(Pointer.HYPERNYM).asScala 
     val hi = synset.getRelatedSynsets(Pointer.HYPERNYM_INSTANCE).asScala 
-    val next = h ++ hi
-    if (next.isEmpty || maxHeight <= 0) hypernyms
+    val parents = h ++ hi
+    if (parents.isEmpty || maxHeight <= 0) hypernyms
     else {
-      val hyps = dict.getSynset(next.head)
-      val words = hyps.getWords().asScala
-      val hypernyms1 = hypernyms ++ words.map{w => w.getLemma}.toSet
-      collectHypernyms(hyps, hypernyms1, maxHeight-1)
+      parents.map{ p =>
+        val hyps = dict.getSynset(p)
+        val words = hyps.getWords().asScala
+        val hypernyms1 = hypernyms ++ words.map{w => w.getLemma}.toSet
+        collectHypernyms(hyps, hypernyms1, maxHeight-1)
+      }.reduce(_ union _)
     }
   }
 
@@ -269,16 +294,17 @@ object WordNet {
    * Labeling methods
    */
   def wordNetRelations(x:String, y:String): String = {
-    val string = if (singleSenseNoun(x) && singleSenseNoun(y)) {
+    val string = if (inVocab(x) && inVocab(y)) {
+      val senses = if (singleSenseNoun(x) && singleSenseNoun(y)) "single" else "multiple"
       lazy val hypernym = tagHypernym(x,y)
       lazy val hyponym = tagHyponym(x,y)
       lazy val synonym = tagSynonym(x,y)
       lazy val antonym = tagAntonym(x,y)
       lazy val alternation = tagAlternation(x,y)
-      Array(synonym, hypernym, hyponym, antonym, alternation).mkString("\t")
+      Array(senses, synonym, hypernym, hyponym, antonym, alternation).mkString("\t")
     }
     else {
-      Array("unknown", "unknown", "unknown", "unknown", "unknown").mkString("\t")
+      Array("OOV", "unknown", "unknown", "unknown", "unknown", "unknown").mkString("\t")
     }
     string
   }
@@ -286,26 +312,26 @@ object WordNet {
   def tagHypernym(x:String, y:String): String = {
     if (kindOf(x, y)) "hypernym"
     else if (notKindOf(x, y)) "nonhypernym"
-    else "unclear"
+    else "possible"
   }
 
   def tagHyponym(x:String, y:String): String = {
     if (kindOf(y, x)) "hyponym"
     else if (notKindOf(y, x)) "nonhyponym"
-    else "unclear"
+    else "possible"
   }
 
   def tagSynonym(x:String, y:String): String = {
     if (x == y) "identical"
     else if (synonymous(x, y)) "synonym"
     else if (notSynonymous(x, y)) "nonsynonym"
-    else "unclear"
+    else "possible"
   }
 
   def tagAntonym(x:String, y:String): String = {
     if (antonymous(x, y)) "antonym"
     else if (notAntonymous(x, y)) "nonantonym"
-    else "unclear"
+    else "possible"
   }
 
   def tagAlternation(x:String, y:String): String = {
@@ -314,7 +340,7 @@ object WordNet {
     else if (kindOf(x, y) || kindOf(y, x) || antonymous(x, y)) "nonalternation"
     else if (alternation(x, y)) "alternation"
     else if (nonAlternation(x, y)) "nonalternation"
-    else "unclear"
+    else "possible"
   }
 
     

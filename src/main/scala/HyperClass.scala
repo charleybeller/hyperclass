@@ -18,11 +18,11 @@ object HyperClass {
    * writes dependency paths to files in output directory (args(2))
    */
   def main(args: Array[String]) = {
-    val dependencyTypes = Set("basic", "collapsed", "propagated")
+    val dependencyTypes = Set("basic", "collapsed", "propagated", "all")
     def usage = {
       println("""|Usage: HyperClass [dependency-type] [agiga-dir] [agiga-prefix] ([output-dir])
                  |
-                 |       legal dependency types: basic, collapsed, propagated""".stripMargin)
+                 |       legal dependency types: basic, collapsed, propagated, all""".stripMargin)
     }
     if ((args.length < 3 || args.length > 4) || !dependencyTypes(args(0))) usage
     else {
@@ -41,15 +41,14 @@ object HyperClass {
       outdir.mkdirs
       
       val prefs = new AgigaPrefs
-      //val form = AgigaConstants.DependencyForm.BASIC_DEPS
+
       val form = args(0) match {
-        case "basic" => AgigaConstants.DependencyForm.BASIC_DEPS
         case "collapsed" => AgigaConstants.DependencyForm.COL_DEPS
         case "propagated" => AgigaConstants.DependencyForm.COL_CCPROC_DEPS
+        case _ => AgigaConstants.DependencyForm.BASIC_DEPS
       }
         
       println(form)
-      prefs.setForConnlStyleDeps(form)
 
       listFiles(agiga, prefix, null).asScala foreach { item =>
         val arg = item.toString 
@@ -61,8 +60,15 @@ object HyperClass {
         val reader = new StreamingSentenceReader(arg, prefs)
 
         reader.asScala.foreach { sent  => 
-          val rule = new DirtRuleFromAgiga(sent, form)
-          rule.extractDIRTdependencies(rulesWriter, false)
+          if (args(0) == "all") {
+            val rule = new AllDependencyRule(sent)
+            rule.extractDIRTdependencies(rulesWriter, false)
+          }
+          else {
+            val rule = new DirtRuleFromAgiga(sent, form)
+            rule.extractDIRTdependencies(rulesWriter, false)
+          }
+          rulesWriter.flush
         }
 
         log.info("Number of sentences: " + reader.getNumSents())
