@@ -8,12 +8,11 @@ import java.util.logging.Logger
 import scala.collection.JavaConverters.collectionAsScalaIterableConverter
 
 
-class WordNet
-object WordNet {
+
+class WordNet(wordNetPath: String) {
   val logger = Logger.getLogger(this.getClass.getName())
-  val wordNetPath = "data/wordnet/dict"
+  val nounPath = wordNetPath + "/index.noun"
   val countsPath = "data/wordnet/dict/cntlist.rev"
-  val nounPath = "data/wordnet/dict/index.noun"
 
   /**
    * Code to deal with cntlist.rev

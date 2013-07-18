@@ -14,17 +14,18 @@ import edu.stanford.nlp.trees._
 
 object HyperClass {
   /**
-   * Traverses agiga documents in directory (args(0)) that match prefix (args(1))
-   * writes dependency paths to files in output directory (args(2))
+   * Traverses agiga documents in directory (args(1)) that match prefix (args(2))
+   * writes dependency paths to files in output directory (args(4))
+   * Dependency type is determined by args(0), args(3) gives the path to the WordNet files
    */
   def main(args: Array[String]) = {
     val dependencyTypes = Set("basic", "collapsed", "propagated", "all")
     def usage = {
-      println("""|Usage: HyperClass [dependency-type] [agiga-dir] [agiga-prefix] ([output-dir])
+      println("""|Usage: HyperClass [dependency-type] [agiga-dir] [agiga-prefix] [wn-dir] ([output-dir])
                  |
                  |       legal dependency types: basic, collapsed, propagated, all""".stripMargin)
     }
-    if ((args.length < 3 || args.length > 4) || !dependencyTypes(args(0))) usage
+    if ((args.length < 4 || args.length > 5) || !dependencyTypes(args(0))) usage
     else {
       val cAppender = new ConsoleAppender(new PatternLayout("%d{HH:mm:ss,SSS} [%t] %c %x -%m%n"))
       BasicConfigurator.configure(cAppender)
@@ -34,11 +35,13 @@ object HyperClass {
 
       val agiga = new java.io.File(args(1))
       val prefix = new PrefixFileFilter(args(2))
+      val wordnet = new edu.jhu.hyperclass.WordNet(args(3))
       val outdir = args.length match {
-        case 4 => new java.io.File(args.last)
-        case 3 => new java.io.File(args.last + ".output")
+        case 5 => new java.io.File(args.last)
+        case 4 => new java.io.File(args.last + ".output")
       }
       outdir.mkdirs
+
       
       val prefs = new AgigaPrefs
 
@@ -62,11 +65,11 @@ object HyperClass {
         reader.asScala.foreach { sent  => 
           if (args(0) == "all") {
             val rule = new AllDependencyRule(sent)
-            rule.extractDIRTdependencies(rulesWriter, false)
+            rule.extractDIRTdependencies(rulesWriter, false, wordnet)
           }
           else {
             val rule = new DirtRuleFromAgiga(sent, form)
-            rule.extractDIRTdependencies(rulesWriter, false)
+            rule.extractDIRTdependencies(rulesWriter, false, wordnet)
           }
           rulesWriter.flush
         }

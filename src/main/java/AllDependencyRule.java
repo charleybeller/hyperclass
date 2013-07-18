@@ -214,7 +214,7 @@ public class AllDependencyRule {
 		return this.nodes2dep_propagated;
 	}
 	
-	public void extractDIRTdependencies(BufferedWriter rulesWriter, boolean print_to_stdout) throws IOException {
+	public void extractDIRTdependencies(BufferedWriter rulesWriter, boolean print_to_stdout, WordNet wordnet) throws IOException {
 		if (this.root == null) this.getRoot();
 
 		HashMap<Pair<TreeGraphNode, TreeGraphNode>, TypedDependency> nodes2dep_basic = this.nodes2dep_basic();
@@ -245,15 +245,18 @@ public class AllDependencyRule {
 				TreeGraphNode yNode = (TreeGraphNode) paths_propagated.get(paths_propagated.size() - 1);
 				x = xNode.label().value();
 				y = yNode.label().value();
+        String xLemma = xNode.label().lemma();
+        String yLemma = yNode.label().lemma();
 				//label WordNet relations from wordnet
-				String wordNetRelations = WordNet.wordNetRelations(x,y);
+				String wordNetRelations = wordnet.wordNetRelations(xLemma,yLemma);
 				//
 				StringBuilder dirtRule = this.buildRule(paths_basic, nodes2dep_basic());
 				dirtRule.append("\t");
 				dirtRule.append(this.buildRule(paths_collapsed, nodes2dep_collapsed()));
 				dirtRule.append("\t");
 				dirtRule.append(this.buildRule(paths_propagated, nodes2dep_propagated()));
-				dirtRule.append("\t"+wordNetRelations+"\tX="+x+"\tY="+y+"\tphrases=");
+				dirtRule.append("\t"+wordNetRelations+"\tX="+x+"|"+xLemma+
+            "\tY="+y+"|"+yLemma+"\tphrases=");
 				for (int k=i; k<=j; k++) {
 					dirtRule.append(this.labels.get(k).word()+" ");
 				}
@@ -269,6 +272,10 @@ public class AllDependencyRule {
 		StringBuilder dirtRule = new StringBuilder(); 
     assert(paths.size()>=2);
 		TreeGraphNode xNode = (TreeGraphNode) paths.get(0);
+    for (Tree child : xNode.getChildrenAsList()) {
+      if ("such".equals(child.nodeString()))
+        dirtRule.append("such<-amod:");
+    }
 		dirtRule.append(getReducedTag(xNode.label().tag()));
 		dirtRule.append(":");
 		TreeGraphNode yNode;
@@ -301,6 +308,11 @@ public class AllDependencyRule {
 				dirtRule.append(yNode.label().lemma());
 			}
 		}
+    Tree last = paths.get(paths.size() - 1);
+    for (Tree child : last.getChildrenAsList()) {
+      if ("other".equals(child.nodeString()))
+        dirtRule.append(":amod->other");
+    }
 		return dirtRule;
 	}
 	
@@ -313,33 +325,34 @@ public class AllDependencyRule {
 			return tag;
 	}
 
-//
-//	/**
-//	 * @param args
-//	 */
-//	public static void main(String[] args) throws Exception {
-//		ConsoleAppender cAppender = new ConsoleAppender(new PatternLayout("%d{HH:mm:ss,SSS} [%t] %p %c %x - %m%n"));
-//		BasicConfigurator.configure(cAppender);
-//		// Must be Level.TRACE for debug logging
-//		Logger.getRootLogger().setLevel(Level.INFO);
-//
-//		BufferedWriter rulesWriter = FileManager.getWriter(args[1]);
-//
-//		log.info("Parsing XML file "+args[0]);
-//		
-//		AgigaPrefs prefs = new AgigaPrefs();
-//		DependencyForm form = DependencyForm.BASIC_DEPS;
-//				prefs.setForConnlStyleDeps(form);
-//				StreamingSentenceReader reader = new StreamingSentenceReader(args[0], prefs);
-//
-//				for (AgigaSentence sent : reader) {
-//					DirtRuleFromAgiga rule = new DirtRuleFromAgiga(sent.getStanfordWordLemmaTags(), sent.getStanfordTreeGraphNodes(form), sent.getStanfordTypedDependencies(form));
-//					rule.extractDIRTdependencies(rulesWriter, false);
-//				}
-//				log.info("Number of sentences: " + reader.getNumSents());
-//
-//		rulesWriter.close();
-//	}
+
+	/**
+	 * @param args
+	 */
+  /*
+	public static void main(String[] args) throws Exception {
+		ConsoleAppender cAppender = new ConsoleAppender(new PatternLayout("%d{HH:mm:ss,SSS} [%t] %p %c %x - %m%n"));
+		BasicConfigurator.configure(cAppender);
+		// Must be Level.TRACE for debug logging
+		Logger.getRootLogger().setLevel(Level.INFO);
+
+		BufferedWriter rulesWriter = FileManager.getWriter(args[1]);
+
+		log.info("Parsing XML file "+args[0]);
+		
+		AgigaPrefs prefs = new AgigaPrefs();
+		DependencyForm form = DependencyForm.BASIC_DEPS;
+				prefs.setForConnlStyleDeps(form);
+				StreamingSentenceReader reader = new StreamingSentenceReader(args[0], prefs);
+
+				for (AgigaSentence sent : reader) {
+					DirtRuleFromAgiga rule = new DirtRuleFromAgiga(sent.getStanfordWordLemmaTags(), sent.getStanfordTreeGraphNodes(form), sent.getStanfordTypedDependencies(form));
+					rule.extractDIRTdependencies(rulesWriter, false);
+				}
+				log.info("Number of sentences: " + reader.getNumSents());
+
+		rulesWriter.close();
+	}*/
 
 }
 
