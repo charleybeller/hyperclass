@@ -1,0 +1,61 @@
+
+This code takes the output of Hyperclass.scala and trains a classifier for detecting entailment relationships.
+The code involves a series of python scripts for transforming the raw data into the correct format and a single java program to train and test a MaxEnt classifier using Mallet. 
+
+***To run every step of this README, use run-pipeline.sh***
+
+----------------------------------
+--    preprocessing the data    --
+----------------------------------
+
+Input data : the data extracted from the Hyperclass.scala should be organized in a directory containing subdirectories for each news source. i.e.
+$INDIR/
+	afp/
+	apw/	
+	nyt/
+	...
+
+Output data : to write the final data, to be used by the classifier, output directory should be organized as a top level directory which contains subdirectories for each path type (basic, propagated, collapsed)
+$OUTDIR/
+	data/
+	basic/
+	propagated/	
+	collapsed/	
+
+--take data from input directory and write to single file, ignoring noun pairs for which no definitive relation could be found. 
+	input format : above directory structure, with each line of file in the form (tab-separated)
+	basic_path prop_path col_path [OOV|single|multiple] synonym hypernym hyponym antonym alternation X Y phrases
+	
+	output format : single file, with each line of the form
+	basic_path prop_path col_path label X Y phrases
+
+	to run:
+	python scripts/preprocess_allsplits.py $INDIR > $OUTDIR/data.wn
+	cat $OUTDIR/data.wn | sort | uniq > $OUTDIR/data.wn.uniq
+
+--extract lexicon of paths which occur with at least 5 unique NPs
+	cat $OUTDIR/data.wn.uniq | python scripts/feature-lexicon.py
+
+--collapse to one NP per line, filter out paths which appear with fewer than 5 unique NPs, and filter out NPs with fewer than 5 unique paths
+	input format : single file, with each line of the form
+	basic_path prop_path col_path label X Y phrases
+
+	output format : single file, with each line of the form
+	label (X,Y) [basic1:count,basic2:count...basicn:count] [prop1:count,prop2:count...propn:count] [col1:count,col2:count...coln:count] 
+
+	to run:
+	cat $OUTDIR/data.wn.uniq | python scripts/path-features-in-lex.py > $OUTDIR/data.wn.uniq.type
+
+--split into train, dev, test 
+	sh scripts/split_traintest.sh $OUTDIR/data.wn.uniq.type $OUTDIR/data/
+
+--split into files by path type
+	cat $OUTDIR/data/train | python scripts/split_by_path.py $OUTDIR data.raw
+	cat $OUTDIR/data/dev | python scripts/split_by_path.py $OUTDIR dev.raw
+
+----------------------------------
+--    training the classifier   --
+----------------------------------
+
+	
+

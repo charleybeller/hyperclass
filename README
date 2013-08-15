@@ -1,3 +1,5 @@
+The code is in 3 places:  HyperClass.scala holds the main method that iterates through the agiga files, for each sentence it instantiates an AllDependencyRule (or a DirtRuleFromAgiga, if you only want one kind of dependency path) that walks the Stanford parses and prints dependency paths.  This object (AllDependencyRule.java) calls WordNet.scala to walk through wordnet and fill in the relation links.
+
 hyperclass
 ==========
 
